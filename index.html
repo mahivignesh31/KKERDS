@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>KK Educational and Rural Development Society</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="KK Computers, Skill Development, IT Courses, PMKVY, APSSDC, Vocational Training, Ongole, Guntur" name="keywords">
+    <meta content="KK Educational and Rural Development Society offers government-certified IT and skill development courses to empower youth for a brighter future. Affiliated with PMKVY & APSSDC." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+
+    <!-- === CUSTOM CSS FOR ENHANCEMENTS === -->
+    <style>
+        /* --- General & Typography Enhancements --- */
+        :root {
+            --primary: #06BBCC;
+            --secondary: #FFC107; /* New Accent Color */
+            --light: #F0F8FF;
+            --dark: #181D38;
+        }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        .btn-primary:hover {
+            background-color: #05a8b8;
+            border-color: #05a8b8;
+        }
+
+        /* --- Navbar & Logo (UPDATED) --- */
+        .navbar {
+            min-height: 110px; /* Add this to ensure the navbar is tall enough for the larger logo */
+        }
+        .logo-img {
+            height: 100px;      /* Increased from 80px to 100px */
+            width: auto;
+            object-fit: contain;
+            margin: -5px 0;     /* Adjusted vertical margin for the new height */
+        }
+        .navbar-light .navbar-nav .nav-link {
+            transition: color 0.3s ease;
+        }
+        .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+        
+        /* --- Hero Carousel --- */
+        .header-carousel .owl-carousel-item .position-absolute {
+            background: linear-gradient(90deg, rgba(24, 29, 56, 0.9) 0%, rgba(24, 29, 56, 0.4) 100%);
+        }
+
+        /* --- Service Section --- */
+        .service-item {
+            transition: all 0.3s ease-in-out;
+            border: 1px solid #eee;
+        }
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        /* --- About Section --- */
+        .about-image-container {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        /* --- Training Partners Marquee (CSS Animation) --- */
+        .partner-logo-reel {
+            overflow: hidden;
+            position: relative;
+            padding: 2rem 0;
+            background-color: #f8f9fa; /* Added background for better contrast */
+        }
+        .partner-logo-reel::before,
+        .partner-logo-reel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            z-index: 2;
+        }
+        .partner-logo-reel::before { left: 0; background: linear-gradient(to right, #f8f9fa, rgba(248,249,250,0)); }
+        .partner-logo-reel::after { right: 0; background: linear-gradient(to left, #f8f9fa, rgba(248,249,250,0)); }
+
+        .partner-track {
+            display: flex;
+            width: calc(200px * 20); /* 200px per item * (10 items * 2 for seamless loop) */
+            animation: scroll 60s linear infinite;
+        }
+        .partner-slide {
+            width: 200px;
+            padding: 15px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .partner-slide img {
+            max-height: 130px;
+            width: 100%;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .partner-slide:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-200px * 10)); }
+        }
+
+        /* --- Stats Counter --- */
+        .stats-item {
+            transition: all 0.3s ease;
+            border-radius: .5rem;
+        }
+        .stats-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .stats-item i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        /* --- Director's Message --- */
+        .director-message {
+            position: relative;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-left: 5px solid var(--primary);
+            border-radius: .5rem;
+        }
+        .director-message::before {
+            content: "\f10d";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.15;
+        }
+        
+        /* --- Course Item --- */
+        .course-item {
+            transition: all 0.3s ease-in-out;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+        .course-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- Team Section --- */
+        .team-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            background: #fff; /* Ensure white background for consistent look */
+        }
+        .team-item .img-fluid {
+            height: 350px;
+            width: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.4s ease;
+        }
+        .team-item:hover .img-fluid {
+            transform: scale(1.05);
+        }
+        .team-item .team-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px 20px 20px;
+            background: linear-gradient(to top, rgba(24, 29, 56, 0.9), transparent);
+            color: #fff;
+            text-align: center;
+        }
+        .team-text h5 {
+            color: #fff;
+            font-weight: 700;
+        }
+        .team-text small {
+            color: var(--secondary);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        .team-center-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            font-size: 2rem; /* Made title slightly larger */
+        }
+        .team-center-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* --- Testimonial Section --- */
+        .testimonial-item {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .testimonial-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .testimonial-text {
+            border-radius: 0.5rem;
+            background-color: var(--light) !important; /* Ensure it's light blue */
+            padding: 1.5rem !important;
+            border-top: 3px solid var(--primary); /* Add a primary color accent */
+        }
+
+        /* --- Footer --- */
+        .footer .btn.btn-social {
+            margin-right: 5px;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 35px;
+            transition: .3s;
+        }
+        .footer .btn.btn-social:hover {
+            color: var(--primary);
+            background-color: #fff;
+        }
+        .footer .btn.btn-link {
+            display: block;
+            margin-bottom: 10px;
+            padding: 0;
+            text-align: left;
+            color: #fff;
+            font-weight: normal;
+            transition: .3s;
+        }
+        .footer .btn.btn-link::before {
+            position: relative;
+            content: "\f105";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin-right: 10px;
+        }
+        .footer .btn.btn-link:hover {
+            letter-spacing: 1px;
+            box-shadow: none;
+            color: var(--primary);
+        }
+
+        /* --- Enquiry Modal --- */
+        .modal-header {
+            background-color: var(--primary);
+            color: white;
+            border-bottom: none;
+            border-top-left-radius: .5rem;
+            border-top-right-radius: .5rem;
+        }
+        .modal-header .modal-title {
+            font-weight: 700;
+        }
+        .modal-content {
+            border-radius: .5rem;
+        }
+        #enquiryForm, #thankYouMessage {
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+           
+</body> <script type="text/javascript">(function(w,s){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="https://cdn.pagesense.io/js/901904775/88d187f1c0114606a9bc21117c741129.js";var x=document.getElementsByTagName("script")[0];x.parentNode.insertBefore(e,x);})(window,"script");</script>
+    </script>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="img/2kk.png" alt="KK Educational Society Logo" class="logo-img">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <a href="skill.html" class="nav-item nav-link">Skill Development</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+<a href="lms.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
+  E-Learning<i class="fa fa-arrow-right ms-3"></i>
+</a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/carousel-1.jpg" alt="Students in a computer lab">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">KK Computers</h5>
+                                <h1 class="display-3 text-white animated slideInDown">Empowering Youth Through IT & Skill Development</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Certified courses in Tally, Python, MS Office, and more. Start your digital journey with expert trainers and job-ready skills.</p>
+                                <a href="courses.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Discover Courses</a>
+                                <a href="#" class="btn btn-light py-md-3 px-md-5 animated slideInRight" data-bs-toggle="modal" data-bs-target="#enquiryModal">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/carousel-2.jpg" alt="A classroom training session">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Government Certified Training</h5>
+                                <h1 class="display-3 text-white animated slideInDown">Your Gateway to a Successful Career</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Affiliated with PMKVY & APSSDC. Learn digital literacy, accounting, and programming in a practical, hands-on environment.</p>
+                                <a href="about.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Learn More</a>
+                                <a href="#" class="btn btn-light py-md-3 px-md-5 animated slideInRight" data-bs-toggle="modal" data-bs-target="#enquiryModal">Register Today</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-3 h-100">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-chalkboard-teacher text-primary mb-4"></i>
+                            <h5 class="mb-3">Skilled Instructors</h5>
+                            <p>Learn from certified, industry-experienced instructors dedicated to your success.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center pt-3 h-100">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-cogs text-primary mb-4"></i>
+                            <h5 class="mb-3">Vocational Training</h5>
+                            <p>Gain job-ready, practical skills through our government-certified vocational programs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3 h-100">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-briefcase text-primary mb-4"></i>
+                            <h5 class="mb-3">Placement Support</h5>
+                            <p>We provide career guidance and placement assistance to help you start your career.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item text-center pt-3 h-100">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                            <h5 class="mb-3">Quality Resources</h5>
+                            <p>Access high-quality study materials and modern labs to support your learning journey.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- About Start -->
+      <div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Image Section -->
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+    <div class="position-relative h-100">
+        <br>
+        <img class="img-fluid position-absolute w-100 h-90" src="about (3).png" alt="Vocational Training at KK COMPUTERS" style="object-fit: cover;">
+                <br>
+
+        <br>
+
+    </div>
+</div>
+   <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
+                <h1 class="mb-4">Welcome to <strong>KK Educational and Rural Development Society</strong></h1>
+                <p class="mb-4"><strong>KK Educational and Rural Development Society</strong> is committed to transforming the lives of individuals in rural areas through quality education, skill development, and community empowerment initiatives. We operate in regions where access to education is limited, aiming to break down barriers and create pathways to knowledge and opportunity.</p>
+                <p class="mb-4">Our programs span a range of critical areas, including <strong>vocational training</strong> that equips youth and adults with practical skills, and initiatives focused on the empowerment of women and girls, ensuring equal access to education and opportunities for personal and professional growth.</p>
+<p class="mb-4">Through our training centers like <strong>KK Computers</strong>, we offer government-recognized courses under schemes such as PMKVY and APSSDC. Our aim is not only to provide education but also to make every learner confident, capable, and career-ready.</p>
+                <div class="row gy-2 gx-4 mb-4">
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i><strong>Skilled Instructors</strong></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i><strong>Vocational Training</strong></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i><strong>Community Empowerment</strong></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i><strong>Women's Education</strong></p>
+                    </div>
+                    <div class="col-sm-6">
+        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i><strong>Digital Literacy Programs</strong></p>
+    </div>
+    <div class="col-sm-6">
+        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i><strong>Government-Certified Courses (DDUGKY/PMKVY / APSSDC)</strong></p>
+    </div>
+    <div class="col-sm-6">
+        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i><strong>Job-Oriented IT & Accounting Skills</strong></p>
+    </div>
+    <div class="col-sm-6">
+        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i><strong>Career Counseling & Placement Assistance</strong></p>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- About End -->
+
+
+    <!-- Training Partners Section Start -->
+    <div class="container-fluid bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Our Esteemed Training Partners</h2>
+            <div class="partner-logo-reel">
+                <div class="partner-track">
+                    <!-- Original Set -->
+                    <div class="partner-slide"><img src="img/ddugky.png" alt="DDU-GKY"></div>
+                    <div class="partner-slide"><img src="img/SEEDAP.png" alt="SEEDAP"></div>
+                    <div class="partner-slide"><img src="img/KSRLM.png" alt="APSSDC"></div>
+                    <div class="partner-slide"><img src="img/ssdc.jpeg" alt="APSSDC"></div>
+                    <div class="partner-slide"><img src="img/nsdc.png" alt="NSDC"></div>
+                    <div class="partner-slide"><img src="img/pmkvy.png" alt="PMKVY"></div>
+                    <div class="partner-slide"><img src="img/mepma.png" alt="MEPMA AP"></div>
+                    <div class="partner-slide"><img src="img/PM.png" alt="PM Vishwakarma"></div>
+                    <div class="partner-slide"><img src="img/AP.jpeg" alt="Government of Andhra Pradesh"></div>
+                    <div class="partner-slide"><img src="img/sc.png" alt="AP Scheduled Castes Corporation"></div>
+                    <div class="partner-slide"><img src="img/S.jpeg" alt="Grama Sachivalayam Trainings"></div>
+                    <!-- Cloned Set for Seamless Loop -->
+                    <div class="partner-slide"><img src="img/ddugky.png" alt="DDU-GKY"></div>
+                    <div class="partner-slide"><img src="img/SEEDAP.png" alt="SEEDAP"></div>
+                    <div class="partner-slide"><img src="img/ssdc.jpeg" alt="APSSDC"></div>
+                    <div class="partner-slide"><img src="img/nsdc.png" alt="NSDC"></div>
+                    <div class="partner-slide"><img src="img/pmkvy.png" alt="PMKVY"></div>
+                    <div class="partner-slide"><img src="img/mepma.png" alt="MEPMA AP"></div>
+                    <div class="partner-slide"><img src="img/PM.png" alt="PM Vishwakarma"></div>
+                    <div class="partner-slide"><img src="img/AP.jpeg" alt="Government of Andhra Pradesh"></div>
+                    <div class="partner-slide"><img src="img/sc.png" alt="AP Scheduled Castes Corporation"></div>
+                    <div class="partner-slide"><img src="img/S.jpeg" alt="Grama Sachivalayam Trainings"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Training Partners Section End -->
+
+    <!-- NOTE: Keep the existing stats counter, director, courses, team, testimonial, and footer sections but I will apply the new styles to them below. -->
+    
+   <div class="container-fluid bg-light py-5">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-md-4">
+            <div class="bg-white rounded shadow p-4 h-100 d-flex flex-column justify-content-center">
+              <h1 class="text-primary counter fast-counter mb-2" data-target="9000">0</h1>
+              <p class="mb-0">Students Successfully Trained</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-white rounded shadow p-4 h-100 d-flex flex-column justify-content-center">
+              <h1 class="text-primary counter fast-counter mb-2" data-target="9">0</h1>
+              <p class="mb-0">Training Centres</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-white rounded shadow p-4 h-100 d-flex flex-column justify-content-center">
+              <h1 class="text-primary counter slow-counter mb-2" data-target="50">0</h1>
+              <p class="mb-0">Expert Faculties</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Stats Counter End -->
+
+    <!-- Director Message Start -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-light text-center text-primary px-3">Leadership</h6>
+                <h1 class="mb-5">Message From The Director</h1>
+            </div>
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-4 text-center wow fadeInLeft" data-wow-delay="0.3s">
+                    <img class="img-fluid rounded-circle shadow-lg border border-5 border-white" src="img/director.png" alt="Photo of Director, Valleti Raveendra" style="max-width: 250px;">
+                    <h4 class="mt-4 mb-1">Valleti Raveendra</h4>
+                    <p class="text-muted">Director, KK Educational & Rural Development Society</p>
+                </div>
+                <div class="col-lg-8 wow fadeInRight" data-wow-delay="0.5s">
+                    <div class="director-message shadow-sm">
+                        <p class="text-dark fs-5" style="text-align: justify;">
+                            Welcome to <strong>KK Educational & Rural Development Society!</strong> Our mission is rooted in the conviction that education is the ultimate tool for empowerment. We are passionately committed to transforming rural landscapes by providing access to quality training and skill development. We strive to break down barriers, create opportunities, and empower every individual to build a better, more prosperous future for themselves and their communities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Director Message End -->
+
+    <!-- Courses Categories (Combined with Popular Courses) -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Our Programs</h6>
+                <h1 class="mb-5">Popular Courses</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Course Item 1 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="course-item bg-light">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/MS.png" alt="MS Office Course Logo">
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h3 class="mb-0">₹4500.00</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small>(123)</small>
+                            </div>
+                            <h5 class="mb-4">MS Office Suite (Word, Excel, PowerPoint)</h5>
+                        </div>
+                        <div class="d-flex border-top">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>45 Days</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course Item 2 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                     <div class="course-item bg-light">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/TALLY.png" alt="Tally ERP 9 Course Logo">
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h3 class="mb-0">₹4500.00</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small>(123)</small>
+                            </div>
+                            <h5 class="mb-4">TallyPrime with GST</h5>
+</div>
+<div class="d-flex border-top">
+<small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>45 Days</small>
+<small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
+</div>
+</div>
+</div>
+<!-- Course Item 3 -->
+<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+<div class="course-item bg-light">
+<div class="position-relative overflow-hidden">
+<img class="img-fluid" src="img/DTP.png" alt="DTP Course Logo">
+</div>
+<div class="text-center p-4 pb-0">
+<h3 class="mb-0">₹4500.00</h3>
+<div class="mb-3">
+<small class="fa fa-star text-primary"></small>
+<small class="fa fa-star text-primary"></small>
+<small class="fa fa-star text-primary"></small>
+<small class="fa fa-star text-primary"></small>
+<small class="fa fa-star-half-alt text-primary"></small>
+<small>(99)</small>
+</div>
+<h5 class="mb-4">Desktop Publishing (DTP)</h5>
+</div>
+<div class="d-flex border-top">
+<small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>45 Days</small>
+<small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-5 wow fadeInUp" data-wow-delay="0.7s">
+<a href="courses.html" class="btn btn-primary py-3 px-5">View All Courses</a>
+</div>
+</div>
+</div>
+<!-- Courses End -->
+<!-- Team Start -->
+<div class="container-xxl py-5 bg-light">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-light text-center text-primary px-3">Instructors</h6>
+            <h1 class="mb-5">Our Expert Instructors</h1>
+        </div>
+
+        <!-- Ongole Center -->
+        <h3 class="text-center team-center-title wow fadeInUp" data-wow-delay="0.2s">Ongole Centre</h3>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="team-item">
+                    <img class="img-fluid" src="img/lakshmi.jpg" alt="Photo of LAKSHMI">
+                    <div class="team-text">
+                        <h5 class="mb-0">LAKSHMI</h5>
+                        <small>MIS Executive</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item">
+                    <img class="img-fluid" src="img/bhaskhar.jpg" alt="Photo of L. BHASKHAR">
+                    <div class="team-text">
+                        <h5 class="mb-0">L. BHASKHAR</h5>
+                        <small>IT Trainer</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="team-item">
+                    <img class="img-fluid" src="img/SRINU.jpg" alt="Photo of KATEBOINA SRINIVAS">
+                    <div class="team-text">
+                        <h5 class="mb-0">KATEBOINA SRINIVAS</h5>
+                        <small>Non-Domain Trainer</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="team-item">
+                    <img class="img-fluid" src="img/sunil.jpeg" alt="Photo of Sunil Alladi">
+                    <div class="team-text">
+                        <h5 class="mb-0">Sunil Alladi</h5>
+                        <small>Domain Trainer</small>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="team-item">
+                    <img class="img-fluid" src="img/teja.jpeg" alt="Photo of Kakumanu Teja">
+                    <div class="team-text">
+                        <h5 class="mb-0">Kakumanu Teja</h5>
+                        <small>English Trainer</small>
+                    </div>
+                </div>
+            </div>
+              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="team-item">
+                    <img class="img-fluid" src="img/srikanth.jpeg" alt="Photo of Kakumanu Teja">
+                    <div class="team-text">
+                        <h5 class="mb-0">Gunji srikanth</h5>
+                        <small>Lab Incharge</small>
+                    </div>
+                </div>
+            </div>
+                          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="team-item">
+                    <img class="img-fluid" src="img/akhila.jpeg" alt="Photo of Kakumanu Teja">
+                    <div class="team-text">
+                        <h5 class="mb-0">Burri Akhila</h5>
+                        <small>Lab Incharge</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guntur Center -->
+        <h3 class="text-center team-center-title mt-5 pt-4 wow fadeInUp" data-wow-delay="0.2s">Guntur Centre</h3>
+        <div class="row g-4 justify-content-center">
+             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="team-item">
+                    <img class="img-fluid" src="img/jaypal.jpeg" alt="Photo of P. PRABHAVATHI">
+                    <div class="team-text">
+                        <h5 class="mb-0">Konda Jayapal reddy </h5>
+                        <small>Center Incharge</small>
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="team-item">
+                    <img class="img-fluid" src="img/guntur 2.jpg" alt="Photo of PODILI NAGARJUNA">
+                    <div class="team-text">
+                        <h5 class="mb-0">PODILI NAGARJUNA</h5>
+                        <small>IT Trainer</small>
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item">
+                    <img class="img-fluid" src="img/guntur 7.jpg" alt="Photo of MAKHAM KIRAN">
+                    <div class="team-text">
+                        <h5 class="mb-0">MAKHAM KIRAN</h5>
+                        <small>English & Soft Skills</small>
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="team-item">
+                    <img class="img-fluid" src="img/malika.jpeg" alt="Photo of KASU HEMA SRI">
+                    <div class="team-text">
+                        <h5 class="mb-0">B.MALIKA BAI</h5>
+                        <small>Domain Trainer</small>
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="team-item">
+                    <img class="img-fluid" src="img/praveen.jpeg" alt="Photo of SRIDHARLA RAMESH">
+                    <div class="team-text">
+                        <h5 class="mb-0">B PRAVEEN REDDY</h5>
+                        <small>Domain Trainer</small>
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                <div class="team-item">
+                    <img class="img-fluid" src="img/guntur 6.jpg" alt="Photo of B. INDUMATHI">
+                    <div class="team-text">
+                        <h5 class="mb-0">B. INDUMATHI</h5>
+                        <small>MIS Executive</small>
+                    </div>
+                </div>
+            </div>
+                         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                <div class="team-item">
+                    <img class="img-fluid" src="img/Saidavali.png" alt="Photo of B. INDUMATHI">
+                    <div class="team-text">
+                        <h5 class="mb-0">Sk. Saidavali</h5>
+                        <small>Lab Incharge</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Samarlakota Center -->
+        <h3 class="text-center team-center-title mt-5 pt-4 wow fadeInUp" data-wow-delay="0.2s">Samarlakota Centre</h3>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s"><div class="team-item"><img class="img-fluid" src="img/sam 1.jpg" alt="Photo of RAJESH BEVARA"><div class="team-text"><h5 class="mb-0">RAJESH BEVARA</h5><small>Center Incharge</small></div></div></div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s"><div class="team-item"><img class="img-fluid" src="img/sam 2.jpg" alt="Photo of G. DURGADEVI"><div class="team-text"><h5 class="mb-0">G. DURGADEVI</h5><small>MIS Executive</small></div></div></div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s"><div class="team-item"><img class="img-fluid" src="img/sam 3.jpg" alt="Photo of ACHANTA RAJASHEKAR"><div class="team-text"><h5 class="mb-0">ACHANTA RAJASHEKAR</h5><small>Non-Domain Trainer</small></div></div></div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.6s"><div class="team-item"><img class="img-fluid" src="img/sam 4.jpg" alt="Photo of KESUPAKA SANTHOSH"><div class="team-text"><h5 class="mb-0">KESUPAKA SANTHOSH</h5><small>Non-Domain Trainer</small></div></div></div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s"><div class="team-item"><img class="img-fluid" src="img/sam 5.jpg" alt="Photo of G. LAKSHMI DURGA"><div class="team-text"><h5 class="mb-0">G. LAKSHMI DURGA</h5><small>English Trainer</small></div></div></div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.8s"><div class="team-item"><img class="img-fluid" src="img/sam 6.jpg" alt="Photo of A. SAIKRISHNA SAGAR"><div class="team-text"><h5 class="mb-0">A. SAIKRISHNA SAGAR</h5><small>Domain Trainer</small></div></div></div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.9s"><div class="team-item"><img class="img-fluid" src="img/sam 7.jpg" alt="Photo of PINNA SAIVARMA"><div class="team-text"><h5 class="mb-0">PINNA SAIVARMA</h5><small>Domain Trainer</small></div></div></div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="1.0s"><div class="team-item"><img class="img-fluid" src="img/sam 8.jpg" alt="Photo of A. RAJKUMAR"><div class="team-text"><h5 class="mb-0">A. RAJKUMAR</h5><small>Domain Trainer</small></div></div></div>
+        </div>
+
+        <!-- Darsi Center -->
+        <h3 class="text-center team-center-title mt-5 pt-4 wow fadeInUp" data-wow-delay="0.2s">Darsi Centre</h3>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s"><div class="team-item"><img class="img-fluid" src="img/darsi 3.jpg" alt="Photo of MUKKALA ASHOK KUMAR"><div class="team-text"><h5 class="mb-0">MUKKALA ASHOK KUMAR</h5><small>Center Incharge</small></div></div></div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s"><div class="team-item"><img class="img-fluid" src="img/darsi 1.jpg" alt="Photo of YACHAVARAPU NAVYA"><div class="team-text"><h5 class="mb-0">YACHAVARAPU NAVYA</h5><small>MIS Executive</small></div></div></div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s"><div class="team-item"><img class="img-fluid" src="img/darsi 2.jpg" alt="Photo of K. KOTESWARARAO"><div class="team-text"><h5 class="mb-0">K. KOTESWARARAO</h5><small>English & Soft Skills</small></div></div></div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.6s"><div class="team-item"><img class="img-fluid" src="img/darsi 4.jpg" alt="Photo of K. VOS KUMAR"><div class="team-text"><h5 class="mb-0">K. VOS KUMAR</h5><small>IT Trainer</small></div></div></div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s"><div class="team-item"><img class="img-fluid" src="img/darsi 5.jpg" alt="Photo of A.V. SIVESWARARAO"><div class="team-text"><h5 class="mb-0">A.V. SIVESWARARAO</h5><small>Domain Trainer</small></div></div></div>
+        </div>
+
+    </div>
+</div>
+<!-- Team End -->
+
+
+<!-- Testimonial Start -->
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center">
+            <h6 class="section-title bg-white text-center text-primary px-3">Testimonials</h6>
+            <h1 class="mb-5">What Our Students Say!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel position-relative">
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;" alt="Student Rahul Kumar">
+                <h5 class="mb-0">Rahul Kumar</h5>
+                <p>DDUGKY Student</p>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">The DDUGKY course was life-changing. The practical training and placement support helped me secure a great job in Sricity. Highly recommended!</p>
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;" alt="Student Priya Singh">
+                <h5 class="mb-0">Priya Singh</h5>
+                <p>MS Office Student</p>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">I thought I knew MS Office, but this course taught me so many advanced techniques. It has made me much more efficient at my job. Thank you, KK Computers!</p>
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 80px; height: 80px;" alt="Student Anjali Reddy">
+                <h5 class="mb-0">Anjali Reddy</h5>
+                <p>MEPMA Student</p>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">The training under the MEPMA scheme was excellent. The instructors were supportive and gave me the confidence to start my own small business.</p>
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" style="width: 80px; height: 80px;" alt="Student Suresh Kumar">
+                <h5 class="mb-0">Suresh Kumar</h5>
+                <p>Tally Student</p>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Learning Tally Prime with GST was so practical. The real-world examples helped me understand complex concepts easily and land a job as an accountant.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Quick Links</h4>
+                <a class="btn btn-link" href="about.html">About Us</a>
+                <a class="btn btn-link" href="contact.html">Contact Us</a>
+                <a class="btn btn-link" href="courses.html">Our Courses</a>
+                <a class="btn btn-link" href="">Terms & Condition</a>
+                <a class="btn btn-link" href="">FAQs & Help</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Head Office</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>34-1/16, Opp. District Library, Court Centre, Ongole</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 99636 47799</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>kkcomputersiso@gmail.com</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Society Address</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>37-1-413 (1198), Ram Nagar, Sth Janepalli, Ongole, Prakasam</p>
+                 <div class="d-flex pt-2 mt-3">
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Newsletter</h4>
+                <p>Stay updated with our latest courses and offers.</p>
+                <div class="position-relative mx-auto" style="max-width: 400px;">
+                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    © <a class="border-bottom" href="#">KK Educational and Rural Development Society</a>, All Right Reserved.
+                    Designed By <a class="border-bottom" href="https://kk-computers.in">KK Computers</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Enquiry Modal Start -->
+<div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title w-100" id="enquiryModalLabel">Quick Enquiry</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <!-- Enquiry Form -->
+                <form id="enquiryForm">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="enquiryName" placeholder="Full Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" id="enquiryEmail" placeholder="Email ID" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" class="form-control" id="enquiryPhone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="enquiryPurpose" rows="3" placeholder="Which course are you interested in?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 py-2">Submit Enquiry</button>
+                </form>
+                <!-- Thank You Message (Initially Hidden) -->
+                <div id="thankYouMessage" class="text-center py-4" style="display: none; opacity: 0;">
+                    <i class="fa fa-check-circle fa-4x text-success mb-3"></i>
+                    <h4 class="text-success">Thank You!</h4>
+                    <p class="mt-2 mb-0">Your enquiry has been sent. Our team will contact you shortly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Enquiry Modal End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+
+<!-- Custom Script for Enquiry Modal and Counters -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Stats Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // The lower the slower
+
+        const animateCounter = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            const updateCount = () => {
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            };
+            updateCount();
+        };
+        
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        counters.forEach(counter => {
+            counter.innerText = '0';
+            observer.observe(counter);
+        });
+
+
+        // Enquiry Modal Logic
+        const enquiryForm = document.getElementById('enquiryForm');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+        const enquiryModalEl = document.getElementById('enquiryModal');
+        const enquiryModal = bootstrap.Modal.getOrCreateInstance(enquiryModalEl);
+
+        enquiryForm.addEventListener('submit', function (event) {
+            event.preventDefault(); 
+
+            // Fade out form
+            enquiryForm.style.opacity = '0';
+            
+            setTimeout(() => {
+                enquiryForm.style.display = 'none';
+                // Show and fade in thank you message
+                thankYouMessage.style.display = 'block';
+                setTimeout(() => {
+                    thankYouMessage.style.opacity = '1';
+                }, 50);
+            }, 400); // Wait for fade out to complete
+
+            // Hide modal and reset form after a delay
+            setTimeout(() => {
+                enquiryModal.hide();
+                setTimeout(() => {
+                    enquiryForm.style.display = 'block';
+                    enquiryForm.style.opacity = '1';
+                    thankYouMessage.style.display = 'none';
+                    thankYouMessage.style.opacity = '0';
+                    enquiryForm.reset();
+                }, 500); // Reset after modal is hidden
+            }, 4000); // 4 seconds before closing
+        });
+    });
+</script>

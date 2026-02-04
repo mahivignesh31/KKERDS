@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>About Us - KK Educational and Rural Development Society</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="KK Computers, Skill Development, IT Courses, PMKVY, APSSDC, Vocational Training, Ongole, Guntur" name="keywords">
+    <meta content="Learn about KK Educational and Rural Development Society, our mission, vision, and commitment to empowering rural communities through quality education and skill development." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- === CUSTOM CSS FOR ENHANCEMENTS === -->
+    <style>
+        /* --- General & Typography Enhancements --- */
+        :root {
+            --primary: #06BBCC;
+            --secondary: #FFC107; /* Accent Color */
+            --light: #F0F8FF; /* Softer light color */
+            --dark: #181D38;
+        }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            color: #555;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(6, 187, 204, 0.4);
+        }
+
+        .section-title {
+            font-weight: 600 !important;
+        }
+        
+        /* --- Navbar & Logo --- */
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        .logo-img {
+            height: 90px; /* Slightly adjusted for balance */
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* --- Page Header Styling --- */
+        .page-header {
+            background: linear-gradient(rgba(24, 29, 56, .8), rgba(24, 29, 56, .8)), url(img/carousel-2.jpg) center center no-repeat;
+            background-size: cover;
+        }
+        .breadcrumb-item a {
+            transition: color 0.3s ease;
+        }
+        .breadcrumb-item a:hover {
+            color: var(--secondary) !important;
+        }
+
+        /* --- About Section --- */
+        .about-image-container {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border: 8px solid #fff;
+        }
+
+        /* --- Vision & Mission Section (ENHANCED) --- */
+        .purpose-card {
+            background-color: #fff;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .purpose-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .purpose-card .icon-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: var(--light);
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        .purpose-card:hover .icon-box {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        /* === NEW: Impact / Stats Section === */
+        .impact-section {
+            background: linear-gradient(rgba(24, 29, 56, .9), rgba(24, 29, 56, .9)), url(img/carousel-1.jpg) center center fixed;
+            background-size: cover;
+            padding: 80px 0;
+        }
+        .counter {
+            font-family: 'Nunito', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .impact-item h5 {
+            color: #fff;
+            font-weight: 600;
+        }
+        .impact-item i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* === Director's Message Section (ENHANCED) === */
+        /* === Director's Message Section (REVISED for a more compact size) === */
+        .director-img {
+            border-radius: 1rem;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .director-message-box {
+            position: relative;
+            padding: 2rem; /* MODIFIED: Reduced from 2.5rem for a more compact feel */
+            background-color: var(--light);
+            border-left: 5px solid var(--primary);
+            border-radius: 0 .5rem .5rem 0;
+        }
+        .director-message-box::before {
+            content: "\f10d";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 0.8rem;   /* MODIFIED: Adjusted for new padding */
+            left: 1rem;    /* MODIFIED: Adjusted for new padding */
+            font-size: 2.5rem; /* MODIFIED: Reduced size to match the compact box */
+            color: var(--primary);
+            opacity: 0.1;
+        }
+        /* --- Core Values Section --- */
+        .service-item {
+            transition: all 0.3s ease-in-out;
+            border: 1px solid #eee;
+            background: #fff;
+            height: 100%;
+        }
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        /* --- Training Partners Marquee (ENHANCED) --- */
+        .partner-logo-reel {
+            overflow: hidden;
+            position: relative;
+            background: #fff;
+            padding: 2rem 0;
+        }
+        .partner-logo-reel::before,
+        .partner-logo-reel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            z-index: 2;
+        }
+        .partner-logo-reel::before { left: 0; background: linear-gradient(to right, white, rgba(255,255,255,0)); }
+        .partner-logo-reel::after { right: 0; background: linear-gradient(to left, white, rgba(255,255,255,0)); }
+        .partner-track {
+            display: flex;
+            width: calc(200px * 20); /* 200px per item * (10 items * 2 for seamless loop) */
+            animation: scroll 60s linear infinite;
+        }
+        .partner-slide {
+            width: 200px;
+            padding: 15px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .partner-slide img {
+            max-height: 70px;
+            width: 100%;
+            object-fit: contain;
+            filter: grayscale(100%) opacity(0.7);
+            transition: all 0.3s ease;
+        }
+        .partner-slide:hover img {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1.1);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-200px * 10)); }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="img/2kk.png" alt="KK Educational Society Logo" class="logo-img">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <a href="skill.html" class="nav-item nav-link">Skill Development</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+<a href="lms.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
+  E-Learning<i class="fa fa-arrow-right ms-3"></i>
+</a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 p-0">
+        <div class="container-fluid page-header-inner py-5">
+            <div class="container text-center">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">About Us </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center text-uppercase">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="about-image-container position-relative h-100">
+                        <img class="img-fluid w-100 h-100" src="about (3).png" alt="Vocational Training at KK COMPUTERS" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
+                    <h1 class="mb-4">Welcome to <strong>KK Educational and Rural Development Society</strong></h1>
+                    <p class="mb-4">Founded with a vision to bridge the urban-rural divide, <strong>KK Educational and Rural Development Society</strong> is dedicated to transforming lives through quality education, targeted skill development, and holistic community empowerment.</p>
+                    <p class="mb-4">Through our flagship training centers like <strong>KK Computers</strong>, we deliver government-recognized courses under prestigious schemes like DDU-GKY, PMKVY, and APSSDC. Our curriculum is meticulously designed to be practical, job-oriented, and aligned with industry demands, ensuring every learner becomes confident, capable, and career-ready.</p>
+                    <div class="row gy-3 gx-4 mb-4">
+                        <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled & Certified Instructors</p></div>
+                        <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Industry-Relevant Curriculum</p></div>
+                        <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Holistic Development</p></div>
+                        <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Women's Empowerment Focus</p></div>
+                        <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Government-Certified Courses</p></div>
+                        <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Guaranteed Placement Support</p></div>
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="courses.html">Explore Courses</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Vision & Mission Start -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Our Purpose</h6>
+                <h1 class="mb-5">Our Vision & Mission</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="purpose-card d-flex">
+                        <div class="icon-box d-flex flex-shrink-0 align-items-center justify-content-center">
+                            <i class="fa fa-eye fa-2x"></i>
+                        </div>
+                        <div class="ms-4">
+                            <h3 class="mb-2">Our Vision</h3>
+                            <p class="mb-0">To create a self-reliant and empowered rural society where every individual has access to quality education and opportunities to achieve their full potential.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="purpose-card d-flex">
+                        <div class="icon-box d-flex flex-shrink-0 align-items-center justify-content-center">
+                            <i class="fa fa-bullseye fa-2x"></i>
+                        </div>
+                        <div class="ms-4">
+                            <h3 class="mb-2">Our Mission</h3>
+                            <p class="mb-0">To provide accessible, affordable, and high-quality vocational training and skill development programs that lead to sustainable livelihoods and inclusive growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vision & Mission End -->
+
+
+   
+    <!-- Director's Message End -->
+
+    <!-- NEW: Impact Section Start -->
+    <div class="container-fluid impact-section my-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center pb-5">
+                 <h1 class="mb-2 text-white">Our Impact in Numbers</h1>
+                 <p class="text-light">Quantifying our commitment to rural development and empowerment.</p>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="impact-item">
+                        <i class="fa fa-users"></i>
+                        <h1 class="counter text-white">15000</h1>
+                        <h5>Students Trained</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="impact-item">
+                        <i class="fa fa-globe-asia"></i>
+                        <h1 class="counter text-white">250</h1>
+                        <h5>Villages Reached</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="impact-item">
+                        <i class="fa fa-briefcase"></i>
+                        <h1 class="counter text-white">98</h1>
+                        <h5>Placement Rate (%)</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="impact-item">
+                        <i class="fa fa-female"></i>
+                        <h1 class="counter text-white">8000</h1>
+                        <h5>Women Empowered</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Impact Section End -->
+
+
+    <!-- Core Values Start -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Our Values</h6>
+                <h1 class="mb-5">Guiding Principles of Our Society</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-hands-helping text-primary mb-4"></i>
+                            <h5 class="mb-3">Empowerment</h5>
+                            <p>Equipping individuals with the skills and confidence to take control of their economic and personal future.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-check-circle text-primary mb-4"></i>
+                            <h5 class="mb-3">Integrity</h5>
+                            <p>Upholding the highest standards of transparency and ethics in all our training programs and operations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-users text-primary mb-4"></i>
+                            <h5 class="mb-3">Inclusivity</h5>
+                            <p>Ensuring our programs are accessible to all, especially focusing on women and marginalized communities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Core Values End -->
+
+
+    <!-- Training Partners Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Our Partners</h6>
+                <h1 class="mb-5">Trusted By Government & Industry</h1>
+            </div>
+            <div class="partner-logo-reel wow fadeInUp" data-wow-delay="0.3s">
+                <div class="partner-track">
+                    <!-- Logos (10 different logos) -->
+                    <div class="partner-slide"><img src="img/ddugky.png" alt="DDU-GKY"></div>
+                    <div class="partner-slide"><img src="img/SEEDAP.png" alt="SEEDAP"></div>
+                    <div class="partner-slide"><img src="img/ssdc.jpeg" alt="APSSDC"></div>
+                    <div class="partner-slide"><img src="img/nsdc.png" alt="NSDC"></div>
+                    <div class="partner-slide"><img src="img/pmkvy.png" alt="PMKVY"></div>
+                    <div class="partner-slide"><img src="img/mepma.png" alt="MEPMA AP"></div>
+                    <div class="partner-slide"><img src="img/PM.png" alt="PM Vishwakarma"></div>
+                    <div class="partner-slide"><img src="img/AP.jpeg" alt="Government of Andhra Pradesh"></div>
+                    <div class="partner-slide"><img src="img/sc.png" alt="AP Scheduled Castes Corporation"></div>
+                    <div class="partner-slide"><img src="img/S.jpeg" alt="Grama Sachivalayam Trainings"></div>
+                    <!-- Cloned Set for Seamless Loop -->
+                    <div class="partner-slide"><img src="img/ddugky.png" alt="DDU-GKY"></div>
+                    <div class="partner-slide"><img src="img/SEEDAP.png" alt="SEEDAP"></div>
+                    <div class="partner-slide"><img src="img/ssdc.jpeg" alt="APSSDC"></div>
+                    <div class="partner-slide"><img src="img/nsdc.png" alt="NSDC"></div>
+                    <div class="partner-slide"><img src="img/pmkvy.png" alt="PMKVY"></div>
+                    <div class="partner-slide"><img src="img/mepma.png" alt="MEPMA AP"></div>
+                    <div class="partner-slide"><img src="img/PM.png" alt="PM Vishwakarma"></div>
+                    <div class="partner-slide"><img src="img/AP.jpeg" alt="Government of Andhra Pradesh"></div>
+                    <div class="partner-slide"><img src="img/sc.png" alt="AP Scheduled Castes Corporation"></div>
+                    <div class="partner-slide"><img src="img/S.jpeg" alt="Grama Sachivalayam Trainings"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Training Partners End -->
+    
+
+    <!-- Call to Action Start -->
+    <div class="container-fluid bg-primary text-light my-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-4">
+            <h1 class="display-4 text-white mb-3">Ready to Build Your Future?</h1>
+            <p class="lead mb-4 mx-auto" style="max-width: 800px;">Join thousands of successful students who transformed their careers with us. Your journey to success begins with a single step. Take it now.</p>
+            <a href="courses.html" class="btn btn-light btn-lg py-3 px-5 m-2">Explore Our Courses</a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg py-3 px-5 m-2">Get In Touch</a>
+        </div>
+    </div>
+    <!-- Call to Action End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="courses.html">Our Courses</a>
+                    <a class="btn btn-link" href="#">Terms & Condition</a>
+                    <a class="btn btn-link" href="#">Privacy Policy</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Head Office</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>34-1/16, Opp. District Library, Court Centre, Ongole</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 99636 47799</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>kkcomputersiso@gmail.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Society Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>37-1-413 (1198), Ram Nagar, Sth Janepalli, Ongole, Prakasam</p>
+                     <div class="d-flex pt-2 mt-3">
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Newsletter</h4>
+                    <p>Stay updated with our latest courses and success stories.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">KK Educational and Rural Development Society</a>, All Right Reserved.
+                    </div>
+                     <div class="col-md-6 text-center text-md-end">
+                        Designed By <a class="border-bottom" href="https://kk-computers.in">KK Computers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    
+    <!-- NEW: Counter-up Library for Impact Section -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- === CUSTOM JS FOR INITIALIZATION === -->
+    <script>
+        (function ($) {
+            "use strict";
+            
+            // Initiate the wowjs
+            new WOW().init();
+
+            // Stats Counter
+            $('.counter').counterUp({
+                delay: 10,
+                time: 2000
+            });
+
+        })(jQuery);
+    </script>
+</body>
+
+</html>

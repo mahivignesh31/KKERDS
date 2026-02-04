@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>KK Educational and Rural Development Society - Electrician Training</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Electrician Training, Electrical Wiring, Safety, NEC, ITI, Skill Development, Certification" name="keywords">
+    <meta content="Become a certified electrician with our comprehensive online and practical training. Master wiring, safety codes, troubleshooting, and prepare for licensing exams. Enroll today!" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- === CUSTOM CSS FOR ENHANCEMENTS === -->
+    <style>
+        /* --- General & Typography Enhancements --- */
+        :root {
+            --primary: #06BBCC;
+            --secondary: #FFC107;
+            /* New Accent Color */
+            --light: #F0F8FF;
+            --dark: #181D38;
+        }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: var(--light);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: #05a8b8;
+            border-color: #05a8b8;
+        }
+
+        /* --- Navbar & Logo --- */
+        .navbar {
+            min-height: 110px;
+        }
+
+        .logo-img {
+            height: 150px;
+            width: auto;
+            object-fit: contain;
+            margin: -5px 0;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            transition: color 0.3s ease;
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover,
+        .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+
+        /* --- Hero Section - Course Specific --- */
+        .course-hero {
+            background: linear-gradient(rgba(24, 29, 56, .8), rgba(24, 29, 56, .8)), url('img/Electrician.jpeg') center center no-repeat;
+            background-size: cover;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            padding: 8rem 0 4rem 0;
+        }
+
+        .course-hero h1 {
+            font-size: 3.8rem;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .course-hero .lead {
+            font-size: 1.3rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .course-meta-top {
+            font-size: 1.1rem;
+            color: #FFC107;
+            /* Star Color */
+            margin-bottom: 1.5rem;
+        }
+
+        .course-meta-top i.fa-star {
+            color: var(--secondary);
+        }
+
+        .course-meta-top span {
+            color: white;
+            margin-left: 10px;
+        }
+
+        .btn-hero-enroll {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            font-size: 1.2rem;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-hero-enroll:hover {
+            background-color: #e0ac00;
+            border-color: #e0ac00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+        }
+
+        .course-section-title {
+            color: var(--dark);
+            font-size: 2.8rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .course-section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 50px;
+        }
+
+        /* --- General Card/Section Styling --- */
+        .content-card {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 3rem;
+        }
+
+        .content-card h3 {
+            color: var(--dark);
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+
+        .content-card p,
+        .content-card ul li {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* --- Info Boxes --- */
+        .course-info-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .info-box {
+            background-color: var(--light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1 1 calc(33% - 20px);
+            /* Three boxes per row */
+            min-width: 250px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        .info-box i {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .info-box h4 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .info-box p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        /* --- What You'll Learn / Prerequisites / Target Audience --- */
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .feature-list li::before {
+            content: "\f00c";
+            /* Checkmark icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* --- Video Embed Styling --- */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .main-course-video {
+            margin-top: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        /* --- Module Accordion --- */
+        .module-accordion .accordion-button {
+            background-color: var(--primary);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 0.25rem;
+            padding: 1rem 1.25rem;
+            border: none;
+        }
+
+        .module-accordion .accordion-button:not(.collapsed) {
+            color: white;
+            background-color: #05a8b8;
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
+        }
+
+        .module-accordion .accordion-button:focus {
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .module-accordion .accordion-body {
+            background-color: #ffffff;
+            padding: 25px;
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-top: none;
+        }
+
+        .module-accordion .accordion-item {
+            border: none;
+            margin-bottom: 10px;
+            border-radius: 0.25rem;
+            overflow: hidden;
+        }
+
+        .module-accordion .module-resources {
+            margin-top: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .module-accordion .module-resources a {
+            margin-right: 15px;
+            color: var(--primary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: inline-block;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .module-accordion .module-resources a:hover {
+            color: var(--dark);
+            text-decoration: underline;
+        }
+
+        /* --- Instructor Section --- */
+        .instructor-section {
+            text-align: center;
+        }
+
+        .instructor-profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .instructor-profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 0 5px rgba(6, 187, 204, 0.2);
+        }
+
+        .instructor-details h4 {
+            margin-bottom: 5px;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .instructor-details p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .instructor-social a {
+            color: var(--dark);
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .instructor-social a:hover {
+            color: var(--primary);
+        }
+
+        /* --- Testimonials Section --- */
+        .testimonial-item {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            height: 100%;
+        }
+
+        .testimonial-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid var(--primary);
+            object-fit: cover;
+        }
+
+        .testimonial-item h5 {
+            color: var(--dark);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-item small {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-item p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* --- Final CTA Section --- */
+        .final-cta {
+            background-color: var(--dark);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        .final-cta h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 2.8rem;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem auto;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        .final-cta .btn {
+            font-size: 1.2rem;
+            padding: 12px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        /* Custom adjustment for WOW.js delays on inner elements */
+        .content-card>* {
+            animation-duration: 1s;
+        }
+
+        @media (max-width: 768px) {
+            .course-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .course-hero .lead {
+                font-size: 1rem;
+            }
+
+            .course-section-title {
+                font-size: 2rem;
+            }
+
+            .info-box {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="img/2kk.png" alt="KK Educational Society Logo" class="logo-img">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <a href="skill.html" class="nav-item nav-link">Skill Development</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="lms.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block active">E-Learning<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Course Hero Section Start -->
+    <div class="container-fluid course-hero wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row justify-content-start">
+                <div class="col-lg-8 text-md-start text-center">
+                    <nav aria-label="breadcrumb" class="mb-3">
+                        <ol class="breadcrumb justify-content-md-start justify-content-center mb-0">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="lms.html">LMS</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Electrician Training</li>
+                        </ol>
+                    </nav>
+                    <h1 class="animated slideInDown">Certified Electrician Training Program</h1>
+                    <p class="lead animated slideInUp">Ignite your career with hands-on electrical training. Master wiring, safety, and advanced systems to become a certified professional.</p>
+                    <div class="course-meta-top animated slideInUp">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        <span>4.9 (3,000+ ratings)</span>
+                    </div>
+                    <a href="#course-overview" class="btn btn-hero-enroll animated slideInUp">
+                        Enroll Now! <i class="fa fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Course Hero Section End -->
+ <!-- Course Content Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-12">
+                <!-- Overview Section -->
+                <div class="content-card wow fadeInUp" data-wow-delay="0.1s">
+                    <h2 class="course-section-title text-center mb-5">Electrician Course Overview</h2>
+                    <p>Welcome to the Electrician Training Program! This comprehensive online course is meticulously designed to transform aspiring individuals into skilled and certified electricians. With the constant demand for safe and reliable electrical systems in homes and industries, expertise in electrical installation, maintenance, and troubleshooting is more valuable than ever.</p>
+                    <p>Throughout this program, you will gain hands-on knowledge of various electrical principles, including wiring techniques, circuit design, safety regulations, and modern electrical systems. We focus on practical application, ensuring you not only understand the theory but can also execute tasks efficiently and safely in real-world scenarios. Prepare to acquire the skills that open doors to exciting career opportunities in the electrical trade.</p>
+
+                    <div class="course-info-boxes mt-5">
+                        <div class="info-box wow fadeInUp" data-wow-delay="0.2s">
+                            <i class="far fa-clock"></i>
+                            <h4>Flexible Duration</h4>
+                            <p>Learn at your own pace, typically completed in 40 Weeks.</p>
+                        </div>
+                        <div class="info-box wow fadeInUp" data-wow-delay="0.3s">
+                            <i class="fa fa-lightbulb"></i>
+                            <h4>10 Core Modules</h4>
+                            <p>Structured curriculum covering all essential electrical aspects.</p>
+                        </div>
+                        <div class="info-box wow fadeInUp" data-wow-delay="0.4s">
+                            <i class="fa fa-users-class"></i>
+                            <h4>300+ Students</h4>
+                            <p>Join a growing community of aspiring electricians.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Course Introduction Video -->
+<div class="text-center main-course-video wow fadeInUp" data-wow-delay="0.5s">
+  <h3 class="course-section-title text-center mb-4">Watch Our Course Introduction Video</h3>
+  <div class="video-container mx-auto" style="max-width: 900px;">
+    <iframe width="100%" height="500"
+      src="https://www.youtube.com/embed/saF8BEZleCI"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <p class="text-muted mt-3">Discover the fundamentals of the electrical trade, career paths, tools, and safety—perfect for starting this course.</p>
+</div>
+
+
+
+                <!-- What You'll Learn Section -->
+                <div class="content-card wow fadeInUp" data-wow-delay="0.6s">
+                    <h3 class="course-section-title text-center mb-5">What You'll Learn</h3>
+                    <p class="text-center mb-4">Upon successful completion of this program, you will be able to:</p>
+                    <ul class="feature-list">
+                        <li>Understand fundamental electrical theory, including Ohm's Law and Kirchhoff's Laws.</li>
+                        <li>Safely install, maintain, and repair electrical wiring and control systems.</li>
+                        <li>Interpret blueprints, electrical schematics, and national electrical codes (NEC).</li>
+                        <li>Work with various types of conduit, wiring methods, and electrical devices.</li>
+                        <li>Diagnose and troubleshoot common electrical faults and system failures.</li>
+                        <li>Apply strict electrical safety practices and use personal protective equipment (PPE).</li>
+                        <li>Configure and test residential, commercial, and industrial electrical panels.</li>
+                        <li>Perform preventative maintenance on electrical equipment.</li>
+                        <li>Prepare for journeyman or master electrician licensing exams.</li>
+                        <li>Develop strong problem-solving and critical thinking skills for electrical work.</li>
+                    </ul>
+                </div>
+
+                <!-- Prerequisites Section -->
+                <div class="content-card wow fadeInUp" data-wow-delay="0.7s">
+                    <h3 class="course-section-title text-center mb-5">Prerequisites</h3>
+                    <p class="text-center mb-4">To get the most out of this course, we recommend:</p>
+                    <ul class="feature-list">
+                        <li>Basic mathematics and reading comprehension skills.</li>
+                        <li>A keen interest in hands-on work and technical problem-solving.</li>
+                        <li>No prior advanced electrical knowledge is required.</li>
+                        <li>Access to a stable internet connection and a computer.</li>
+                        <li>Basic understanding of English (course language).</li>
+                    </ul>
+                </div>
+
+                <!-- Who This Course Is For Section -->
+                <div class="content-card wow fadeInUp" data-wow-delay="0.8s">
+                    <h3 class="course-section-title text-center mb-5">Who This Course Is For</h3>
+                    <p class="text-center mb-4">This program is ideal for:</p>
+                    <ul class="feature-list">
+                        <li>Individuals aspiring to become Licensed Electricians.</li>
+                        <li>Construction workers looking to specialize in electrical trades.</li>
+                        <li>Maintenance technicians seeking to expand their electrical skill set.</li>
+                        <li>Anyone interested in understanding home or industrial electrical systems.</li>
+                        <li>Entrepreneurs looking to start an electrical contracting business.</li>
+                        <li>Students pursuing vocational training in trades or engineering.</li>
+                    </ul>
+                </div>
+
+                <!-- Curriculum Section -->
+                <div class="content-card wow fadeInUp" data-wow-delay="0.9s">
+                    <h2 class="course-section-title text-center mb-5">Course Curriculum: Week-Wise Modules</h2>
+                    <p class="text-center mb-4">Our structured curriculum breaks down complex topics into easy-to-digest weekly modules. Click to expand, watch the video lesson, and explore the learning outcomes for each section.</p>
+                    <div class="accordion module-accordion" id="electricianAccordion">
+                        <!-- Module 1 -->
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="1.0s">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="fas fa-bolt me-3"></i> Week 1-4: Electrical Fundamentals & Safety
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#electricianAccordion">
+                                <div class="accordion-body">
+                                    <div class="video-container mb-4">
+                                       <iframe width="100%" height="500"
+  src="https://www.youtube.com/embed/videoseries?list=PLRNS1x1jcKbGQ5lPyrSUJtxHzvKChrmOj"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+
+                                    </div>
+
+                                    <p><strong>Module Goal:</strong> Establish a solid foundation in basic electrical theory, terminologies, and paramount safety procedures essential for all electrical work. This video introduces core electrical concepts and safety.</p>
+                                    <p>Key topics covered in this module:</p>
+                                    <ul>
+                                        <li>Introduction to Electricity: Voltage, Current, Resistance, Power.</li>
+                                        <li>Ohm's Law and Kirchhoff's Laws: Calculations and practical applications.</li>
+                                        <li>Electrical Safety: Lockout/Tagout, PPE, hazard recognition.</li>
+                                        <li>First Aid for Electrical Shock: Emergency procedures.</li>
+                                        <li>Basic Electrical Tools: Multimeters, wire strippers, pliers, screwdrivers.</li>
+                                    </ul>
+
+                                    <div class="module-resources mt-3">
+                                        <a href="BOOK Elictritions.pdf" target="_blank">
+                                            <i class="far fa-file-pdf me-1"></i> Module Syllabus PDF
+                                        </a>
+                                        <a href="#" class="quiz1-link">
+                                            <i class="fas fa-file-alt me-1"></i> Quiz 1: Electrical Basics & Safety
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quiz Modal - Retained from previous code, ensure JS is updated if needed -->
+                        <div class="modal fade" id="quiz1Modal" tabindex="-1" aria-hidden="true">
+                          <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                            <div class="modal-content rounded-3">
+                              <div class="modal-header">
+                                <h5 class="modal-title"><i class="fas fa-clipboard-check me-2"></i>Quiz 1: Electrical Basics & Safety</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                              </div>
+                              <div class="modal-body">
+                                <p class="text-muted mb-3">Answer the 5 questions below. Click <strong>Submit</strong> to see your score and explanations.</p>
+                                <div id="quiz1Questions" class="vstack gap-4"></div>
+                                <div id="quiz1Result" class="alert d-none mt-4"></div>
+                              </div>
+                              <div class="modal-footer">
+                                <button id="retakeBtn" type="button" class="btn btn-outline-primary d-none">Retake Quiz</button>
+                                <button id="submitQuizBtn" type="button" class="btn btn-primary">Submit</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Quiz Script - Retained from previous code, ensure QUESTION_BANK is updated below for Electrician content -->
+                        <script>
+                        (function() {
+                          const QUESTION_BANK = [
+                            { q:"What is the unit of electrical current?", options:["Volt","Ampere","Ohm","Watt"], answer:1, expl:"Ampere (Amp) is the unit of electrical current."},
+                            { q:"Which law states that voltage across a circuit is directly proportional to the current flowing through it, given a constant resistance?", options:["Kirchhoff's Current Law","Faraday's Law","Ohm's Law","Lenz's Law"], answer:2, expl:"Ohm's Law (V=IR) describes this relationship."},
+                            { q:"What is the primary purpose of Lockout/Tagout (LOTO) procedures?", options:["To prevent unauthorized access to electrical panels","To ensure equipment is de-energized and cannot be accidentally started","To tag faulty equipment for repair","To identify circuit breakers"], answer:1, expl:"LOTO procedures prevent accidental energization during maintenance."},
+                            { q:"Which tool is used to measure voltage, current, and resistance?", options:["Wire Stripper","Pliers","Screwdriver","Multimeter"], answer:3, expl:"A multimeter is a versatile tool for various electrical measurements."},
+                            { q:"Before working on any electrical circuit, what is the most important first step?", options:["Gather all your tools","Notify your supervisor","Verify the circuit is de-energized","Wear safety glasses"], answer:2, expl:"Verifying de-energization is the critical first step for electrical safety."},
+                            { q:"What does PPE stand for in electrical safety?", options:["Personal Power Equipment","Primary Protection Element","Personal Protective Equipment","Panel Performance Evaluator"], answer:2, expl:"PPE stands for Personal Protective Equipment."},
+                            { q:"A circuit with a single path for current flow is called a:", options:["Parallel Circuit","Series Circuit","Combination Circuit","Shunt Circuit"], answer:1, expl:"In a series circuit, components are connected end-to-end, forming a single path."}
+                          ];
+
+                          const NUM_QUESTIONS = 5;
+                          let currentQuestions = [];
+
+                          function pickRandom(arr,n){return [...arr].sort(()=>Math.random()-0.5).slice(0,n);}
+                          function shuffleWithIndex(arr){const m=arr.map((v,i)=>({v,i}));for(let i=m.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[m[i],m[j]]=[m[j],m[i]];}return m;}
+
+                          function renderQuiz(){
+                            const c=document.getElementById("quiz1Questions"),res=document.getElementById("quiz1Result");
+                            res.classList.add("d-none");res.textContent="";document.getElementById("submitQuizBtn").disabled=false;
+                            document.getElementById("retakeBtn").classList.add("d-none");
+                            currentQuestions=pickRandom(QUESTION_BANK,NUM_QUESTIONS);c.innerHTML="";
+                            currentQuestions.forEach((qObj,idx)=>{
+                              const shuffled=shuffleWithIndex(qObj.options), correctNew=shuffled.findIndex(o=>o.i===qObj.answer);
+                              const qWrap=document.createElement("div");qWrap.className="p-3 border rounded-3";qWrap.dataset.correct=correctNew;qWrap.dataset.expl=qObj.expl;
+                              const qTitle=document.createElement("div");qTitle.className="fw-semibold mb-2";qTitle.textContent=`Q${idx+1}. ${qObj.q}`;qWrap.appendChild(qTitle);
+                              const opts=document.createElement("div");opts.className="vstack gap-2";
+                              shuffled.forEach((opt,optIdx)=>{const id=`q${idx}_opt${optIdx}`;const label=document.createElement("label");label.setAttribute("for",id);label.className="d-flex align-items-start gap-2";const input=document.createElement("input");input.type="radio";input.name=`q${idx}`;input.id=id;input.value=optIdx;label.appendChild(input);const span=document.createElement("span");span.textContent=opt.v;label.appendChild(span);opts.appendChild(label);});
+                              const expl=document.createElement("div");expl.className="mt-2 small text-muted d-none";expl.id=`expl_${idx}`;expl.textContent=`Explanation: ${qObj.expl}`;qWrap.appendChild(opts);qWrap.appendChild(expl);c.appendChild(qWrap);
+                            });
+                          }
+
+                          function gradeQuiz(){
+                            const blocks=[...document.getElementById("quiz1Questions").children];let score=0,answeredAll=true;
+                            blocks.forEach((b,idx)=>{const correct=Number(b.dataset.correct),radios=b.querySelectorAll(`input[name="q${idx}"]`);let chosen=-1;
+                              radios.forEach((r,i)=>{if(r.checked)chosen=i;r.disabled=true;});
+                              if(chosen===-1)answeredAll=false;
+                              const labels=b.querySelectorAll("label");labels.forEach((lbl,i)=>{lbl.classList.remove("border","border-success","border-danger","rounded","px-2");
+                                if(i===correct)lbl.classList.add("border","border-success","rounded","px-2");
+                                if(chosen!==-1 && i===chosen && chosen!==correct)lbl.classList.add("border","border-danger","rounded","px-2");});
+                              b.querySelector(`#expl_${idx}`).classList.remove("d-none");if(chosen===correct)score++;});
+                            const res=document.getElementById("quiz1Result");res.classList.remove("d-none");const pct=Math.round((score/blocks.length)*100),pass=pct>=60;
+                            res.className=`alert mt-4 ${pass?"alert-success":"alert-danger"}`;res.innerHTML=`<strong>Score:</strong> ${score}/${blocks.length} (${pct}%). ${pass?"Great job! ✅":"Keep practicing! ❗"}`;
+                            document.getElementById("submitQuizBtn").disabled=true;document.getElementById("retakeBtn").classList.remove("d-none");
+                          }
+
+                          document.addEventListener("DOMContentLoaded",function(){
+                            document.querySelector("a.quiz1-link").addEventListener("click",function(e){e.preventDefault();renderQuiz();new bootstrap.Modal(document.getElementById("quiz1Modal")).show();});
+                            document.getElementById("submitQuizBtn").addEventListener("click",gradeQuiz);
+                            document.getElementById("retakeBtn").addEventListener("click",renderQuiz);
+                          });
+                        })();
+                        </script>
+
+
+                        <!-- Module 2 -->
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="1.1s">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="fas fa-screwdriver me-3"></i> Week 5-8: Residential Wiring & National Electrical Code (NEC)
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#electricianAccordion">
+                                <div class="accordion-body">
+                                    <div class="video-container mb-4">
+<iframe width="100%" height="500"
+  src="https://www.youtube.com/embed/bsdt310LESw"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+                                    </div>
+                                    <p><strong>Module Goal:</strong> Gain practical skills in residential electrical wiring, understanding common circuits, and applying the National Electrical Code (NEC) standards. This video demonstrates residential wiring techniques and code compliance.</p>
+                                    <p>Key topics covered in this module:</p>
+                                    <ul>
+                                        <li>Introduction to the NEC: General requirements, definitions, and application.</li>
+                                        <li>Circuit Design: Branch circuits, dedicated circuits, load calculations.</li>
+                                        <li>Wiring Methods: Romex, conduit bending (EMT), junction boxes.</li>
+                                        <li>Device Installation: Switches, receptacles, light fixtures, GFCI/AFCI.</li>
+                                        <li>Service Entrances & Panel Boards: Main disconnects, breaker installation.</li>
+                                    </ul>
+                                    <div class="module-resources mt-3">
+                                        <a href="BOOK Elictritions.pdf" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                                        <a href="#" target="_blank"><i class="fas fa-file-alt me-1"></i> Lab Exercise: Wiring a 3-Way Switch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 3 -->
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="1.2s">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <i class="fas fa-industry me-3"></i> Week 9-12: Commercial & Industrial Electrical Systems
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#electricianAccordion">
+                                <div class="accordion-body">
+                                    <div class="video-container mb-4">
+<iframe width="100%" height="500"
+  src="https://www.youtube.com/embed/QRZlLWqOC4k"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+                                    </div>
+                                    <p><strong>Module Goal:</strong> Understand the unique requirements and complexities of electrical systems in commercial buildings and industrial environments. Watch this video for an in-depth look at commercial and industrial electrical work.</p>
+                                    <p>Key topics covered in this module:</p>
+                                    <ul>
+                                        <li>Three-Phase Power: Principles and applications.</li>
+                                        <li>Commercial Wiring: Larger conduits, busways, panelboards.</li>
+                                        <li>Motor Control Circuits: Starters, overloads, control wiring.</li>
+                                        <li>Transformers: Types, connections, and applications.</li>
+                                        <li>Hazardous Locations: Classifications and wiring methods.</li>
+                                    </ul>
+                                    <div class="module-resources mt-3">
+                                        <a href="BOOK Elictritions.pdf" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                                        <a href="#" target="_blank"><i class="fas fa-microscope me-1"></i> Practical: Motor Starter Wiring</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 4 -->
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="1.3s">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <i class="fas fa-solar-panel me-3"></i> Week 13-16: Renewable Energy & Smart Home Systems
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#electricianAccordion">
+                                <div class="accordion-body">
+                                    <div class="video-container mb-4">
+                                      <iframe width="100%" height="500"
+  src="https://www.youtube.com/embed/wIvUiF1gdEE"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+
+                                    </div>
+                                    <p><strong>Module Goal:</strong> Explore the growing fields of solar power, energy storage, and smart home automation as they relate to electrical installations. This video covers modern energy and home automation.</p>
+                                    <p>Key topics covered in this module:</p>
+                                    <ul>
+                                        <li>Solar Photovoltaic (PV) Systems: Components, installation, grid-tie.</li>
+                                        <li>Battery Storage Systems: Principles and integration.</li>
+                                        <li>Electric Vehicle (EV) Charging Stations: Installation requirements.</li>
+                                        <li>Smart Home Technology: Lighting control, thermostats, security systems.</li>
+                                        <li>Energy Efficiency in Electrical Systems: Audits and upgrades.</li>
+                                    </ul>
+                                    <div class="module-resources mt-3">
+                                        <a href="BOOK Elictritions.pdf" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                                        <a href="#" target="_blank"><i class="fas fa-chart-bar me-1"></i> Case Study: Residential Solar Installation</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 5 -->
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="1.4s">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <i class="fas fa-tools me-3"></i> Week 17-20: Electrical Troubleshooting & Diagnostics
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#electricianAccordion">
+                                <div class="accordion-body">
+                                    <div class="video-container mb-4">
+                                       <iframe width="100%" height="500"
+  src="https://www.youtube.com/embed/nYuVSG89vg0"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+                                    </div>
+                                    <p><strong>Module Goal:</strong> Master systematic approaches to diagnose and resolve common and complex electrical faults efficiently and safely. This video guides you through expert troubleshooting techniques.</p>
+                                    <p>Key topics covered in this module:</p>
+                                    <ul>
+                                        <li>Troubleshooting Methodology: Step-by-step problem diagnosis.</li>
+                                        <li>Using Diagnostic Equipment: Multimeters, clamp meters, circuit tracers.</li>
+                                        <li>Identifying Faults: Short circuits, open circuits, ground faults.</li>
+                                        <li>Motor & Control Troubleshooting: Common issues and fixes.</li>
+                                        <li>Advanced Panel Diagnostics: Voltage drop, imbalance, overheating.</li>
+                                    </ul>
+                                    <div class="module-resources mt-3">
+                                        <a href="BOOK Elictritions.pdf" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                                        <a href="#" target="_blank"><i class="fas fa-desktop me-1"></i> Virtual Lab: Circuit Fault Diagnosis</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 6 -->
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="1.5s">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    <i class="fas fa-clipboard-list me-3"></i> Week 21-24: Blueprints, Schematics & Estimating
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#electricianAccordion">
+                                <div class="accordion-body">
+                                    <div class="video-container mb-4">
+                                     <iframe width="100%" height="500"
+  src="https://www.youtube.com/embed/ODbWYYGo_d0"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+
+                                    </div>
+                                    <p><strong>Module Goal:</strong> Learn to read and interpret electrical blueprints and schematics, and develop skills in accurately estimating project costs and materials. This video covers reading electrical plans and basic estimating.</p>
+                                    <p>Key topics covered in this module:</p>
+                                    <ul>
+                                        <li>Reading Electrical Blueprints: Symbols, legends, scales.</li>
+                                        <li>Interpreting Schematics: Control circuits, power distribution.</li>
+                                        <li>Material Take-Offs: Calculating quantities of wire, conduit, devices.</li>
+                                        <li>Labor Cost Estimation: Factors affecting project pricing.</li>
+                                        <li>Project Planning & Scheduling: Basic project management.</li>
+                                    </ul>
+                                    <div class="module-resources mt-3">
+                                        <a href="BOOK Elictritions.pdf" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                                        <a href="#" target="_blank"><i class="fas fa-calculator me-1"></i> Estimating Worksheet Template</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 7 -->
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="1.6s">
+                            <h2 class="accordion-header" id="headingSeven">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                    <i class="fas fa-hard-hat me-3"></i> Week 25-28: Advanced Electrical Installations
+                                </button>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#electricianAccordion">
+                                <div class="accordion-body">
+                                    <div class="video-container mb-4">
+                                        <iframe width="100%" height="500"
+  src="https://www.youtube.com/embed/qM6VjTPTzVU"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+                                    </div>
+                                    <p><strong>Module Goal:</strong> Explore advanced installation techniques for specialized electrical systems, including emergency power and grounding. This video offers expert strategies for complex installations.</p>
+                                    <p>Key topics covered in this module:</p>
+                                    <ul>
+                                        <li>Generator & Transfer Switch Installation: Standby power systems.</li>
+                                        <li>Grounding & Bonding: Principles and NEC requirements.</li>
+                                        <li>Fire Alarm Systems: Basic installation and testing.</li>
+                                        <li>Data & Communications Cabling: Low-voltage wiring.</li>
+                                        <li>Specialty Lighting: LED, emergency lighting, controls.</li>
+                                    </ul>
+                                    <div class="module-resources mt-3">
+                                        <a href="BOOK Elictritions.pdf" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                                        <a href="#" target="_blank"><i class="fas fa-clipboard-list me-1"></i> Grounding & Bonding Checklist</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 8 -->
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="1.7s">
+                            <h2 class="accordion-header" id="headingEight">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                    <i class="fas fa-handshake me-3"></i> Week 29-32: Professionalism & Customer Relations
+                                </button>
+                            </h2>
+                            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#electricianAccordion">
+                                <div class="accordion-body">
+                                    <div class="video-container mb-4">
+<iframe width="100%" height="500"
+  src="https://www.youtube.com/embed/KwoKmPAnSl8"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+                                    </div>
+                                    <p><strong>Module Goal:</strong> Develop essential soft skills for effective customer interaction, work order management, and professional conduct in the electrical trade. This video focuses on excelling in customer interactions and field ethics.</p>
+                                    <p>Key topics covered in this module:</p>
+                                    <ul>
+                                        <li>Effective Communication: Active listening, clear explanations, setting expectations.</li>
+                                        <li>Professional Demeanor: Punctuality, appearance, site etiquette.</li>
+                                        <li>Work Order Management: Documentation, invoicing, client follow-up.</li>
+                                        <li>Ethical Practices: Integrity, transparency, avoiding conflicts of interest.</li>
+                                        <li>Time Management: Prioritizing tasks and optimizing efficiency.</li>
+                                    </ul>
+                                    <div class="module-resources mt-3">
+                                        <a href="BOOK Elictritions.pdf" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                                        <a href="#" target="_blank"><i class="fas fa-user-tie me-1"></i> Role-Playing Scenarios: Customer Service</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 9 -->
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="1.8s">
+                            <h2 class="accordion-header" id="headingNine">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                    <i class="fas fa-file-invoice-dollar me-3"></i> Week 33-36: Business Practices & Regulations
+                                </button>
+                            </h2>
+                            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#electricianAccordion">
+                                <div class="accordion-body">
+                                    <div class="video-container mb-4">
+                                      <iframe width="100%" height="500"
+  src="https://www.youtube.com/embed/LXFPeUl6k3w"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+
+                                    </div>
+                                    <p><strong>Module Goal:</strong> Gain an understanding of basic business principles, legal regulations, and administrative tasks relevant to operating as an independent electrician or contractor. This video covers business essentials for electricians.</p>
+                                    <p>Key topics covered in this module:</p>
+                                    <ul>
+                                        <li>Business Structures: Sole proprietorship, LLC, corporation.</li>
+                                        <li>Licensing & Permits: Obtaining necessary qualifications.</li>
+                                        <li>Insurance Requirements: Liability, workers' compensation.</li>
+                                        <li>Contract Basics: Bidding, agreements, change orders.</li>
+                                        <li>Marketing & Networking for electrical services.</li>
+                                    </ul>
+                                    <div class="module-resources mt-3">
+                                        <a href="BOOK Elictritions.pdf" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                                        <a href="#" target="_blank"><i class="fas fa-chart-line me-1"></i> Business Plan Template</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 10 -->
+
+    <!-- Course Content End -->
+
+    <!-- Final Call to Action Section Start -->
+    <div class="container-fluid final-cta wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2>Ready to Launch Your Career in Broadband Technology?</h2>
+                    <p>Don't miss out on this opportunity to gain in-demand skills and join the forefront of digital connectivity. Enroll today and start building your future!</p>
+                    <a href="contact.html" class="btn btn-primary py-3 px-5">Enroll Now & Get Started <i class="fa fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Final Call to Action Section End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="courses.html">Our Courses</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Head Office</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>34-1/16, Opp. District Library, Court Centre, Ongole</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 99636 47799</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>kkcomputersiso@gmail.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Society Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>37-1-413 (1198), Ram Nagar, Sth Janepalli, Ongole, Prakasam</p>
+                     <div class="d-flex pt-2 mt-3">
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Newsletter</h4>
+                    <p>Stay updated with our latest courses and offers.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        © <a class="border-bottom" href="#">KK Educational and Rural Development Society</a>, All Right Reserved.
+                        Designed By <a class="border-bottom" href="https://kk-computers.in">KK Computers</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

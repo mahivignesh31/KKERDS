@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>KK Educational and Rural Development Society - Broadband Technician Training</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Broadband Technician, Fiber Optics, Network Maintenance, IT Training, KK Computers, Online Course, Skill Development, Certification" name="keywords">
+    <meta content="Master broadband installation, troubleshooting, and network maintenance with our comprehensive online Broadband Technician course. Includes fiber optics, copper cabling, and modern internet technologies with week-wise modules and expert instruction. Enroll today!" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- === CUSTOM CSS FOR ENHANCEMENTS === -->
+    <style>
+        /* --- General & Typography Enhancements --- */
+        :root {
+            --primary: #06BBCC;
+            --secondary: #FFC107; /* New Accent Color */
+            --light: #F0F8FF;
+            --dark: #181D38;
+        }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: var(--light); 
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        .btn-primary:hover {
+            background-color: #05a8b8;
+            border-color: #05a8b8;
+        }
+
+        /* --- Navbar & Logo --- */
+        .navbar {
+            min-height: 110px; 
+        }
+        .logo-img {
+            height: 150px;      
+            width: auto;
+            object-fit: contain;
+            margin: -5px 0;     
+        }
+        .navbar-light .navbar-nav .nav-link {
+            transition: color 0.3s ease;
+        }
+        .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+
+        /* --- Hero Section - Course Specific --- */
+        .course-hero {
+            background: linear-gradient(rgba(24, 29, 56, .8), rgba(24, 29, 56, .8)), url('img/board.jpeg') center center no-repeat;
+            background-size: cover;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            padding: 8rem 0 4rem 0; 
+        }
+        .course-hero h1 {
+            font-size: 3.8rem;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .course-hero .lead {
+            font-size: 1.3rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        .course-meta-top {
+            font-size: 1.1rem;
+            color: #FFC107; 
+            margin-bottom: 1.5rem;
+        }
+        .course-meta-top i.fa-star {
+            color: var(--secondary);
+        }
+        .course-meta-top span {
+            color: white;
+            margin-left: 10px;
+        }
+        .btn-hero-enroll {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            font-size: 1.2rem;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-hero-enroll:hover {
+            background-color: #e0ac00;
+            border-color: #e0ac00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+        }
+        .course-section-title {
+            color: var(--dark);
+            font-size: 2.8rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .course-section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 50px;
+        }
+        /* --- General Card/Section Styling --- */
+        .content-card {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 3rem;
+        }
+        .content-card h3 {
+            color: var(--dark);
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+        .content-card p, .content-card ul li {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* --- Info Boxes --- */
+        .course-info-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        .info-box {
+            background-color: var(--light);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1 1 calc(33% - 20px); 
+            min-width: 250px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: left; 
+        }
+        .info-box i {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .info-box h4 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        .info-box p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        /* --- What You'll Learn / Prerequisites / Target Audience --- */
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .feature-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+        .feature-list li::before {
+            content: "\f00c"; 
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* --- Video Embed Styling --- */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .main-course-video {
+            margin-top: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        /* --- Module Accordion --- */
+        .module-accordion .accordion-button {
+            background-color: var(--primary);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 0.25rem;
+            padding: 1rem 1.25rem;
+            border: none;
+        }
+        .module-accordion .accordion-button:not(.collapsed) {
+            color: white;
+            background-color: #05a8b8;
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
+        }
+        .module-accordion .accordion-button:focus {
+            box-shadow: none;
+            border-color: transparent;
+        }
+        .module-accordion .accordion-body {
+            background-color: #ffffff;
+            padding: 25px;
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-top: none;
+        }
+        .module-accordion .accordion-item {
+            border: none;
+            margin-bottom: 10px;
+            border-radius: 0.25rem;
+            overflow: hidden; 
+        }
+        .module-accordion .module-resources {
+            margin-top: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        .module-accordion .module-resources a {
+            margin-right: 15px;
+            color: var(--primary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: inline-block;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+        .module-accordion .module-resources a:hover {
+            color: var(--dark);
+            text-decoration: underline;
+        }
+
+        /* --- Instructor Section --- */
+        .instructor-section {
+            text-align: center;
+        }
+        .instructor-profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .instructor-profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 0 5px rgba(6, 187, 204, 0.2);
+        }
+        .instructor-details h4 {
+            margin-bottom: 5px;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        .instructor-details p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .instructor-social a {
+            color: var(--dark);
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+        .instructor-social a:hover {
+            color: var(--primary);
+        }
+
+        /* --- Testimonials Section --- */
+        .testimonial-item {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            height: 100%; 
+        }
+        .testimonial-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid var(--primary);
+            object-fit: cover;
+        }
+        .testimonial-item h5 {
+            color: var(--dark);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        .testimonial-item small {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 15px;
+        }
+        .testimonial-item p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* --- Final CTA Section --- */
+        .final-cta {
+            background-color: var(--dark);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            margin-top: 5rem;
+        }
+        .final-cta h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 2.8rem;
+        }
+        .final-cta p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem auto;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .final-cta .btn {
+            font-size: 1.2rem;
+            padding: 12px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        /* Custom adjustment for WOW.js delays on inner elements */
+        .content-card > * {
+            animation-duration: 1s; 
+        }
+
+        @media (max-width: 768px) {
+            .course-hero h1 {
+                font-size: 2.5rem;
+            }
+            .course-hero .lead {
+                font-size: 1rem;
+            }
+            .course-section-title {
+                font-size: 2rem;
+            }
+            .info-box {
+                flex: 1 1 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="img/2kk.png" alt="KK Educational Society Logo" class="logo-img">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <a href="skill.html" class="nav-item nav-link">Skill Development</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="lms.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block active">E-Learning<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Course Hero Section Start -->
+    <div class="container-fluid course-hero wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row justify-content-start">
+                <div class="col-lg-8 text-md-start text-center">
+                    <nav aria-label="breadcrumb" class="mb-3">
+                        <ol class="breadcrumb justify-content-md-start justify-content-center mb-0">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="lms.html">LMS</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Broadband Technician</li>
+                        </ol>
+                    </nav>
+                    <h1 class="animated slideInDown">Broadband Technician Training Program</h1>
+                    <p class="lead animated slideInUp">Master the essentials of high-speed internet infrastructure from fiber optics to troubleshooting, and launch a thriving career in telecommunications.</p>
+                    <div class="course-meta-top animated slideInUp">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        <span>4.8 (2,500+ ratings)</span>
+                    </div>
+<a href="#course-overview" class="btn btn-hero-enroll animated slideInUp">
+    Enroll Now! <i class="fa fa-arrow-right ms-2"></i>
+</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Course Hero Section End -->
+
+    <!-- Course Content Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-12">
+                    <!-- Overview Section -->
+                    <div class="content-card wow fadeInUp" data-wow-delay="0.1s">
+                        <h2 class="course-section-title text-center mb-5">Course Overview</h2>
+                        <p>Welcome to the Broadband Technician Training Program! This comprehensive online course is meticulously designed to transform aspiring individuals into skilled broadband professionals. With the ever-increasing demand for high-speed internet, expertise in network installation, maintenance, and troubleshooting is more valuable than ever.</p>
+                        <p>Throughout this program, you will gain hands-on knowledge of various broadband technologies, including cutting-edge fiber optics, traditional copper cabling (DSL), and modern wireless solutions. We focus on practical application, ensuring you not only understand the theory but can also execute tasks efficiently in real-world scenarios. Prepare to acquire the skills that open doors to exciting career opportunities in the telecommunications industry.</p>
+                        
+                        <div class="course-info-boxes mt-5">
+                            <div class="info-box wow fadeInUp" data-wow-delay="0.2s">
+                                <i class="far fa-clock"></i>
+                                <h4>Flexible Duration</h4>
+                                <p>Learn at your own pace, typically completed in 240 Weeks.</p>
+                            </div>
+                            <div class="info-box wow fadeInUp" data-wow-delay="0.3s">
+                                <i class="fa fa-book-open"></i>
+                                <h4>10 Core Modules</h4>
+                                <p>Structured curriculum covering all essential aspects.</p>
+                            </div>
+                            <div class="info-box wow fadeInUp" data-wow-delay="0.4s">
+                                <i class="fa fa-users-class"></i>
+                                <h4>250+ Students</h4>
+                                <p>Join a growing community of learners.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Course Introduction Video -->
+                  <div class="text-center main-course-video wow fadeInUp" data-wow-delay="0.5s">
+    <h3 class="course-section-title text-center mb-4">Watch Our Course Introduction Video</h3>
+    <div class="video-container mx-auto" style="max-width: 900px;">
+        <iframe width="100%" height="500" 
+            src="https://www.youtube.com/embed/I-UucJ4JAII" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+    <p class="text-muted mt-3">Get a quick overview of what to expect in this comprehensive training program!</p>
+</div>
+
+
+                    <!-- What You'll Learn Section -->
+                    <div class="content-card wow fadeInUp" data-wow-delay="0.6s">
+                        <h3 class="course-section-title text-center mb-5">What You'll Learn</h3>
+                        <p class="text-center mb-4">Upon successful completion of this program, you will be able to:</p>
+                        <ul class="feature-list">
+                            <li>Master fiber optics installation, splicing, and testing techniques.</li>
+                            <li>Gain expertise in copper cabling (DSL, Ethernet) and termination.</li>
+                            <li>Understand and implement advanced network troubleshooting methods.</li>
+                            <li>Learn about wireless broadband technologies, including Wi-Fi, 4G, and 5G.</li>
+                            <li>Configure and secure Customer Premises Equipment (CPE) effectively.</li>
+                            <li>Apply essential network security practices for broadband infrastructure.</li>
+                            <li>Develop strong customer service and communication skills for field work.</li>
+                            <li>Interpret network diagrams and technical documentation.</li>
+                            <li>Prepare for industry-recognized certifications in broadband technology.</li>
+                            <li>Execute hands-on tasks with diagnostic tools and equipment.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Prerequisites Section -->
+                    <div class="content-card wow fadeInUp" data-wow-delay="0.7s">
+                        <h3 class="course-section-title text-center mb-5">Prerequisites</h3>
+                        <p class="text-center mb-4">To get the most out of this course, we recommend:</p>
+                        <ul class="feature-list">
+                            <li>Basic computer literacy and internet navigation skills.</li>
+                            <li>A keen interest in technology and networking.</li>
+                            <li>No prior advanced networking knowledge is required.</li>
+                            <li>Access to a stable internet connection and a computer.</li>
+                            <li>Basic understanding of English (course language).</li>
+                        </ul>
+                    </div>
+
+                    <!-- Who This Course Is For Section -->
+                    <div class="content-card wow fadeInUp" data-wow-delay="0.8s">
+                        <h3 class="course-section-title text-center mb-5">Who This Course Is For</h3>
+                        <p class="text-center mb-4">This program is ideal for:</p>
+                        <ul class="feature-list">
+                            <li>Individuals aspiring to become Broadband Technicians.</li>
+                            <li>IT support professionals looking to specialize in networking.</li>
+                            <li>Electricians or field technicians seeking to expand their skill set.</li>
+                            <li>Anyone interested in understanding internet infrastructure.</li>
+                            <li>Entrepreneurs looking to start a small internet service business.</li>
+                            <li>Students pursuing vocational training in IT or telecommunications.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Curriculum Section -->
+                    <div class="content-card wow fadeInUp" data-wow-delay="0.9s">
+                        <h2 class="course-section-title text-center mb-5">Course Curriculum: Week-Wise Modules</h2>
+                        <p class="text-center mb-4">Our structured curriculum breaks down complex topics into easy-to-digest weekly modules. Click to expand, watch the video lesson, and explore the learning outcomes for each section.</p>
+                        <div class="accordion module-accordion" id="broadbandAccordion">
+                            <!-- Module 1 -->
+                            <div class="accordion-item wow fadeInUp" data-wow-delay="1.0s">
+  <h2 class="accordion-header" id="headingOne">
+    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <i class="fas fa-microchip me-3"></i> Week 1-4: Broadband Fundamentals & Network Basics
+    </button>
+  </h2>
+  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#broadbandAccordion">
+    <div class="accordion-body">
+      <div class="video-container mb-4">
+        <iframe
+          width="100%"
+          height="500"
+          src="https://www.youtube.com/embed/_IOZ8_cPgu8?controls=0"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p><strong>Module Goal:</strong> Establish a solid foundation in broadband communication, its core concepts, and the essential building blocks of modern networks. This video introduces broadband fundamentals.</p>
+      <p>Key topics covered in this module:</p>
+      <ul>
+        <li>Introduction to Broadband: History, types (DSL, Cable, Fiber), and applications.</li>
+        <li>Network Topologies: Star, Bus, Ring, Mesh and their relevance.</li>
+        <li>Basic Network Devices: Routers, Modems, Switches, Hubs explained.</li>
+        <li>IP Addressing: IPv4 & IPv6 basics, subnetting concepts.</li>
+        <li>Introduction to Network Protocols: TCP/IP, DNS, DHCP.</li>
+      </ul>
+
+      <div class="module-resources mt-3">
+        <a href="Broadband Technician Material New (2).pdf" target="_blank">
+          <i class="far fa-file-pdf me-1"></i> Module Syllabus PDF
+        </a>
+        <a href="#" class="quiz1-link">
+          <i class="fas fa-file-alt me-1"></i> Quiz 1: Broadband Concepts
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Quiz Modal -->
+<div class="modal fade" id="quiz1Modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content rounded-3">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="fas fa-clipboard-check me-2"></i>Quiz 1: Broadband Concepts</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-muted mb-3">Answer the 5 questions below. Click <strong>Submit</strong> to see your score and explanations.</p>
+        <div id="quiz1Questions" class="vstack gap-4"></div>
+        <div id="quiz1Result" class="alert d-none mt-4"></div>
+      </div>
+      <div class="modal-footer">
+        <button id="retakeBtn" type="button" class="btn btn-outline-primary d-none">Retake Quiz</button>
+        <button id="submitQuizBtn" type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Quiz Script -->
+<script>
+(function() {
+  const QUESTION_BANK = [
+    { q:"Which statement best describes broadband?", options:["Single-frequency transmission limited to voice","High-capacity transmission that carries multiple signals simultaneously","A network only for mobile devices","A protocol used by routers to find paths"], answer:1, expl:"Broadband provides high-capacity, multi-signal transmission."},
+    { q:"Which broadband type typically offers the lowest latency and highest bandwidth?", options:["DSL","Cable","Fiber-to-the-Home (FTTH)","Dial-up"], answer:2, expl:"FTTH uses optical fiber, enabling very high speeds and low latency."},
+    { q:"In a star topology:", options:["Each device connects to a central device","All devices share a single backbone cable","Each device connects to exactly two neighbors in a loop","Every device connects to every other device directly"], answer:0, expl:"Star topology uses a central hub/switch."},
+    { q:"Which device modulates and demodulates signals for ISP connectivity?", options:["Switch","Router","Hub","Modem"], answer:3, expl:"A modem converts digital data to/from the ISP medium."},
+    { q:"Which protocol automatically assigns IP addresses?", options:["DNS","HTTP","DHCP","TCP"], answer:2, expl:"DHCP dynamically assigns IP configuration."},
+    { q:"DNS is primarily used to:", options:["Encrypt data","Translate domain names to IP addresses","Route packets","Detect intrusions"], answer:1, expl:"DNS resolves names to IP addresses."},
+    { q:"Which topology offers highest redundancy but is expensive?", options:["Bus","Ring","Mesh","Star"], answer:2, expl:"Full mesh provides multiple paths, very reliable but costly."}
+  ];
+
+  const NUM_QUESTIONS = 5;
+  let currentQuestions = [];
+
+  function pickRandom(arr,n){return [...arr].sort(()=>Math.random()-0.5).slice(0,n);}
+  function shuffleWithIndex(arr){const m=arr.map((v,i)=>({v,i}));for(let i=m.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[m[i],m[j]]=[m[j],m[i]];}return m;}
+
+  function renderQuiz(){
+    const c=document.getElementById("quiz1Questions"),res=document.getElementById("quiz1Result");
+    res.classList.add("d-none");res.textContent="";document.getElementById("submitQuizBtn").disabled=false;
+    document.getElementById("retakeBtn").classList.add("d-none");
+    currentQuestions=pickRandom(QUESTION_BANK,NUM_QUESTIONS);c.innerHTML="";
+    currentQuestions.forEach((qObj,idx)=>{
+      const shuffled=shuffleWithIndex(qObj.options), correctNew=shuffled.findIndex(o=>o.i===qObj.answer);
+      const qWrap=document.createElement("div");qWrap.className="p-3 border rounded-3";qWrap.dataset.correct=correctNew;qWrap.dataset.expl=qObj.expl;
+      const qTitle=document.createElement("div");qTitle.className="fw-semibold mb-2";qTitle.textContent=`Q${idx+1}. ${qObj.q}`;qWrap.appendChild(qTitle);
+      const opts=document.createElement("div");opts.className="vstack gap-2";
+      shuffled.forEach((opt,optIdx)=>{const id=`q${idx}_opt${optIdx}`;const label=document.createElement("label");label.setAttribute("for",id);label.className="d-flex align-items-start gap-2";const input=document.createElement("input");input.type="radio";input.name=`q${idx}`;input.id=id;input.value=optIdx;label.appendChild(input);const span=document.createElement("span");span.textContent=opt.v;label.appendChild(span);opts.appendChild(label);});
+      const expl=document.createElement("div");expl.className="mt-2 small text-muted d-none";expl.id=`expl_${idx}`;expl.textContent=`Explanation: ${qObj.expl}`;qWrap.appendChild(opts);qWrap.appendChild(expl);c.appendChild(qWrap);
+    });
+  }
+
+  function gradeQuiz(){
+    const blocks=[...document.getElementById("quiz1Questions").children];let score=0,answeredAll=true;
+    blocks.forEach((b,idx)=>{const correct=Number(b.dataset.correct),radios=b.querySelectorAll(`input[name="q${idx}"]`);let chosen=-1;
+      radios.forEach((r,i)=>{if(r.checked)chosen=i;r.disabled=true;});
+      if(chosen===-1)answeredAll=false;
+      const labels=b.querySelectorAll("label");labels.forEach((lbl,i)=>{lbl.classList.remove("border","border-success","border-danger","rounded","px-2");
+        if(i===correct)lbl.classList.add("border","border-success","rounded","px-2");
+        if(chosen!==-1 && i===chosen && chosen!==correct)lbl.classList.add("border","border-danger","rounded","px-2");});
+      b.querySelector(`#expl_${idx}`).classList.remove("d-none");if(chosen===correct)score++;});
+    const res=document.getElementById("quiz1Result");res.classList.remove("d-none");const pct=Math.round((score/blocks.length)*100),pass=pct>=60;
+    res.className=`alert mt-4 ${pass?"alert-success":"alert-danger"}`;res.innerHTML=`<strong>Score:</strong> ${score}/${blocks.length} (${pct}%). ${pass?"Great job! ✅":"Keep practicing! ❗"}`;
+    document.getElementById("submitQuizBtn").disabled=true;document.getElementById("retakeBtn").classList.remove("d-none");
+  }
+
+  document.addEventListener("DOMContentLoaded",function(){
+    document.querySelector("a.quiz1-link").addEventListener("click",function(e){e.preventDefault();renderQuiz();new bootstrap.Modal(document.getElementById("quiz1Modal")).show();});
+    document.getElementById("submitQuizBtn").addEventListener("click",gradeQuiz);
+    document.getElementById("retakeBtn").addEventListener("click",renderQuiz);
+  });
+})();
+</script>
+
+
+                            <!-- Module 2 -->
+                            <div class="accordion-item wow fadeInUp" data-wow-delay="1.1s">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <i class="fas fa-ethernet me-3"></i> Week 5-8: Copper Cabling & DSL Technologies
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#broadbandAccordion">
+                                    <div class="accordion-body">
+                                        <div class="video-container mb-4">
+                                            <!-- Replace YOUR_YOUTUBE_VIDEO_ID_M2 with the actual YouTube video ID for Module 2 -->
+                                           <iframe
+  width="100%"
+  height="500"
+  src="https://www.youtube.com/embed/zoefzxHIfPc"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+                                        </div>
+                                        <p><strong>Module Goal:</strong> Gain practical skills in working with copper cable infrastructure for DSL and Ethernet networks, including installation and testing. This video demonstrates key copper cabling techniques.</p>
+                                        <p>Key topics covered in this module:</p>
+                                        <ul>
+                                            <li>Twisted-Pair Cabling: Cat5e, Cat6, Cat6a standards and applications.</li>
+                                            <li>Cable Termination: RJ45 and RJ11 connector installation (hands-on).</li>
+                                            <li>Digital Subscriber Line (DSL): ADSL, VDSL, G.fast principles and deployment.</li>
+                                            <li>Copper Line Testing: Using cable certifiers and continuity testers.</li>
+                                            <li>Common Copper Line Faults: Diagnosis and rectification.</li>
+                                        </ul>
+                                        <div class="module-resources mt-3">
+                                            <a href="docs/Broadband Technician Material New (2).pdf#page=12" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                                            <a href="#" target="_blank"><i class="fas fa-file-alt me-1"></i> Lab Exercise: Cable Crimping</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Module 3 -->
+                            <div class="accordion-item wow fadeInUp" data-wow-delay="1.2s">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <i class="fas fa-lightbulb me-3"></i> Week 9-12: Fiber Optic Communication & FTTx
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#broadbandAccordion">
+                                    <div class="accordion-body">
+                                        <div class="video-container mb-4">
+                                            <!-- Replace YOUR_YOUTUBE_VIDEO_ID_M3 with the actual YouTube video ID for Module 3 -->
+                                            <iframe
+  width="100%"
+  height="500"
+  src="https://www.youtube.com/embed/SwnXI2Da6G0"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+                                        </div>
+                                        <p><strong>Module Goal:</strong> Understand the theory and practical application of fiber optics in modern broadband networks, including FTTx deployments. Watch this video for an in-depth look at fiber optic technology.</p>
+                                        <p>Key topics covered in this module:</p>
+                                        <ul>
+                                            <li>Principles of Fiber Optics: Light transmission, reflection, refraction.</li>
+                                            <li>Fiber Types: Single-mode vs. Multi-mode fiber characteristics.</li>
+                                            <li>Fiber Optic Cables: Construction, connectors (SC, LC, ST).</li>
+                                            <li>Fusion Splicing & Mechanical Splicing Techniques.</li>
+                                            <li>FTTx Architectures: FTTH, FTTB, FTTC, and their components.</li>
+                                            <li>Fiber Testing: Using OTDRs, Visual Fault Locators, and Power Meters.</li>
+                                        </ul>
+                                        <div class="module-resources mt-3">
+                                            <a href="docs/Broadband Technician Material New (2).pdf#page=20" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                                            <a href="#" target="_blank"><i class="fas fa-microscope me-1"></i> Practical: Fiber Cleaning & Inspection</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Module 4 -->
+                            <div class="accordion-item wow fadeInUp" data-wow-delay="1.3s">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        <i class="fas fa-wifi me-3"></i> Week 13-16: Wireless & Mobile Broadband Technologies
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#broadbandAccordion">
+                                    <div class="accordion-body">
+                                        <div class="video-container mb-4">
+                                            <!-- Replace YOUR_YOUTUBE_VIDEO_ID_M4 with the actual YouTube video ID for Module 4 -->
+                                            <iframe
+  width="100%"
+  height="500"
+  src="https://www.youtube.com/embed/UTj1moMe1t0"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+                                        </div>
+                                        <p><strong>Module Goal:</strong> Explore the world of wireless and mobile broadband, including Wi-Fi, cellular networks, and fixed wireless access, along with deployment considerations. This video covers modern wireless communication.</p>
+                                        <p>Key topics covered in this module:</p>
+                                        <ul>
+                                            <li>Wi-Fi Standards: 802.11 a/b/g/n/ac/ax (Wi-Fi 6) and best practices.</li>
+                                            <li>Wireless Network Planning: Site surveys, signal strength, interference management.</li>
+                                            <li>Cellular Technologies: Overview of 4G (LTE) and 5G network architecture.</li>
+                                            <li>Fixed Wireless Access (FWA): Technology, components, and installation.</li>
+                                            <li>Antenna Types and Placement: Directional vs. Omni-directional.</li>
+                                        </ul>
+                                        <div class="module-resources mt-3">
+                                            <a href="docs/Broadband Technician Material New (2).pdf#page=28" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                                            <a href="#" target="_blank"><i class="fas fa-chart-bar me-1"></i> Case Study: Rural FWA Deployment</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Module 5 -->
+                            <div class="accordion-item wow fadeInUp" data-wow-delay="1.4s">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        <i class="fas fa-house-user me-3"></i> Week 17-20: Customer Premises Equipment (CPE) & Installation
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#broadbandAccordion">
+                                    <div class="accordion-body">
+                                        <div class="video-container mb-4">
+                                            <!-- Replace YOUR_YOUTUBE_VIDEO_ID_M5 with the actual YouTube video ID for Module 5 -->
+                                           <iframe
+  width="100%"
+  height="500"
+  src="https://www.youtube.com/embed/o0IlCvRbVXM"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+                                        </div>
+                                        <p><strong>Module Goal:</strong> Master the installation and configuration of broadband equipment at the customer's location, ensuring optimal service delivery. This video guides you through CPE setup.</p>
+                                        <p>Key topics covered in this module:</p>
+                                        <ul>
+                                            <li>Modem and Router Configuration: Setup, firmware updates, basic settings.</li>
+                                            <li>In-Home Wiring: Best practices for structured cabling and wall-plate installation.</li>
+                                            <li>Wi-Fi Network Setup: SSID, password, security protocols (WPA2/WPA3).</li>
+                                            <li>Quality of Service (QoS): Prioritizing traffic for voice/video.</li>
+                                            <li>Customer Handover: Explaining service features and basic troubleshooting.</li>
+                                        </ul>
+                                        <div class="module-resources mt-3">
+                                            <a href="docs/Broadband Technician Material New (2).pdf#page=35" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                                            <a href="#" target="_blank"><i class="fas fa-desktop me-1"></i> Virtual Lab: Router Configuration</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Module 6 -->
+<div class="accordion-item wow fadeInUp" data-wow-delay="1.5s">
+    <h2 class="accordion-header" id="headingSix">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+            <i class="fas fa-shield-alt me-3"></i> Week 21-24: Broadband Network Security Essentials
+        </button>
+    </h2>
+    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#broadbandAccordion">
+        <div class="accordion-body">
+            <div class="video-container mb-4">
+                <iframe src="https://www.youtube.com/embed/o0IlCvRbVXM?controls=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p><strong>Module Goal:</strong> Understand fundamental network security concepts and implement basic security measures for broadband installations and customer networks. Learn to protect networks in this video.</p>
+            <p>Key topics covered in this module:</p>
+            <ul>
+                <li>Introduction to Network Threats: Malware, phishing, denial of service (DoS).</li>
+                <li>Securing Wi-Fi: Strong passwords, hidden SSIDs, MAC filtering.</li>
+                <li>Basic Firewall Configuration: Protecting home and small business networks.</li>
+                <li>VPN Basics: Understanding secure remote access.</li>
+                <li>Client Education: Advising customers on cybersecurity best practices.</li>
+            </ul>
+            <div class="module-resources mt-3">
+                <a href="docs/Broadband Technician Material New (2).pdf#page=42" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                <a href="#" target="_blank"><i class="fas fa-user-secret me-1"></i> Security Checklist for Home Networks</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Module 7 -->
+<div class="accordion-item wow fadeInUp" data-wow-delay="1.6s">
+    <h2 class="accordion-header" id="headingSeven">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+            <i class="fas fa-wrench me-3"></i> Week 25-28: Advanced Troubleshooting & Diagnostics
+        </button>
+    </h2>
+    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#broadbandAccordion">
+        <div class="accordion-body">
+            <div class="video-container mb-4">
+                <iframe src="https://www.youtube.com/embed/UTj1moMe1t0?controls=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p><strong>Module Goal:</strong> Develop systematic and advanced approaches to diagnose and resolve complex broadband network issues efficiently. This video offers expert troubleshooting strategies.</p>
+            <p>Key topics covered in this module:</p>
+            <ul>
+                <li>Troubleshooting Methodology: Step-by-step approach to problem-solving.</li>
+                <li>Diagnostic Tools: Using ping, tracert, ipconfig, speed tests, Wi-Fi analyzers.</li>
+                <li>Advanced Modem/Router Diagnostics: Log analysis, signal strength interpretation.</li>
+                <li>Identifying Intermittent Issues: Packet loss, latency, jitter analysis.</li>
+                <li>Layer 1-7 Troubleshooting Model: Applying the OSI model to diagnose faults.</li>
+                <li>Case Studies: Real-world troubleshooting scenarios and solutions.</li>
+            </ul>
+            <div class="module-resources mt-3">
+                <a href="docs/Broadband Technician Material New (2).pdf#page=50" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                <a href="#" target="_blank"><i class="fas fa-clipboard-list me-1"></i> Troubleshooting Flowcharts</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Module 8 -->
+<div class="accordion-item wow fadeInUp" data-wow-delay="1.7s">
+    <h2 class="accordion-header" id="headingEight">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+            <i class="fas fa-headset me-3"></i> Week 29-32: Customer Service & Field Operations
+        </button>
+    </h2>
+    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#broadbandAccordion">
+        <div class="accordion-body">
+            <div class="video-container mb-4">
+                <iframe src="https://www.youtube.com/embed/SwnXI2Da6G0?controls=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p><strong>Module Goal:</strong> Develop essential soft skills for effective customer interaction, work order management, and professional field conduct. This video focuses on excelling in customer interactions.</p>
+            <p>Key topics covered in this module:</p>
+            <ul>
+                <li>Effective Communication: Active listening, clear explanations, conflict resolution.</li>
+                <li>Professional Demeanor: Punctuality, appearance, site etiquette.</li>
+                <li>Work Order Management: Documentation, reporting, dispatch systems.</li>
+                <li>Safety Protocols: Electrical safety, ladder safety, personal protective equipment.</li>
+                <li>Time Management: Prioritizing tasks and optimizing routes.</li>
+            </ul>
+            <div class="module-resources mt-3">
+                <a href="docs/Broadband Technician Material New (2).pdf#page=58" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                <a href="#" target="_blank"><i class="fas fa-handshake me-1"></i> Role-Playing Scenarios</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Module 9 -->
+<div class="accordion-item wow fadeInUp" data-wow-delay="1.8s">
+    <h2 class="accordion-header" id="headingNine">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+            <i class="fas fa-server me-3"></i> Week 33-36: Network Monitoring & Maintenance
+        </button>
+    </h2>
+    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#broadbandAccordion">
+        <div class="accordion-body">
+            <div class="video-container mb-4">
+                <iframe src="https://www.youtube.com/embed/zoefzxHIfPc?controls=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p><strong>Module Goal:</strong> Learn about tools and practices for proactive network monitoring, preventive maintenance, and system upgrades. This video demonstrates effective network management.</p>
+            <p>Key topics covered in this module:</p>
+            <ul>
+                <li>Introduction to Network Monitoring Tools (e.g., SNMP, PingPlotter).</li>
+                <li>Proactive Maintenance Schedules: Inspections, cleaning, cable management.</li>
+                <li>Firmware Updates & Software Management for network devices.</li>
+                <li>Scalability & Upgrades: Planning for network expansion.</li>
+                <li>Disaster Recovery Planning Basics for broadband networks.</li>
+            </ul>
+            <div class="module-resources mt-3">
+                <a href="docs/Broadband Technician Material New (2).pdf#page=65" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                <a href="#" target="_blank"><i class="fas fa-chart-line me-1"></i> Tool Walkthrough: Monitoring Dashboard</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Module 10 -->
+<div class="accordion-item wow fadeInUp" data-wow-delay="1.9s">
+    <h2 class="accordion-header" id="headingTen">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+            <i class="fas fa-award me-3"></i> Week 37-40: Certification Prep & Career Pathways
+        </button>
+    </h2>
+    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#broadbandAccordion">
+        <div class="accordion-body">
+            <div class="video-container mb-4">
+                <iframe src="https://www.youtube.com/embed/_IOZ8_cPgu8?controls=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p><strong>Module Goal:</strong> Prepare for industry certifications, explore career opportunities, and develop a professional development plan in broadband technology. This video provides career guidance and certification tips.</p>
+            <p>Key topics covered in this module:</p>
+            <ul>
+                <li>Review of Core Concepts & Practice Exams.</li>
+                <li>Introduction to Industry Certifications (e.g., FOA, ETA).</li>
+                <li>Job Search Strategies: Resume building, interview tips.</li>
+                <li>Continuous Learning: Staying updated with new technologies.</li>
+                <li>Career Pathways: Roles and advancement opportunities in broadband.</li>
+            </ul>
+            <div class="module-resources mt-3">
+                <a href="docs/Broadband Technician Material New (2).pdf#page=72" target="_blank"><i class="far fa-file-pdf me-1"></i> Module Syllabus PDF</a>
+                <a href="#" target="_blank"><i class="fas fa-user-tie me-1"></i> Interview Preparation Guide</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+                    <!-- Instructor Section -->
+                    <div class="content-card instructor-section wow fadeInUp" data-wow-delay="2.1s">
+                        <h3 class="course-section-title text-center mb-5">Meet Your Instructor</h3>
+                        <div class="instructor-profile">
+                            <img src="img/Surendra.jpg" alt="Instructor Name">
+                            <div class="instructor-details mt-4">
+                                <h4>Mr. SANIKOMMU SURENDRA
+</h4>
+                                <p class="mb-3">Mr. SANIKOMMU SURENDRA is a seasoned Broadband Network Engineer with over 15 years of experience in telecommunications infrastructure, fiber optic deployment, and network management. He holds multiple industry certifications and is passionate about empowering the next generation of technicians. His practical insights and clear teaching style make complex topics easy to understand.</p>
+                                <div class="instructor-social">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Student Testimonials Section -->
+                    <div class="content-card wow fadeInUp" data-wow-delay="2.2s">
+                        <h3 class="course-section-title text-center mb-5">What Our Students Say</h3>
+                        <div class="owl-carousel testimonial-carousel position-relative">
+                            <div class="testimonial-item text-center">
+                                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;">
+                                <h5 class="mb-0">Priya Sharma</h5>
+                                <small>Broadband Technician Graduate</small>
+                                <p>"This course completely transformed my career! The modules were practical, and the instructor's explanations were incredibly clear. I landed a job even before finishing the advanced modules. Highly recommended!"</p>
+                            </div>
+                            <div class="testimonial-item text-center">
+                                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;">
+                                <h5 class="mb-0">Amit Singh</h5>
+                                <small>Field Operations Specialist</small>
+                                <p>"The fiber optics section was a game-changer for me. I finally understood the intricacies of splicing and testing. The course content is up-to-date and directly applicable to current industry standards."</p>
+                            </div>
+                            <div class="testimonial-item text-center">
+                                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 80px; height: 80px;">
+                                <h5 class="mb-0">Lakshmi Devi</h5>
+                                <small>Network Support Analyst</small>
+                                <p>"As someone new to networking, I appreciated the step-by-step approach. The troubleshooting modules were particularly useful, giving me confidence to diagnose and resolve issues effectively."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Course Content End -->
+
+    <!-- Final Call to Action Section Start -->
+    <div class="container-fluid final-cta wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2>Ready to Launch Your Career in Broadband Technology?</h2>
+                    <p>Don't miss out on this opportunity to gain in-demand skills and join the forefront of digital connectivity. Enroll today and start building your future!</p>
+                    <a href="contact.html" class="btn btn-primary py-3 px-5">Enroll Now & Get Started <i class="fa fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Final Call to Action Section End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="courses.html">Our Courses</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Head Office</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>34-1/16, Opp. District Library, Court Centre, Ongole</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 99636 47799</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>kkcomputersiso@gmail.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Society Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>37-1-413 (1198), Ram Nagar, Sth Janepalli, Ongole, Prakasam</p>
+                     <div class="d-flex pt-2 mt-3">
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Newsletter</h4>
+                    <p>Stay updated with our latest courses and offers.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        © <a class="border-bottom" href="#">KK Educational and Rural Development Society</a>, All Right Reserved.
+                        Designed By <a class="border-bottom" href="https://kk-computers.in">KK Computers</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

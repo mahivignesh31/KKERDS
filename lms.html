@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>KK Educational and Rural Development Society - LMS</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="KK Computers, Skill Development, IT Courses, PMKVY, APSSDC, Vocational Training, Ongole, Guntur, LMS, Broadband Technician, Electrician, Sewing Machine, Computer Courses" name="keywords">
+    <meta content="Explore our Learning Management System (LMS) at KK Educational and Rural Development Society. We offer comprehensive online courses for Broadband Technicians, Electricians, Sewing Machine Operators, and various Computer & IT skills to empower your career." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- === CUSTOM CSS FOR ENHANCEMENTS (Keep from index.html, modify as needed) === -->
+    <style>
+        /* --- General & Typography Enhancements --- */
+        :root {
+            --primary: #06BBCC;
+            --secondary: #FFC107; /* New Accent Color */
+            --light: #F0F8FF;
+            --dark: #181D38;
+        }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: var(--light); /* Light background for the LMS page */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        .btn-primary:hover {
+            background-color: #05a8b8;
+            border-color: #05a8b8;
+        }
+
+        /* --- Navbar & Logo --- */
+        .navbar {
+            min-height: 110px; 
+        }
+        .logo-img {
+            height: 150px;      
+            width: auto;
+            object-fit: contain;
+            margin: -5px 0;     
+        }
+        .navbar-light .navbar-nav .nav-link {
+            transition: color 0.3s ease;
+        }
+        .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+
+        /* --- Page Header / Hero Section --- */
+        .page-header {
+            background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(img/lms-hero.jpg) center center no-repeat;
+            background-size: cover;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+        }
+        .page-header h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: white;
+        }
+        .breadcrumb-item a {
+            color: white;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb-item a:hover {
+            color: var(--primary);
+        }
+
+        /* --- LMS Course Grid --- */
+        .lms-course-item {
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Ensure cards are same height */
+        }
+        .lms-course-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+        .lms-course-img {
+            height: 200px; /* Fixed height for course images */
+            overflow: hidden;
+        }
+        .lms-course-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .lms-course-item:hover .lms-course-img img {
+            transform: scale(1.08);
+        }
+        .lms-course-content {
+            padding: 25px;
+            flex-grow: 1; /* Allows content to expand and push footer down */
+            display: flex;
+            flex-direction: column;
+        }
+        .lms-course-title {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        .lms-course-meta {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .lms-course-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1; /* Allows description to take available space */
+        }
+        .lms-course-footer {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: auto; /* Pushes footer to the bottom */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .lms-course-footer .btn {
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            border-radius: 50px;
+        }
+        .lms-course-footer .duration {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .lms-course-resources {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+        .lms-course-resources .btn {
+            font-size: 0.85rem;
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+        .lms-cta-section {
+            background-color: var(--dark);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            margin-top: 5rem;
+        }
+        .lms-cta-section h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+        .lms-cta-section p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem auto;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .lms-cta-section .btn {
+            font-size: 1.1rem;
+            padding: 12px 35px;
+            border-radius: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="img/2kk.png" alt="KK Educational Society Logo" class="logo-img">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <a href="skill.html" class="nav-item nav-link">Skill Development</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="lms.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block active">E-Learning<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+<div class="container-fluid page-header py-5 mb-5 wow fadeIn" 
+     data-wow-delay="0.1s" 
+     style="background: url('img/course-1.jpg') center center/cover no-repeat;">
+    <div class="container py-5 text-center">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">
+            Learning Management System
+        </h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item">
+                    <a class="text-white" href="index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item text-white active" aria-current="page">LMS</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+
+    <!-- Page Header End -->
+
+
+    <!-- LMS Courses Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Online Learning</h6>
+                <h1 class="mb-5">Our Popular LMS Courses</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                
+                <!-- Broadband Technician Course -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="lms-course-item shadow">
+                        <div class="position-relative lms-course-img">
+                            <img class="img-fluid" src="img/board.jpeg" alt="Broadband Technician Course">
+                        </div>
+                        <div class="lms-course-content">
+                            <h3 class="lms-course-title">Broadband Technician Training</h3>
+                            <div class="lms-course-meta">
+                                <span class="me-3"><i class="fa fa-book text-primary me-2"></i>Modules: 10</span>
+                                <span><i class="fa fa-users text-primary me-2"></i>Students: 250+</span>
+                            </div>
+                            <p class="lms-course-description">Master the essentials of broadband installation, troubleshooting, and network maintenance. This course covers fiber optics, copper cabling, and modern internet technologies.</p>
+                            <div class="lms-course-footer">
+                                <span class="duration"><i class="far fa-clock text-primary me-1"></i> 240 Weeks</span>
+                                <a href="Broadband.html" class="btn btn-primary">Start Learning</a>
+                            </div>
+                            <div class="lms-course-resources">
+                                <a href="https://www.youtube.com/watch?v=your-broadband-video-id" target="_blank" class="btn btn-outline-danger"><i class="fab fa-youtube me-1"></i> Video Lessons</a>
+                                <a href="docs/broadband_syllabus.pdf" target="_blank" class="btn btn-outline-info"><i class="far fa-file-pdf me-1"></i> Syllabus PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Electrician Course -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="lms-course-item shadow">
+                        <div class="position-relative lms-course-img">
+                            <img class="img-fluid" src="img/Electrician.jpeg" alt="Electrician Course">
+                        </div>
+                        <div class="lms-course-content">
+                            <h3 class="lms-course-title">Certified Electrician Program</h3>
+                            <div class="lms-course-meta">
+                                <span class="me-3"><i class="fa fa-book text-primary me-2"></i>Modules: 12</span>
+                                <span><i class="fa fa-users text-primary me-2"></i>Students: 300+</span>
+                            </div>
+                            <p class="lms-course-description">Learn electrical wiring, safety standards, circuit design, and troubleshooting for residential and commercial applications. Get ready for a high-demand career.</p>
+                            <div class="lms-course-footer">
+                                <span class="duration"><i class="far fa-clock text-primary me-1"></i> 240 Weeks</span>
+                                <a href="Electrician.html" class="btn btn-primary">Start Learning</a>
+                            </div>
+                            <div class="lms-course-resources">
+                                <a href="https://www.youtube.com/watch?v=your-electrician-video-id" target="_blank" class="btn btn-outline-danger"><i class="fab fa-youtube me-1"></i> Video Lessons</a>
+                                <a href="docs/electrician_syllabus.pdf" target="_blank" class="btn btn-outline-info"><i class="far fa-file-pdf me-1"></i> Syllabus PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sewing Machine Operator Course -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="lms-course-item shadow">
+                        <div class="position-relative lms-course-img">
+                            <img class="img-fluid" src="img/Sewing.jpeg" alt="Sewing Machine Course">
+                        </div>
+                        <div class="lms-course-content">
+                            <h3 class="lms-course-title">Professional Sewing Machine Operator</h3>
+                            <div class="lms-course-meta">
+                                <span class="me-3"><i class="fa fa-book text-primary me-2"></i>Modules: 8</span>
+                                <span><i class="fa fa-users text-primary me-2"></i>Students: 180+</span>
+                            </div>
+                            <p class="lms-course-description">Develop expert-level skills in operating various sewing machines for garment production, repairs, and creative textile projects. Perfect for fashion and tailoring.</p>
+                            <div class="lms-course-footer">
+                                <span class="duration"><i class="far fa-clock text-primary me-1"></i> 240 Weeks</span>
+                                <a href="SewingMachine.html" class="btn btn-primary">Start Learning</a>
+                            </div>
+                            <div class="lms-course-resources">
+                                <a href="https://www.youtube.com/watch?v=your-sewing-video-id" target="_blank" class="btn btn-outline-danger"><i class="fab fa-youtube me-1"></i> Video Lessons</a>
+                                <a href="docs/sewing_syllabus.pdf" target="_blank" class="btn btn-outline-info"><i class="far fa-file-pdf me-1"></i> Syllabus PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Computer Courses (General IT Skills) -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="lms-course-item shadow">
+                        <div class="position-relative lms-course-img">
+                            <img class="img-fluid" src="img/Computer.jpeg" alt="Computer Courses">
+                        </div>
+                        <div class="lms-course-content">
+                            <h3 class="lms-course-title">Essential Computer & IT Skills</h3>
+                            <div class="lms-course-meta">
+                                <span class="me-3"><i class="fa fa-book text-primary me-2"></i>Modules: 15</span>
+                                <span><i class="fa fa-users text-primary me-2"></i>Students: 500+</span>
+                            </div>
+                            <p class="lms-course-description">From basic computer literacy to advanced office applications, digital marketing, and coding fundamentals, enhance your IT proficiency for any professional field.</p>
+                            <div class="lms-course-footer">
+                                <span class="duration"><i class="far fa-clock text-primary me-1"></i> Flexible</span>
+                                <a href="#" class="btn btn-primary">Start Learning</a>
+                            </div>
+                            <div class="lms-course-resources">
+                                <a href="https://www.youtube.com/watch?v=your-computer-video-id" target="_blank" class="btn btn-outline-danger"><i class="fab fa-youtube me-1"></i> Video Lessons</a>
+                                <a href="docs/computer_syllabus.pdf" target="_blank" class="btn btn-outline-info"><i class="far fa-file-pdf me-1"></i> Syllabus PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- LMS Courses End -->
+
+    <!-- Call to Action Section Start -->
+    <div class="container-fluid lms-cta-section wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2>Ready to Upskill and Transform Your Career?</h2>
+                    <p>Join thousands of successful students who have started their journey with KK Educational and Rural Development Society's online learning platform. Gain practical skills, earn certifications, and achieve your professional goals from anywhere.</p>
+                    <a href="contact.html" class="btn btn-primary py-3 px-5">Contact Us to Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Call to Action Section End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="courses.html">Our Courses</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Head Office</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>34-1/16, Opp. District Library, Court Centre, Ongole</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 99636 47799</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>kkcomputersiso@gmail.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Society Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>37-1-413 (1198), Ram Nagar, Sth Janepalli, Ongole, Prakasam</p>
+                     <div class="d-flex pt-2 mt-3">
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Newsletter</h4>
+                    <p>Stay updated with our latest courses and offers.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        © <a class="border-bottom" href="#">KK Educational and Rural Development Society</a>, All Right Reserved.
+                        Designed By <a class="border-bottom" href="https://kk-computers.in">KK Computers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
