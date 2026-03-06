@@ -318,42 +318,101 @@
             </div>
 
             <!-- Contact Form -->
-            <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
-                <form method="post" action=""> <!-- Update this to your PHP endpoint -->
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                                <label for="name">Your Name</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                                <label for="email">Your Email</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
-                                <label for="subject">Subject</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 150px" required></textarea>
-                                <label for="message">Message</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+         <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+  <form id="contactForm">
+    <div class="row g-3">
+
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input type="text" class="form-control" id="c_name" placeholder="Your Name" required>
+          <label for="c_name">Your Name</label>
         </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input type="email" class="form-control" id="c_email" placeholder="Your Email" required>
+          <label for="c_email">Your Email</label>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input type="tel" class="form-control" id="c_phone" placeholder="+91 XXXXX XXXXX" required>
+          <label for="c_phone">Phone Number</label>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input type="text" class="form-control" id="c_subject" placeholder="Subject">
+          <label for="c_subject">Subject</label>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Leave a message here" id="c_message"
+            style="height: 150px" required></textarea>
+          <label for="c_message">Message</label>
+        </div>
+      </div>
+
+      <!-- Success Message -->
+      <div class="col-12" id="contactSuccess" style="display:none;">
+        <div class="alert alert-success text-center" role="alert">
+          ✅ Message sent successfully! We'll get back to you soon.
+        </div>
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-primary w-100 py-3" type="submit" id="contactBtn">
+          Send Message
+        </button>
+      </div>
+
     </div>
+  </form>
 </div>
+
+<script>
+  const CONTACT_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby_BA-I2ellGzrClpv13bVRcPdcJIx04wG0NiLjTuDtxX6EQPExiU4-gZMmwhU0GIXEHg/exec";
+
+  document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const btn = document.getElementById("contactBtn");
+    btn.textContent = "Sending...";
+    btn.disabled = true;
+
+    const payload = {
+      name:    document.getElementById("c_name").value.trim(),
+      email:   document.getElementById("c_email").value.trim(),
+      phone:   document.getElementById("c_phone").value.trim(),
+      subject: document.getElementById("c_subject").value.trim(),
+      message: document.getElementById("c_message").value.trim()
+    };
+
+    try {
+      await fetch(CONTACT_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      document.getElementById("contactSuccess").style.display = "block";
+      document.getElementById("contactForm").reset();
+      btn.textContent = "Send Message";
+      btn.disabled = false;
+
+    } catch (err) {
+      alert("Failed to send. Please try again.");
+      btn.textContent = "Send Message";
+      btn.disabled = false;
+    }
+  });
+</script>
 <!-- Contact End -->
 
 
