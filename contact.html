@@ -177,12 +177,44 @@
                                 </div>
                             </div>
 
-                            <!-- Success Message -->
                             <div class="col-12" id="contactSuccess" style="display:none;">
-                                <div class="alert alert-success text-center" role="alert">
-                                    ✅ Message sent successfully! We'll get back to you soon.
-                                </div>
-                            </div>
+  <div style="
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(6,187,204,0.15);
+    border-top: 4px solid #06BBCC;
+    animation: fadeSlideIn 0.5s ease;
+  ">
+    <div style="
+      width: 65px; height: 65px;
+      background: linear-gradient(135deg, #06BBCC, #04a0af);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 15px;
+      box-shadow: 0 5px 20px rgba(6,187,204,0.4);
+    ">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <h5 style="color:#181D38; font-family:'Nunito',sans-serif; font-weight:700; margin-bottom:8px;">Message Sent Successfully!</h5>
+    <p style="color:#777; font-size:14px; margin:0;">Thank you for reaching out. Our team will contact you within <strong>24 hours</strong>.</p>
+  </div>
+</div>
+                            <script>
+                                <style>
+  @keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(-15px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.7); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+</style>
+                            </script>
 
                             <!-- Error Message -->
                             <div class="col-12" id="contactError" style="display:none;">
