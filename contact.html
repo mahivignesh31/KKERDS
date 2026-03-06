@@ -445,55 +445,56 @@
     <!-- ===== CONTACT FORM SCRIPT (GET method — reliable with Google Apps Script) ===== -->
     <script>
         // ✅ PASTE YOUR NEW GET-BASED DEPLOYMENT URL BELOW
-        const CONTACT_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxkyx-kxDyGhOzBivt5KE4lsQ-wpSh5RMQ44aCPqq0yNffClkeR84p_raF_9wrUnQZKig/exec";
+        const CONTACT_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzbGl5zQaZu8LH33tzozJRmFpb1Y4IudfbYOeI7k19FAflUqEK1iKGRYRPMzV7z12Hw8Q/exec";
 
-        document.getElementById("contactForm").addEventListener("submit", function (e) {
-            e.preventDefault();
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-            const btn     = document.getElementById("contactBtn");
-            const success = document.getElementById("contactSuccess");
-            const error   = document.getElementById("contactError");
+    const btn     = document.getElementById("contactBtn");
+    const success = document.getElementById("contactSuccess");
+    const error   = document.getElementById("contactError");
 
-            // Hide previous messages
-            success.style.display = "none";
-            error.style.display   = "none";
+    success.style.display = "none";
+    error.style.display   = "none";
+    btn.textContent = "Sending...";
+    btn.disabled    = true;
 
-            btn.textContent = "Sending...";
-            btn.disabled    = true;
+    // ✅ Auto-generate Date & Time from browser
+    const now     = new Date();
+    const date    = now.toLocaleDateString("en-IN");   // e.g. 07/03/2026
+    const time    = now.toLocaleTimeString("en-IN");   // e.g. 12:22:00 AM
 
-            // Build GET params
-            const params = new URLSearchParams({
-                name:    document.getElementById("c_name").value.trim(),
-                email:   document.getElementById("c_email").value.trim(),
-                phone:   document.getElementById("c_phone").value.trim(),
-                subject: document.getElementById("c_subject").value.trim(),
-                message: document.getElementById("c_message").value.trim()
-            });
+    const params = new URLSearchParams({
+        date:    date,                                              // ← Added
+        time:    time,                                              // ← Added
+        name:    document.getElementById("c_name").value.trim(),
+        email:   document.getElementById("c_email").value.trim(),
+        phone:   document.getElementById("c_phone").value.trim(),
+        subject: document.getElementById("c_subject").value.trim(),
+        message: document.getElementById("c_message").value.trim()
+    });
 
-            const url = CONTACT_SCRIPT_URL + "?" + params.toString();
+    const url = CONTACT_SCRIPT_URL + "?" + params.toString();
 
-            // Use <img> tag trick — most reliable method for Google Apps Script
-            // No CORS issues at all
-            const img = new Image();
+    const img = new Image();
 
-            img.onload = function () {
-                success.style.display = "block";
-                document.getElementById("contactForm").reset();
-                btn.textContent = "Send Message";
-                btn.disabled    = false;
-            };
+    img.onload = function () {
+        success.style.display = "block";
+        document.getElementById("contactForm").reset();
+        btn.textContent = "Send Message";
+        btn.disabled    = false;
+    };
 
-            img.onerror = function () {
-                // onerror also fires on success (because response is JSON not an image)
-                // So we treat onerror as success too
-                success.style.display = "block";
-                document.getElementById("contactForm").reset();
-                btn.textContent = "Send Message";
-                btn.disabled    = false;
-            };
+    img.onerror = function () {
+        // onerror fires on success too (JSON response ≠ image)
+        success.style.display = "block";
+        document.getElementById("contactForm").reset();
+        btn.textContent = "Send Message";
+        btn.disabled    = false;
+    };
 
-            img.src = url;
-        });
+    img.src = url;
+});
     </script>
 
 </body>
