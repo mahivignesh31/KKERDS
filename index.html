@@ -512,40 +512,38 @@
     <!-- About End -->
 
 
-    <!-- Training Partners Section Start -->
-    <div class="container-fluid bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 fw-bold">Our Esteemed Training Partners</h2>
-            <div class="partner-logo-reel">
-                <div class="partner-track">
-                    <!-- Original Set -->
-                    <div class="partner-slide"><img src="img/ddugky.png" alt="DDU-GKY"></div>
-                    <div class="partner-slide"><img src="img/SEEDAP.png" alt="SEEDAP"></div>
-                    <div class="partner-slide"><img src="img/KSRLM.png" alt="APSSDC"></div>
-                    <div class="partner-slide"><img src="img/ssdc.jpeg" alt="APSSDC"></div>
-                    <div class="partner-slide"><img src="img/nsdc.png" alt="NSDC"></div>
-                    <div class="partner-slide"><img src="img/pmkvy.png" alt="PMKVY"></div>
-                    <div class="partner-slide"><img src="img/mepma.png" alt="MEPMA AP"></div>
-                    <div class="partner-slide"><img src="img/PM.png" alt="PM Vishwakarma"></div>
-                    <div class="partner-slide"><img src="img/AP.jpeg" alt="Government of Andhra Pradesh"></div>
-                    <div class="partner-slide"><img src="img/sc.png" alt="AP Scheduled Castes Corporation"></div>
-                    <div class="partner-slide"><img src="img/S.jpeg" alt="Grama Sachivalayam Trainings"></div>
-                    <!-- Cloned Set for Seamless Loop -->
-                    <div class="partner-slide"><img src="img/ddugky.png" alt="DDU-GKY"></div>
-                    <div class="partner-slide"><img src="img/SEEDAP.png" alt="SEEDAP"></div>
-                    <div class="partner-slide"><img src="img/ssdc.jpeg" alt="APSSDC"></div>
-                    <div class="partner-slide"><img src="img/nsdc.png" alt="NSDC"></div>
-                    <div class="partner-slide"><img src="img/pmkvy.png" alt="PMKVY"></div>
-                    <div class="partner-slide"><img src="img/mepma.png" alt="MEPMA AP"></div>
-                    <div class="partner-slide"><img src="img/PM.png" alt="PM Vishwakarma"></div>
-                    <div class="partner-slide"><img src="img/AP.jpeg" alt="Government of Andhra Pradesh"></div>
-                    <div class="partner-slide"><img src="img/sc.png" alt="AP Scheduled Castes Corporation"></div>
-                    <div class="partner-slide"><img src="img/S.jpeg" alt="Grama Sachivalayam Trainings"></div>
-                </div>
-            </div>
+<!-- Training Partners Section Start -->
+<div class="container-fluid bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 fw-bold">Our Esteemed Training Partners</h2>
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4 align-items-center justify-content-center">
+            <div class="col text-center"><img src="img/ddugky.png" alt="DDU-GKY" class="partner-logo"></div>
+            <div class="col text-center"><img src="img/SEEDAP.png" alt="SEEDAP" class="partner-logo"></div>
+            <div class="col text-center"><img src="img/KSRLM.png" alt="KSRLM" class="partner-logo"></div>
+            <div class="col text-center"><img src="img/ssdc.jpeg" alt="APSSDC" class="partner-logo"></div>
+            <div class="col text-center"><img src="img/nsdc.png" alt="NSDC" class="partner-logo"></div>
+            <div class="col text-center"><img src="img/pmkvy.png" alt="PMKVY" class="partner-logo"></div>
+            <div class="col text-center"><img src="img/mepma.png" alt="MEPMA AP" class="partner-logo"></div>
+            <div class="col text-center"><img src="img/PM.png" alt="PM Vishwakarma" class="partner-logo"></div>
+            <div class="col text-center"><img src="img/AP.jpeg" alt="Government of Andhra Pradesh" class="partner-logo"></div>
+            <div class="col text-center"><img src="img/sc.png" alt="AP Scheduled Castes Corporation" class="partner-logo"></div>
+            <div class="col text-center"><img src="img/S.jpeg" alt="Grama Sachivalayam Trainings" class="partner-logo"></div>
         </div>
     </div>
-    <!-- Training Partners Section End -->
+</div>
+<!-- Training Partners Section End -->
+    .partner-logo {
+    max-height: 80px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%);
+}
 
     <!-- NOTE: Keep the existing stats counter, director, courses, team, testimonial, and footer sections but I will apply the new styles to them below. -->
     
