@@ -530,18 +530,6 @@
                 <div class="marquee-item"><img src="img/AP.jpeg" alt="Govt of Andhra Pradesh"></div>
                 <div class="marquee-item"><img src="img/sc.png" alt="AP SC Corporation"></div>
                 <div class="marquee-item"><img src="img/S.jpeg" alt="Grama Sachivalayam"></div>
-                <!-- Cloned Set for Seamless Loop -->
-                <div class="marquee-item"><img src="img/ddugky.png" alt="DDU-GKY"></div>
-                <div class="marquee-item"><img src="img/SEEDAP.png" alt="SEEDAP"></div>
-                <div class="marquee-item"><img src="img/KSRLM.png" alt="KSRLM"></div>
-                <div class="marquee-item"><img src="img/ssdc.jpeg" alt="APSSDC"></div>
-                <div class="marquee-item"><img src="img/nsdc.png" alt="NSDC"></div>
-                <div class="marquee-item"><img src="img/pmkvy.png" alt="PMKVY"></div>
-                <div class="marquee-item"><img src="img/mepma.png" alt="MEPMA AP"></div>
-                <div class="marquee-item"><img src="img/PM.png" alt="PM Vishwakarma"></div>
-                <div class="marquee-item"><img src="img/AP.jpeg" alt="Govt of Andhra Pradesh"></div>
-                <div class="marquee-item"><img src="img/sc.png" alt="AP SC Corporation"></div>
-                <div class="marquee-item"><img src="img/S.jpeg" alt="Grama Sachivalayam"></div>
             </div>
         </div>
     </div>
@@ -618,7 +606,40 @@
 @keyframes marquee-scroll {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
-}  </style>
+} 
+    .marquee-item img {
+    height: 70px;
+    max-width: 130px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transform: scale(1);
+    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ✅ Triggers on cursor hover — NO click required */
+.marquee-item img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.marquee-item {
+    flex-shrink: 0;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ✅ Card glow effect on cursor hover — NO click required */
+.marquee-item:hover {
+    background: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}</style>
 
 
     <!-- NOTE: Keep the existing stats counter, director, courses, team, testimonial, and footer sections but I will apply the new styles to them below. -->
