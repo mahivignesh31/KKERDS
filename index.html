@@ -512,135 +512,40 @@
     <!-- About End -->
 
 
-<!-- Training Partners Section Start -->
-<div class="container-fluid bg-light py-5">
-    <div class="container-fluid">
-        <h2 class="text-center mb-5 fw-bold">Our Esteemed Training Partners</h2>
-        <div class="marquee-wrapper">
-            <div class="marquee-track">
-                <!-- Original Set -->
-                <div class="marquee-item"><img src="img/ddugky.png" alt="DDU-GKY"></div>
-                <div class="marquee-item"><img src="img/SEEDAP.png" alt="SEEDAP"></div>
-                <div class="marquee-item"><img src="img/KSRLM.png" alt="KSRLM"></div>
-                <div class="marquee-item"><img src="img/ssdc.jpeg" alt="APSSDC"></div>
-                <div class="marquee-item"><img src="img/nsdc.png" alt="NSDC"></div>
-                <div class="marquee-item"><img src="img/pmkvy.png" alt="PMKVY"></div>
-                <div class="marquee-item"><img src="img/mepma.png" alt="MEPMA AP"></div>
-                <div class="marquee-item"><img src="img/PM.png" alt="PM Vishwakarma"></div>
-                <div class="marquee-item"><img src="img/AP.jpeg" alt="Govt of Andhra Pradesh"></div>
-                <div class="marquee-item"><img src="img/sc.png" alt="AP SC Corporation"></div>
-                <div class="marquee-item"><img src="img/S.jpeg" alt="Grama Sachivalayam"></div>
+    <!-- Training Partners Section Start -->
+    <div class="container-fluid bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Our Esteemed Training Partners</h2>
+            <div class="partner-logo-reel">
+                <div class="partner-track">
+                    <!-- Original Set -->
+                    <div class="partner-slide"><img src="img/ddugky.png" alt="DDU-GKY"></div>
+                    <div class="partner-slide"><img src="img/SEEDAP.png" alt="SEEDAP"></div>
+                    <div class="partner-slide"><img src="img/KSRLM.png" alt="APSSDC"></div>
+                    <div class="partner-slide"><img src="img/ssdc.jpeg" alt="APSSDC"></div>
+                    <div class="partner-slide"><img src="img/nsdc.png" alt="NSDC"></div>
+                    <div class="partner-slide"><img src="img/pmkvy.png" alt="PMKVY"></div>
+                    <div class="partner-slide"><img src="img/mepma.png" alt="MEPMA AP"></div>
+                    <div class="partner-slide"><img src="img/PM.png" alt="PM Vishwakarma"></div>
+                    <div class="partner-slide"><img src="img/AP.jpeg" alt="Government of Andhra Pradesh"></div>
+                    <div class="partner-slide"><img src="img/sc.png" alt="AP Scheduled Castes Corporation"></div>
+                    <div class="partner-slide"><img src="img/S.jpeg" alt="Grama Sachivalayam Trainings"></div>
+                    <!-- Cloned Set for Seamless Loop -->
+                    <div class="partner-slide"><img src="img/ddugky.png" alt="DDU-GKY"></div>
+                    <div class="partner-slide"><img src="img/SEEDAP.png" alt="SEEDAP"></div>
+                    <div class="partner-slide"><img src="img/ssdc.jpeg" alt="APSSDC"></div>
+                    <div class="partner-slide"><img src="img/nsdc.png" alt="NSDC"></div>
+                    <div class="partner-slide"><img src="img/pmkvy.png" alt="PMKVY"></div>
+                    <div class="partner-slide"><img src="img/mepma.png" alt="MEPMA AP"></div>
+                    <div class="partner-slide"><img src="img/PM.png" alt="PM Vishwakarma"></div>
+                    <div class="partner-slide"><img src="img/AP.jpeg" alt="Government of Andhra Pradesh"></div>
+                    <div class="partner-slide"><img src="img/sc.png" alt="AP Scheduled Castes Corporation"></div>
+                    <div class="partner-slide"><img src="img/S.jpeg" alt="Grama Sachivalayam Trainings"></div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Training Partners Section End -->
-    <style>
-/* Marquee Wrapper */
-.marquee-wrapper {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    background: #f8f9fa;
-    padding: 10px 0;
-}
-
-/* Optional fade edges on left & right */
-.marquee-wrapper::before,
-.marquee-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 80px;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-.marquee-wrapper::before {
-    left: 0;
-    background: linear-gradient(to right, #f8f9fa, transparent);
-}
-.marquee-wrapper::after {
-    right: 0;
-    background: linear-gradient(to left, #f8f9fa, transparent);
-}
-
-/* Scrolling Track */
-.marquee-track {
-    display: flex;
-    align-items: center;
-    width: max-content;
-    animation: marquee-scroll 30s linear infinite;
-}
-
-/* Pause on hover */
-.marquee-wrapper:hover .marquee-track {
-    animation-play-state: paused;
-}
-
-/* Each Logo Item */
-.marquee-item {
-    flex-shrink: 0;
-    padding: 0 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.marquee-item img {
-    height: 70px;
-    max-width: 130px;
-    width: auto;
-    object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.75;
-    transition: filter 0.3s ease, opacity 0.3s ease;
-}
-
-.marquee-item img:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-
-/* Keyframe Animation */
-@keyframes marquee-scroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-} 
-    .marquee-item img {
-    height: 70px;
-    max-width: 130px;
-    width: auto;
-    object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transform: scale(1);
-    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* ✅ Triggers on cursor hover — NO click required */
-.marquee-item img:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-    transform: scale(1.15);
-}
-
-.marquee-item {
-    flex-shrink: 0;
-    padding: 0 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* ✅ Card glow effect on cursor hover — NO click required */
-.marquee-item:hover {
-    background: #ffffff;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-}</style>
-
+    <!-- Training Partners Section End -->
 
     <!-- NOTE: Keep the existing stats counter, director, courses, team, testimonial, and footer sections but I will apply the new styles to them below. -->
     
