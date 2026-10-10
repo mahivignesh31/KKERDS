@@ -328,13 +328,53 @@
         #enquiryForm, #thankYouMessage {
             transition: opacity 0.5s ease-in-out;
         }
-    </style>
+    
+/* KK Computers 2026 design refresh */
+:root{--primary:#087e94;--secondary:#e9a83b;--dark:#102b46;--light:#f3f8fb}
+html{scroll-behavior:smooth}body{color:#34465a;background:#fff;line-height:1.7}
+h1,h2,h3,h4,h5,h6{color:#102b46;letter-spacing:-.025em}
+.container-xxl,.container{max-width:1200px}
+.navbar{min-height:88px!important;padding:0 3%!important;border-bottom:1px solid #e8eef3}
+.logo-img{height:76px!important;margin:0!important}
+.navbar .nav-link{font-size:.95rem;font-weight:700!important;padding:1.8rem 1rem!important;color:#243b53!important}
+.navbar .nav-link:hover,.navbar .nav-link.active{color:#087e94!important}
+.btn{border-radius:9px!important;font-weight:700;letter-spacing:.01em;transition:.25s}
+.btn-primary{background:#087e94!important;border-color:#087e94!important}
+.btn-primary:hover{background:#065e70!important;transform:translateY(-2px)}
+.header-carousel .owl-carousel-item{height:590px;position:relative}
+.header-carousel .owl-carousel-item>img{height:100%;width:100%;object-fit:cover}
+.header-carousel .owl-carousel-item .position-absolute{background:linear-gradient(90deg,rgba(11,36,60,.96),rgba(11,36,60,.74) 50%,rgba(11,36,60,.18))!important}
+.header-carousel h1{font-size:clamp(2.5rem,5vw,4.6rem);line-height:1.12;max-width:780px}
+.header-carousel h5{color:#7de0e8!important;letter-spacing:.14em;font-size:.86rem}
+.header-carousel p{max-width:620px;line-height:1.8}
+.container-xxl.py-5,.container-fluid.bg-light.py-5{padding-top:5.5rem!important;padding-bottom:5.5rem!important}
+.service-item,.course-item,.team-item,.testimonial-item,.stats-item{border-radius:16px!important;box-shadow:0 12px 32px rgba(16,43,70,.065)!important;border:1px solid #e7edf2!important;overflow:hidden}
+.service-item{background:#fff;height:100%}.service-item .p-4{padding:2rem!important}.service-item i{color:#087e94!important}.service-item h5{font-size:1.15rem}
+.bg-light{background-color:#f3f8fb!important}
+.section-title{color:#087e94!important;text-transform:uppercase;letter-spacing:.13em;font-size:.85rem;font-weight:800}
+.section-title+h1{font-size:clamp(2rem,3.2vw,2.9rem)}
+.about-image-container,img[src="about (3).png"]{border-radius:18px}
+.partner-logo-reel{border-radius:18px;background:#fff!important;border:1px solid #e7edf2;padding:1rem 0!important}
+.partner-track{width:max-content!important;animation:kkScroll 65s linear infinite!important}
+.partner-slide{width:190px!important;height:145px;padding:20px!important}
+.partner-slide img{max-height:90px!important;max-width:145px}
+@keyframes kkScroll{to{transform:translateX(-50%)}}
+.counter{font-size:2.8rem;font-weight:800;color:#087e94!important}
+.director-message{background:white!important;border-left:5px solid #087e94!important;padding:2.5rem!important}
+.course-item{background:white!important;height:100%}.course-item img{height:215px;width:100%;object-fit:contain;background:#f8fafc;padding:18px}.course-item .p-4{padding:1.5rem!important}.course-item h3{color:#087e94;font-size:1.6rem}
+.team-item img.img-fluid{height:285px!important}.team-item .team-text{padding-top:55px!important}
+.team-center-title{margin-top:3rem!important}.testimonial-text{background:#f3f8fb!important;border-top:3px solid #087e94!important}
+.footer{background:#102b46!important}.footer h4{color:#fff!important}.footer a{color:#e0edf6}
+#enquiryModal .modal-header{background:#087e94}
+@media(max-width:991px){.navbar{min-height:75px!important}.logo-img{height:65px!important}.navbar .nav-link{padding:.65rem 1rem!important}.header-carousel .owl-carousel-item{height:540px}.header-carousel .owl-carousel-item .position-absolute{background:linear-gradient(90deg,rgba(11,36,60,.92),rgba(11,36,60,.55))!important}}
+@media(max-width:575px){.header-carousel .owl-carousel-item{height:540px}.header-carousel h1{font-size:2.25rem}.header-carousel p{font-size:1rem!important}.container-xxl.py-5,.container-fluid.bg-light.py-5{padding-top:3.5rem!important;padding-bottom:3.5rem!important}.team-item img.img-fluid{height:320px!important}}
+
+</style>
 </head>
 
 <body>
            
-</body> <script type="text/javascript">(function(w,s){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="https://cdn.pagesense.io/js/901904775/88d187f1c0114606a9bc21117c741129.js";var x=document.getElementsByTagName("script")[0];x.parentNode.insertBefore(e,x);})(window,"script");</script>
-    </script>
+<script type="text/javascript">(function(w,s){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="https://cdn.pagesense.io/js/901904775/88d187f1c0114606a9bc21117c741129.js";var x=document.getElementsByTagName("script")[0];x.parentNode.insertBefore(e,x);})(window,"script");</script>
 
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -463,7 +503,7 @@
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
     <div class="position-relative h-100">
         <br>
-        <img class="img-fluid position-absolute w-100 h-90" src="about (3).png" alt="Vocational Training at KK COMPUTERS" style="object-fit: cover;">
+        <img class="img-fluid w-100" src="about (3).png" alt="Vocational Training at KK COMPUTERS" style="object-fit: cover;">
                 <br>
 
         <br>
@@ -641,14 +681,7 @@
                         </div>
                         <div class="text-center p-4 pb-0">
                             <h3 class="mb-0">₹4500.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small>(123)</small>
-                            </div>
+                            
                             <h5 class="mb-4">MS Office Suite (Word, Excel, PowerPoint)</h5>
                         </div>
                         <div class="d-flex border-top">
@@ -665,14 +698,7 @@
                         </div>
                         <div class="text-center p-4 pb-0">
                             <h3 class="mb-0">₹4500.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small>(123)</small>
-                            </div>
+                            
                             <h5 class="mb-4">TallyPrime with GST</h5>
 </div>
 <div class="d-flex border-top">
@@ -689,14 +715,7 @@
 </div>
 <div class="text-center p-4 pb-0">
 <h3 class="mb-0">₹4500.00</h3>
-<div class="mb-3">
-<small class="fa fa-star text-primary"></small>
-<small class="fa fa-star text-primary"></small>
-<small class="fa fa-star text-primary"></small>
-<small class="fa fa-star text-primary"></small>
-<small class="fa fa-star-half-alt text-primary"></small>
-<small>(99)</small>
-</div>
+
 <h5 class="mb-4">Desktop Publishing (DTP)</h5>
 </div>
 <div class="d-flex border-top">
@@ -985,7 +1004,7 @@
                 <div id="thankYouMessage" class="text-center py-4" style="display: none; opacity: 0;">
                     <i class="fa fa-check-circle fa-4x text-success mb-3"></i>
                     <h4 class="text-success">Thank You!</h4>
-                    <p class="mt-2 mb-0">Your enquiry has been sent. Our team will contact you shortly.</p>
+                    <p class="mt-2 mb-0">Please contact our office to complete your enquiry.</p>
                 </div>
             </div>
         </div>
@@ -1055,6 +1074,7 @@
         enquiryForm.addEventListener('submit', function (event) {
             event.preventDefault(); 
 
+            // Demo only: connect this form to a backend before production deployment
             // Fade out form
             enquiryForm.style.opacity = '0';
             
