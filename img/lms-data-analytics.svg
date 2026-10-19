@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420"><defs><pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="white" stroke-opacity=".05"/></pattern></defs><rect width="720" height="420" fill="#e5eadc"/><circle cx="105" cy="40" r="200" fill="#d4dfc5"/><g transform="translate(135 68) rotate(-5 220 140)"><rect width="450" height="285" rx="15" fill="#fffdf5" stroke="#c3cdb6" stroke-width="2"/><text x="28" y="42" fill="#5d7155" font-family="sans-serif" font-size="15" letter-spacing="3">FROM DATA TO DECISIONS</text><path d="M35 220H415M35 170H415M35 120H415M35 70H415" stroke="#e7eadf"/><rect x="55" y="150" width="43" height="70" rx="5" fill="#bacb9d"/><rect x="125" y="125" width="43" height="95" rx="5" fill="#96b17a"/><rect x="195" y="140" width="43" height="80" rx="5" fill="#789559"/><rect x="265" y="95" width="43" height="125" rx="5" fill="#557548"/><rect x="335" y="65" width="43" height="155" rx="5" fill="#254f36"/><text x="28" y="260" fill="#5d7155" font-family="monospace" font-size="16">SQL / Spreadsheets / Python</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
+  <defs>
+    <linearGradient id="g-data-analytics" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1d3a4a"/>
+      <stop offset="100%" stop-color="#1d3a4a" stop-opacity=".85"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="420" fill="url(#g-data-analytics)"/>
+  <circle cx="640" cy="-20" r="210" fill="#b9d7e8" fill-opacity=".12"/>
+  <circle cx="40" cy="400" r="140" fill="#b9d7e8" fill-opacity=".08"/>
+  <text x="48" y="78" fill="#b9d7e8" font-family="Manrope,Arial,sans-serif" font-size="14" letter-spacing="3.5" font-weight="700">KK LEARNING</text>
+  <text x="48" y="150" fill="#f7faf5" font-family="Manrope,Arial,sans-serif" font-size="42" font-weight="800">DATA ANALYTICS</text>
+  <text x="48" y="195" fill="#b9d7e8" font-family="DM Sans,Arial,sans-serif" font-size="20">SQL · Python · Insights</text>
+  <rect x="48" y="230" width="72" height="6" rx="3" fill="#b9d7e8"/>
+  <rect x="500" y="230" width="28" height="70" rx="4" fill="#b9d7e8"/><rect x="540" y="190" width="28" height="110" rx="4" fill="#b9d7e8" fill-opacity=".75"/><rect x="580" y="150" width="28" height="150" rx="4" fill="#b9d7e8" fill-opacity=".55"/><rect x="620" y="170" width="28" height="130" rx="4" fill="#b9d7e8" fill-opacity=".85"/>
+</svg>

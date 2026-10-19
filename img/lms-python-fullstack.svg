@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420"><defs><pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="white" stroke-opacity=".05"/></pattern></defs><rect width="720" height="420" fill="#183b39"/><rect width="720" height="420" fill="url(#grid)"/><circle cx="620" cy="60" r="210" fill="#23544a"/><g transform="translate(170 90) rotate(-5 190 115)"><rect width="380" height="240" rx="15" fill="#102b29" stroke="#729e85" stroke-width="2"/><path d="M0 42H380" stroke="#41675a"/><circle cx="23" cy="22" r="5" fill="#e8a58b"/><circle cx="43" cy="22" r="5" fill="#e4cd83"/><circle cx="63" cy="22" r="5" fill="#87b395"/><text x="32" y="103" fill="#e8d38c" font-family="monospace" font-size="25">def build_future():</text><text x="55" y="150" fill="#a2d2b4" font-family="monospace" font-size="23">return your_next_step</text><text x="32" y="207" fill="#729e85" font-family="monospace" font-size="20">&gt; Python + Web + Django</text></g><text x="583" y="348" fill="#e8d38c" font-family="sans-serif" font-size="53">{ }</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
+  <defs>
+    <linearGradient id="g-python-fullstack" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#163c2e"/>
+      <stop offset="100%" stop-color="#163c2e" stop-opacity=".85"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="420" fill="url(#g-python-fullstack)"/>
+  <circle cx="640" cy="-20" r="210" fill="#cfe6c8" fill-opacity=".12"/>
+  <circle cx="40" cy="400" r="140" fill="#cfe6c8" fill-opacity=".08"/>
+  <text x="48" y="78" fill="#cfe6c8" font-family="Manrope,Arial,sans-serif" font-size="14" letter-spacing="3.5" font-weight="700">KK LEARNING</text>
+  <text x="48" y="150" fill="#f7faf5" font-family="Manrope,Arial,sans-serif" font-size="42" font-weight="800">FULL STACK</text>
+  <text x="48" y="195" fill="#cfe6c8" font-family="DM Sans,Arial,sans-serif" font-size="20">Python · Django · Web</text>
+  <rect x="48" y="230" width="72" height="6" rx="3" fill="#cfe6c8"/>
+  <rect x="470" y="120" width="180" height="170" rx="12" fill="#cfe6c8" fill-opacity=".12"/><text x="492" y="175" fill="#cfe6c8" font-family="ui-monospace,monospace" font-size="22">{ }</text><text x="492" y="215" fill="#cfe6c8" font-family="ui-monospace,monospace" font-size="22">def()</text><text x="492" y="255" fill="#cfe6c8" font-family="ui-monospace,monospace" font-size="22">{ }</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
+  <defs>
+    <linearGradient id="g-accounting-taxation" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a2418"/>
+      <stop offset="100%" stop-color="#2a2418" stop-opacity=".85"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="420" fill="url(#g-accounting-taxation)"/>
+  <circle cx="640" cy="-20" r="210" fill="#e8d4a8" fill-opacity=".12"/>
+  <circle cx="40" cy="400" r="140" fill="#e8d4a8" fill-opacity=".08"/>
+  <text x="48" y="78" fill="#e8d4a8" font-family="Manrope,Arial,sans-serif" font-size="14" letter-spacing="3.5" font-weight="700">KK LEARNING</text>
+  <text x="48" y="150" fill="#f7faf5" font-family="Manrope,Arial,sans-serif" font-size="42" font-weight="800">ACCOUNTING + TAX</text>
+  <text x="48" y="195" fill="#e8d4a8" font-family="DM Sans,Arial,sans-serif" font-size="20">Junior accountant pathway</text>
+  <rect x="48" y="230" width="72" height="6" rx="3" fill="#e8d4a8"/>
+  <rect x="500" y="130" width="150" height="190" rx="10" fill="#e8d4a8" fill-opacity=".2" stroke="#e8d4a8" stroke-width="3"/><path d="M525 175 H725 M525 210 H700 M525 245 H710" stroke="#e8d4a8" stroke-width="4" opacity=".7"/>
+</svg>
