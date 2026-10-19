@@ -10,6 +10,8 @@
   let ytPlayer = null, watchTimer = null, watchCursor = 0, watchReady = false, watchMountId = 0;
   const watchedLessons = new Set();
   const quizOpenedForWatch = new Set();
+  let activeLessonQuizId = null;
+  let skulptLoading = null;
   let state = readLocal();
   function watchKey(courseId, lessonId) { return `${courseId}:${lessonId}`; }
   function isLessonWatched(courseId, lessonId) { return watchedLessons.has(watchKey(courseId, lessonId)); }
@@ -79,27 +81,35 @@
       hint.textContent = 'Finish watching the full video. Skipping ahead and speed changes are locked; rewinding is allowed.';
     }
   }
-  function renderQuizDialog() {
-    const c = currentCourse;
-    if (!c) return;
-    const item = record(c);
-    const passed = item?.quizPassed === true;
+  function lessonQuizPassed(c, lessonId) {
+    return record(c)?.lessonQuizzes?.[lessonId] === true;
+  }
+  function renderQuizDialog(quiz, title, passed, mode) {
     $('#quiz-dialog-content').innerHTML = `
-      <h2 id="quiz-dialog-title">${escape(c.title)}</h2>
-      <p class="quiz-dialog-lead">${passed ? 'You passed this knowledge check. Revisit it anytime.' : `Answer all ${c.quiz.length} questions. You need at least ${QUIZ_PASS_SCORE} correct to pass.`}</p>
-      <p class="notes-hint">${escape(quizPassLabel(c.quiz))}</p>
-      <form id="quiz-form" class="quiz">
-        ${c.quiz.map((q,i) => `<fieldset><legend>${i+1}. ${escape(q.question)}</legend>${q.options.map((o,j) => `<label><input type="radio" name="q${i}" value="${j}" required>${escape(o)}</label>`).join('')}</fieldset>`).join('')}
+      <h2 id="quiz-dialog-title">${escape(title)}</h2>
+      <p class="quiz-dialog-lead">${passed ? 'You passed this knowledge check. Revisit it anytime.' : `Answer all ${quiz.length} questions. You need at least ${QUIZ_PASS_SCORE} correct to pass before the next lesson unlocks.`}</p>
+      <p class="notes-hint">${escape(quizPassLabel(quiz))}</p>
+      <form id="quiz-form" class="quiz" data-quiz-mode="${mode}">
+        ${quiz.map((q,i) => `<fieldset><legend>${i+1}. ${escape(q.question)}</legend>${q.options.map((o,j) => `<label><input type="radio" name="q${i}" value="${j}" required>${escape(o)}</label>`).join('')}</fieldset>`).join('')}
         <button class="button primary" type="submit">Check my answers →</button>
         <div id="quiz-result" class="quiz-result" role="status" hidden></div>
       </form>`;
   }
-  function openQuizDialog() {
+  function openCourseQuizDialog() {
     if (!currentCourse || !record(currentCourse)) return;
-    renderQuizDialog();
+    activeLessonQuizId = null;
+    renderQuizDialog(currentCourse.quiz, currentCourse.title, record(currentCourse).quizPassed === true, 'course');
     const dialog = $('#quiz-dialog');
     if (!dialog.open) dialog.showModal();
   }
+  function openLessonQuizDialog(lesson) {
+    if (!currentCourse || !lesson?.quiz?.length) return;
+    activeLessonQuizId = lesson.id;
+    renderQuizDialog(lesson.quiz, `${currentCourse.title} · ${lesson.title}`, lessonQuizPassed(currentCourse, lesson.id), 'lesson');
+    const dialog = $('#quiz-dialog');
+    if (!dialog.open) dialog.showModal();
+  }
+  function openQuizDialog() { openCourseQuizDialog(); }
   function onVideoFinished(courseId, lessonId) {
     if (!currentCourse || currentCourse.id !== courseId) return;
     const key = watchKey(courseId, lessonId);
@@ -108,9 +118,62 @@
     updateCompleteButton();
     if (!firstFinish) return;
     notify('Video finished. Mark lesson complete is ready.');
-    if (!record(currentCourse)?.quizPassed && !quizOpenedForWatch.has(key)) {
-      quizOpenedForWatch.add(key);
-      openQuizDialog();
+  }
+  function loadSkulpt() {
+    if (window.Sk?.misceval) return Promise.resolve();
+    if (skulptLoading) return skulptLoading;
+    skulptLoading = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js';
+      script.onload = () => {
+        const std = document.createElement('script');
+        std.src = 'https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js';
+        std.onload = () => resolve();
+        std.onerror = () => reject(new Error('skulpt-stdlib'));
+        document.head.appendChild(std);
+      };
+      script.onerror = () => reject(new Error('skulpt'));
+      document.head.appendChild(script);
+    }).catch(error => { skulptLoading = null; throw error; });
+    return skulptLoading;
+  }
+  async function runPythonLab() {
+    const code = $('#python-code')?.value ?? '';
+    const output = $('#python-output');
+    if (!output) return;
+    output.textContent = 'Running…\n';
+    try {
+      await loadSkulpt();
+      output.textContent = '';
+      function builtinRead(file) {
+        if (window.Sk.builtinFiles?.files?.[file] !== undefined) return window.Sk.builtinFiles.files[file];
+        throw new Error(`File not found: '${file}'`);
+      }
+      window.Sk.configure({
+        output: text => { output.textContent += text; },
+        read: builtinRead,
+        inputfun: promptText => window.prompt(promptText || 'Input:', '') ?? '',
+        inputfunTakesPrompt: true
+      });
+      await window.Sk.misceval.asyncToPromise(() => window.Sk.importMainWithBody('<stdin>', false, code, true));
+      if (!output.textContent.trim()) output.textContent = '(Program finished with no printed output)';
+    } catch (error) {
+      output.textContent = String(error.toString?.() || error);
+    }
+  }
+  function runWebLab() {
+    const code = $('#web-code')?.value ?? '';
+    const frame = $('#web-preview');
+    if (!frame) return;
+    frame.srcdoc = code;
+  }
+  function mountLessonLabs(lesson) {
+    if (lesson.lab === 'python') {
+      $('#run-python')?.addEventListener('click', runPythonLab);
+    }
+    if (lesson.lab === 'web') {
+      $('#run-web')?.addEventListener('click', runWebLab);
+      runWebLab();
     }
   }
   function enforceStrictPlayback() {
@@ -208,7 +271,11 @@
       const done = Array.isArray(item.completed) ? [...new Set(item.completed.filter(id => course.lessons.some(l => l.id === id)))] : [];
       const notes = {};
       for (const lesson of course.lessons) if (typeof item.notes?.[lesson.id] === 'string') notes[lesson.id] = item.notes[lesson.id].slice(0, 10000);
-      clean.courses[course.id] = {enrolled:true, completed:done, notes, quizPassed:item.quizPassed === true};
+      const lessonQuizzes = {};
+      for (const lesson of course.lessons) {
+        if (item.lessonQuizzes?.[lesson.id] === true || item.lessonQuizzes?.[lesson.id] === 'passed') lessonQuizzes[lesson.id] = true;
+      }
+      clean.courses[course.id] = {enrolled:true, completed:done, notes, lessonQuizzes, quizPassed:item.quizPassed === true};
     }
     return clean;
   }
@@ -262,7 +329,11 @@
     if (index <= 0) return true;
     const item = record(c);
     if (!item) return false;
-    return c.lessons.slice(0, index).every(lesson => item.completed.includes(lesson.id));
+    return c.lessons.slice(0, index).every(lesson => {
+      if (!item.completed.includes(lesson.id)) return false;
+      if (lesson.quiz?.length && item.lessonQuizzes?.[lesson.id] !== true) return false;
+      return true;
+    });
   }
   function clampToUnlockedLesson() {
     if (!currentCourse || isLessonUnlocked(currentCourse, currentLesson)) return;
@@ -334,21 +405,48 @@
     const item = record(c);
     const isDone = item?.completed.includes(lesson.id);
     const watched = !lesson.video || isDone || isLessonWatched(c.id, lesson.id);
-    const canGoNext = isDone && currentLesson < c.lessons.length - 1 && isLessonUnlocked(c, currentLesson + 1);
-    let content;
-    if (lesson.body) {
-      content = `<article class="lesson-reading">
-        <p>${escape(lesson.body)}</p>
-        <div class="practice-task"><strong>Your practice task</strong><p>${escape(lesson.practice)}</p></div>
-        <a class="button" href="${escape(lesson.readingUrl)}" target="_blank" rel="noopener">${escape(lesson.readingLabel)} ↗</a>
+    const lessonQuizDone = !lesson.quiz?.length || lessonQuizPassed(c, lesson.id);
+    const canGoNext = isDone && lessonQuizDone && currentLesson < c.lessons.length - 1 && isLessonUnlocked(c, currentLesson + 1);
+    let content = '';
+    // Video always comes first whenever the lesson has one.
+    if (lesson.video) {
+      content += item
+        ? `<div class="video-frame strict-video"><div id="kk-strict-player"></div></div>`
+        : `<div class="video-frame strict-video"><iframe src="${escape(lesson.video)}" title="${escape(lesson.title)} video preview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p class="video-watch-hint" style="position:absolute;left:12px;bottom:12px;margin:0;padding:8px 10px;border-radius:8px;background:rgba(16,60,46,.92);color:#f4f7ef">Start the course to track watch progress.</p></div>`;
+    }
+    if (!item && !lesson.video) {
+      content += `<article class="course-preview">
+        <img src="${escape(c.image)}" alt="${escape(c.title)}" width="720" height="405">
+        <div><h4>Build your skills, one lesson at a time.</h4>
+        <p>Preview the curriculum, then start the course to unlock videos, labs, quizzes, and progress tracking.</p></div>
       </article>`;
-    } else if (item && lesson.video) {
-      content = `<div class="video-frame strict-video"><div id="kk-strict-player"></div></div>`;
-    } else {
+    }
+    if (lesson.body) {
+      content += `<article class="lesson-reading">
+        <p>${escape(lesson.body)}</p>
+        ${lesson.practice ? `<div class="practice-task"><strong>Your practice task</strong><p>${escape(lesson.practice)}</p></div>` : ''}
+        ${lesson.readingUrl ? `<a class="button" href="${escape(lesson.readingUrl)}" target="_blank" rel="noopener">${escape(lesson.readingLabel)} ↗</a>` : ''}
+      </article>`;
+    }
+    if (item && lesson.lab === 'python') {
+      content += `<section class="code-lab" aria-label="Python compiler">
+        <div class="code-lab-header"><h3>Python lab</h3><button type="button" class="button primary" id="run-python">Run code →</button></div>
+        <p class="notes-hint">Practice here in the browser. Django project steps still need Python installed on your computer.</p>
+        <textarea id="python-code" class="code-editor" spellcheck="false" aria-label="Python code">${escape(lesson.starterCode || '# Write Python here\nprint("Hello, KK Learning")\n')}</textarea>
+        <pre id="python-output" class="code-output" aria-live="polite">Output will appear here.</pre>
+      </section>`;
+    }
+    if (item && lesson.lab === 'web') {
+      content += `<section class="code-lab" aria-label="Web sandbox">
+        <div class="code-lab-header"><h3>Web lab (HTML / CSS / JS)</h3><button type="button" class="button primary" id="run-web">Refresh preview →</button></div>
+        <textarea id="web-code" class="code-editor" spellcheck="false" aria-label="HTML code">${escape(lesson.starterCode || '<h1>Hello</h1>')}</textarea>
+        <iframe id="web-preview" class="web-preview" title="Web preview" sandbox="allow-scripts"></iframe>
+      </section>`;
+    }
+    if (!content) {
       content = `<article class="course-preview">
         <img src="${escape(c.image)}" alt="${escape(c.title)}" width="720" height="405">
-        <div><h4>${item ? 'Study this lesson' : 'Build your skills, one lesson at a time.'}</h4>
-        <p>${item ? 'Open the full course guide to study this topic and its learning resources.' : 'Preview the curriculum, then start the course to unlock video lessons, save notes, and track your progress.'}</p></div>
+        <div><h4>Study this lesson</h4><p>Open the full course guide to study this topic and its learning resources.</p></div>
       </article>`;
     }
     $('#course-dialog-content').innerHTML = `
@@ -367,27 +465,30 @@
       </header>
       <div class="player-layout">
         <section class="lesson-panel" aria-labelledby="active-lesson-title">
-          <div class="lesson-heading"><span class="eyebrow">${!item ? 'LESSON PREVIEW' : c.format ? 'READ · PRACTICE · BUILD' : 'WATCH · LEARN · PRACTICE'}</span><span>Lesson ${currentLesson + 1} of ${c.lessons.length}</span></div>
+          <div class="lesson-heading"><span class="eyebrow">${!item ? 'LESSON PREVIEW' : lesson.video && lesson.lab ? 'WATCH · LAB · QUIZ' : lesson.video ? 'WATCH · LEARN · PRACTICE' : c.format ? 'READ · PRACTICE · BUILD' : 'WATCH · LEARN · PRACTICE'}</span><span>Lesson ${currentLesson + 1} of ${c.lessons.length}</span></div>
           <h3 class="lesson-title" id="active-lesson-title">${escape(lesson.title)}</h3>
           ${content}
-          ${item ? `<div class="lesson-actions"><button class="button primary" id="complete-lesson" ${!isDone && lesson.video && !watched ? 'hidden' : ''}>${isDone ? '✓ Completed · undo' : 'Mark lesson complete ✓'}</button>${currentLesson < c.lessons.length - 1 ? `<button class="button" id="next-lesson" ${canGoNext ? '' : 'disabled'}>Next lesson →</button>` : `<button class="button" id="go-quiz" ${count(c) === c.lessons.length ? '' : 'disabled'}>Open knowledge check</button>`}</div>
-            ${lesson.video && !isDone && !watched ? '<p class="video-watch-hint" id="video-watch-hint">Finish watching the full video. Skipping ahead and speed changes are locked; rewinding is allowed.</p>' : !isDone ? '<p class="video-watch-hint" id="video-watch-hint">Complete this lesson before the next one unlocks.</p>' : '<p class="video-watch-hint" id="video-watch-hint" hidden></p>'}
+          ${item ? `<div class="lesson-actions"><button class="button primary" id="complete-lesson" ${!isDone && lesson.video && !watched ? 'hidden' : ''}>${isDone ? '✓ Completed · undo' : 'Mark lesson complete ✓'}</button>${lesson.quiz?.length ? `<button class="button" id="lesson-quiz" ${isDone ? '' : 'disabled'}>${lessonQuizDone ? '✓ Lesson quiz passed' : 'Take lesson quiz'}</button>` : ''}${currentLesson < c.lessons.length - 1 ? `<button class="button" id="next-lesson" ${canGoNext ? '' : 'disabled'}>Next lesson →</button>` : `<button class="button" id="go-quiz" ${count(c) === c.lessons.length && [...c.lessons].every(l => !l.quiz?.length || lessonQuizPassed(c, l.id)) ? '' : 'disabled'}>Final knowledge check</button>`}</div>
+            ${lesson.video && !isDone && !watched ? '<p class="video-watch-hint" id="video-watch-hint">Finish watching the full video. Skipping ahead and speed changes are locked; rewinding is allowed.</p>' : isDone && lesson.quiz?.length && !lessonQuizDone ? '<p class="video-watch-hint" id="video-watch-hint">Pass this lesson quiz (3 of 5 correct) to unlock the next lesson.</p>' : !isDone ? '<p class="video-watch-hint" id="video-watch-hint">Complete this lesson before the next one unlocks.</p>' : '<p class="video-watch-hint" id="video-watch-hint" hidden></p>'}
             <div class="lesson-notes"><label class="notes-label" for="lesson-notes">Your lesson notes</label><textarea class="notes-input" id="lesson-notes" maxlength="10000" placeholder="Write an idea to remember or a question to revisit…">${escape(item.notes[lesson.id] || '')}</textarea><p class="notes-hint">Saved automatically. ${user && cloudReady ? 'Synced to your account.' : 'Stored in this browser.'}</p></div>` : '<p class="preview-hint">This is a preview. Start the course above when you’re ready to track your learning.</p>'}
         </section>
         <aside class="curriculum-panel" aria-label="Course curriculum">
           <div class="curriculum-header"><h3>Course curriculum</h3><span>${count(c)}/${c.lessons.length}</span></div>
           ${progress(c)}
-          <p class="curriculum-hint">${item ? 'Finish each lesson in order. Later lessons stay locked until the previous one is complete.' : 'Preview a lesson, then enroll to start in order.'}</p>
+          <p class="curriculum-hint">${item ? 'Finish video, practice, and the lesson quiz in order. The next lesson stays locked until you pass.' : 'Preview a lesson, then enroll to start in order.'}</p>
           <div class="lesson-list">${c.lessons.map((l,i) => {
             const done = item?.completed.includes(l.id);
+            const quizDone = !l.quiz?.length || lessonQuizPassed(c, l.id);
             const unlocked = !item || isLessonUnlocked(c, i);
             const selected = i === currentLesson;
-            return `<button class="lesson-row ${selected ? 'selected' : ''} ${done ? 'done' : ''} ${unlocked ? '' : 'locked'}" data-lesson="${i}" ${selected ? 'aria-current="step"' : ''} ${unlocked ? '' : 'aria-disabled="true"'}><span>${done ? '✓' : unlocked ? i+1 : '◌'}</span><span>${escape(l.title)}</span>${selected ? '<span class="lesson-current" aria-hidden="true">→</span>' : unlocked ? '' : '<span class="lesson-lock-label">Locked</span>'}</button>`;
+            return `<button class="lesson-row ${selected ? 'selected' : ''} ${done && quizDone ? 'done' : ''} ${unlocked ? '' : 'locked'}" data-lesson="${i}" ${selected ? 'aria-current="step"' : ''} ${unlocked ? '' : 'aria-disabled="true"'}><span>${done && quizDone ? '✓' : unlocked ? i+1 : '◌'}</span><span>${escape(l.title)}</span>${selected ? '<span class="lesson-current" aria-hidden="true">→</span>' : unlocked ? '' : '<span class="lesson-lock-label">Locked</span>'}</button>`;
           }).join('')}</div>
-          <p class="notes-hint">${c.format ? 'Guided reading, practical exercises, and official documentation.' : 'Videos from external creators in the existing course curriculum.'}</p>
+          <p class="notes-hint">${c.tools?.includes('python-lab') ? 'Includes videos, in-browser labs, and a quiz after each lesson.' : c.format ? 'Guided reading, practical exercises, and official documentation.' : 'Videos from external creators in the existing course curriculum.'}</p>
         </aside>
       </div>`;
     if (item && lesson.video) mountStrictPlayer(lesson.video, c.id, lesson.id);
+    else if (!item && lesson.video) {/* preview iframe already rendered */}
+    if (item) mountLessonLabs(lesson);
   }
   document.addEventListener('click', async event => {
     const target = event.target.closest('button');
@@ -421,9 +522,9 @@
       renderCourse();
     }
     if (target.id === 'enroll') {
-      state.courses[currentCourse.id] = {enrolled:true, completed:[], notes:{}, quizPassed:false};
+      state.courses[currentCourse.id] = {enrolled:true, completed:[], notes:{}, lessonQuizzes:{}, quizPassed:false};
       currentLesson = 0;
-      save(); render(); renderCourse(); notify('You’re enrolled. Start with lesson 1 — later lessons unlock after you complete each one.');
+      save(); render(); renderCourse(); notify('You’re enrolled. Start with lesson 1 — later lessons unlock after each quiz.');
     }
     if (target.id === 'complete-lesson') {
       const item = record(currentCourse);
@@ -431,29 +532,53 @@
       const id = lesson.id;
       if (item.completed.includes(id)) {
         item.completed = item.completed.filter(x => x !== id);
-        // Drop progress after this lesson so order stays enforced.
         const cut = currentLesson;
         item.completed = item.completed.filter(doneId => {
           const idx = currentCourse.lessons.findIndex(l => l.id === doneId);
           return idx >= 0 && idx < cut;
         });
+        item.lessonQuizzes = item.lessonQuizzes || {};
+        for (const lessonItem of currentCourse.lessons) {
+          const idx = currentCourse.lessons.findIndex(l => l.id === lessonItem.id);
+          if (idx >= cut) delete item.lessonQuizzes[lessonItem.id];
+        }
       } else {
         if (lesson.video && !isLessonWatched(currentCourse.id, id)) {
           notify('Finish watching the full video at normal speed before marking this lesson complete.');
           return;
         }
         item.completed.push(id);
+        save(); render(); renderCourse();
+        if (lesson.quiz?.length && !lessonQuizPassed(currentCourse, id)) {
+          notify('Lesson marked complete. Pass the lesson quiz to unlock the next lesson.');
+          openLessonQuizDialog(lesson);
+        } else if (finished(currentCourse)) notify('Course completed. A milestone worth celebrating!');
+        return;
       }
       save(); render(); renderCourse();
       if (finished(currentCourse)) notify('Course completed. A milestone worth celebrating!');
     }
+    if (target.id === 'lesson-quiz') {
+      const lesson = currentCourse.lessons[currentLesson];
+      if (!record(currentCourse)?.completed.includes(lesson.id)) {
+        notify('Mark the lesson complete before taking the quiz.');
+        return;
+      }
+      openLessonQuizDialog(lesson);
+    }
     if (target.id === 'next-lesson') {
-      if (!record(currentCourse)?.completed.includes(currentCourse.lessons[currentLesson].id)) {
+      const lesson = currentCourse.lessons[currentLesson];
+      if (!record(currentCourse)?.completed.includes(lesson.id)) {
         notify('Mark this lesson complete before moving to the next one.');
         return;
       }
+      if (lesson.quiz?.length && !lessonQuizPassed(currentCourse, lesson.id)) {
+        notify('Pass this lesson quiz first. You need at least 3 correct answers.');
+        openLessonQuizDialog(lesson);
+        return;
+      }
       if (!isLessonUnlocked(currentCourse, currentLesson + 1)) {
-        notify('Complete the previous lesson first. Lessons unlock one by one.');
+        notify('Complete the previous lesson and quiz first. Lessons unlock one by one.');
         return;
       }
       currentLesson++;
@@ -461,10 +586,14 @@
     }
     if (target.id === 'go-quiz') {
       if (count(currentCourse) !== currentCourse.lessons.length) {
-        notify('Complete every lesson in order before the knowledge check.');
+        notify('Complete every lesson in order before the final knowledge check.');
         return;
       }
-      openQuizDialog();
+      if (!currentCourse.lessons.every(l => !l.quiz?.length || lessonQuizPassed(currentCourse, l.id))) {
+        notify('Pass every lesson quiz before the final knowledge check.');
+        return;
+      }
+      openCourseQuizDialog();
     }
     if (target.id === 'signin' || target.id === 'auth-retry') {
       if ($('#auth-dialog').open) $('#auth-dialog').close();
@@ -488,12 +617,23 @@
     if (event.target.id !== 'quiz-form') return;
     event.preventDefault();
     const data = new FormData(event.target), c = currentCourse;
-    const score = c.quiz.reduce((n,q,i) => n + (Number(data.get(`q${i}`)) === q.answer ? 1 : 0), 0);
+    const mode = event.target.dataset.quizMode || 'course';
+    const lesson = mode === 'lesson' ? c.lessons.find(l => l.id === activeLessonQuizId) : null;
+    const quiz = mode === 'lesson' ? lesson?.quiz : c.quiz;
+    if (!quiz?.length) return;
+    const score = quiz.reduce((n,q,i) => n + (Number(data.get(`q${i}`)) === q.answer ? 1 : 0), 0);
     const passed = score >= QUIZ_PASS_SCORE;
-    if (passed) { record(c).quizPassed = true; save(); render(); if ($('#course-dialog').open) renderCourse(); }
+    if (passed) {
+      if (mode === 'lesson' && lesson) {
+        record(c).lessonQuizzes = record(c).lessonQuizzes || {};
+        record(c).lessonQuizzes[lesson.id] = true;
+      } else record(c).quizPassed = true;
+      save(); render();
+      if ($('#course-dialog').open) renderCourse();
+    }
     $('#quiz-result').hidden = false;
-    $('#quiz-result').innerHTML = `<strong>${score}/${c.quiz.length} correct. ${passed ? `Knowledge check passed (${QUIZ_PASS_SCORE}+ required)!` : `You need at least ${QUIZ_PASS_SCORE} correct to pass. Keep practicing, then try again.`}</strong><br>${c.quiz.map((q,i) => `${Number(data.get(`q${i}`)) === q.answer ? '✓' : '○'} ${escape(q.explanation)}`).join('<br>')}${passed && !finished(c) ? '<br>Complete all lessons to reach the course milestone.' : finished(c) ? '<br>✦ All lessons and the knowledge check completed. Well done!' : ''}`;
-    if (passed) notify('Knowledge check passed!');
+    $('#quiz-result').innerHTML = `<strong>${score}/${quiz.length} correct. ${passed ? `Passed (${QUIZ_PASS_SCORE}+ required)!` : `You need at least ${QUIZ_PASS_SCORE} correct to pass. Try again.`}</strong><br>${quiz.map((q,i) => `${Number(data.get(`q${i}`)) === q.answer ? '✓' : '○'} ${escape(q.explanation)}`).join('<br>')}${passed && mode === 'lesson' ? '<br>Next lesson is unlocked when you continue.' : ''}${passed && mode === 'course' && finished(c) ? '<br>✦ All lessons and the final knowledge check completed. Well done!' : ''}`;
+    if (passed) notify(mode === 'lesson' ? 'Lesson quiz passed. Next lesson unlocked.' : 'Final knowledge check passed!');
   });
   const googleAuth = window.KKGoogleAuth.createClient({
     config: window.KK_FIREBASE_CONFIG,

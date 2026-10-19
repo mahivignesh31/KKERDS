@@ -277,7 +277,14 @@ main { padding-top: 32px; }
 .course-dialog .lesson-row.locked:hover { background: transparent; }
 .lesson-lock-label { font-size: 10px; color: var(--muted); white-space: nowrap; }
 .lesson-current { color: var(--green); padding-top: 2px; }
-#next-lesson:disabled, #go-quiz:disabled { opacity: .5; cursor: not-allowed; }
+#next-lesson:disabled, #go-quiz:disabled, #lesson-quiz:disabled { opacity: .5; cursor: not-allowed; }
+.code-lab { margin: 0 0 20px; border: 1px solid var(--border); border-radius: 10px; background: #101611; color: #e8efe6; overflow: hidden; }
+.code-lab-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 16px; background: #163528; }
+.code-lab-header h3 { margin: 0; font-size: 14px; color: #f3f7ef; }
+.code-lab .notes-hint { margin: 0; padding: 0 16px 10px; color: #b7c4b5; }
+.code-editor { display: block; width: 100%; min-height: 220px; border: 0; border-top: 1px solid #2a3d32; border-bottom: 1px solid #2a3d32; resize: vertical; padding: 14px 16px; background: #0d1410; color: #d7e6d4; font: 13px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.code-output, .web-preview { display: block; width: 100%; min-height: 140px; margin: 0; padding: 14px 16px; background: #0a100d; color: #cfe0cb; font: 12px/1.7 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: pre-wrap; border: 0; }
+.web-preview { min-height: 260px; background: #fff; }
 .curriculum-panel .notes-hint { border-top: 1px solid var(--border); padding-top: 12px; line-height: 1.8; font-size: 10px; }
 .quiz-panel { margin-top: 26px; border: 1px solid var(--border); border-radius: 9px; overflow: hidden; }
 .quiz-panel > summary { cursor: pointer; padding: 18px 20px; font-weight: 700; color: var(--green); font-size: 14px; background: #f7f9f2; line-height: 1.8; }
