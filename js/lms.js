@@ -9,6 +9,7 @@
   let toastTimer, saveTimer, syncQueue = Promise.resolve(), authGeneration = 0;
   let ytPlayer = null, watchTimer = null, watchCursor = 0, watchReady = false, watchMountId = 0;
   const watchedLessons = new Set();
+  const quizOpenedForWatch = new Set();
   let state = readLocal();
   function watchKey(courseId, lessonId) { return `${courseId}:${lessonId}`; }
   function isLessonWatched(courseId, lessonId) { return watchedLessons.has(watchKey(courseId, lessonId)); }
@@ -57,19 +58,59 @@
     const lesson = currentCourse.lessons[currentLesson];
     const done = record(currentCourse)?.completed.includes(lesson.id);
     if (!lesson.video || done) {
+      button.hidden = false;
       button.disabled = false;
+      button.classList.add('primary');
+      button.classList.remove('subtle');
+      button.textContent = done ? '✓ Completed · undo' : 'Mark lesson complete ✓';
       if (hint) hint.hidden = true;
       return;
     }
     const watched = isLessonWatched(currentCourse.id, lesson.id);
+    button.hidden = !watched;
     button.disabled = !watched;
-    button.classList.toggle('primary', watched);
-    button.classList.toggle('subtle', !watched);
+    if (watched) {
+      button.classList.add('primary');
+      button.classList.remove('subtle');
+      button.textContent = 'Mark lesson complete ✓';
+    }
     if (hint) {
-      hint.hidden = false;
-      hint.textContent = watched
-        ? 'Full video watched at normal speed. You can mark this lesson complete.'
-        : 'Watch the full video at normal speed. Skipping ahead and speed changes are locked; rewinding is allowed.';
+      hint.hidden = watched;
+      hint.textContent = 'Finish watching the full video. Skipping ahead and speed changes are locked; rewinding is allowed.';
+    }
+  }
+  function renderQuizDialog() {
+    const c = currentCourse;
+    if (!c) return;
+    const item = record(c);
+    const passed = item?.quizPassed === true;
+    $('#quiz-dialog-content').innerHTML = `
+      <h2 id="quiz-dialog-title">${escape(c.title)}</h2>
+      <p class="quiz-dialog-lead">${passed ? 'You passed this knowledge check. Revisit it anytime.' : `Answer all ${c.quiz.length} questions. You need at least ${QUIZ_PASS_SCORE} correct to pass.`}</p>
+      <p class="notes-hint">${escape(quizPassLabel(c.quiz))}</p>
+      <form id="quiz-form" class="quiz">
+        ${c.quiz.map((q,i) => `<fieldset><legend>${i+1}. ${escape(q.question)}</legend>${q.options.map((o,j) => `<label><input type="radio" name="q${i}" value="${j}" required>${escape(o)}</label>`).join('')}</fieldset>`).join('')}
+        <button class="button primary" type="submit">Check my answers →</button>
+        <div id="quiz-result" class="quiz-result" role="status" hidden></div>
+      </form>`;
+  }
+  function openQuizDialog() {
+    if (!currentCourse || !record(currentCourse)) return;
+    renderQuizDialog();
+    const dialog = $('#quiz-dialog');
+    if (!dialog.open) dialog.showModal();
+  }
+  function onVideoFinished(courseId, lessonId) {
+    if (!currentCourse || currentCourse.id !== courseId) return;
+    const key = watchKey(courseId, lessonId);
+    const firstFinish = !isLessonWatched(courseId, lessonId);
+    markLessonWatched(courseId, lessonId);
+    updateCompleteButton();
+    if (!firstFinish) return;
+    notify('Video finished. Mark lesson complete is ready.');
+    if (!record(currentCourse)?.quizPassed && !quizOpenedForWatch.has(key)) {
+      quizOpenedForWatch.add(key);
+      openQuizDialog();
     }
   }
   function enforceStrictPlayback() {
@@ -92,8 +133,7 @@
       }
       const duration = ytPlayer.getDuration?.() || 0;
       if (duration > 0 && watchCursor >= duration - 1.5) {
-        markLessonWatched(currentCourse.id, currentCourse.lessons[currentLesson].id);
-        updateCompleteButton();
+        onVideoFinished(currentCourse.id, currentCourse.lessons[currentLesson].id);
       }
     } catch {}
   }
@@ -140,11 +180,7 @@
           },
           onStateChange(event) {
             if (mountId !== watchMountId) return;
-            if (event.data === YT.PlayerState.ENDED) {
-              markLessonWatched(courseId, lessonId);
-              updateCompleteButton();
-              notify('Video finished. You can mark this lesson complete.');
-            }
+            if (event.data === YT.PlayerState.ENDED) onVideoFinished(courseId, lessonId);
           },
           onPlaybackRateChange() {
             if (mountId !== watchMountId) return;
@@ -291,7 +327,7 @@
         <a class="button" href="${escape(lesson.readingUrl)}" target="_blank" rel="noopener">${escape(lesson.readingLabel)} ↗</a>
       </article>`;
     } else if (item && lesson.video) {
-      content = `<div class="video-frame strict-video"><div id="kk-strict-player"></div><p class="video-lock-badge" aria-live="polite">Strict watch · no skip ahead · 1× speed only</p></div>`;
+      content = `<div class="video-frame strict-video"><div id="kk-strict-player"></div></div>`;
     } else {
       content = `<article class="course-preview">
         <img src="${escape(c.image)}" alt="${escape(c.title)}" width="720" height="405">
@@ -318,8 +354,8 @@
           <div class="lesson-heading"><span class="eyebrow">${!item ? 'LESSON PREVIEW' : c.format ? 'READ · PRACTICE · BUILD' : 'WATCH · LEARN · PRACTICE'}</span><span>Lesson ${currentLesson + 1} of ${c.lessons.length}</span></div>
           <h3 class="lesson-title" id="active-lesson-title">${escape(lesson.title)}</h3>
           ${content}
-          ${item ? `<div class="lesson-actions"><button class="button ${isDone || watched ? 'primary' : 'subtle'}" id="complete-lesson" ${!isDone && lesson.video && !watched ? 'disabled' : ''}>${isDone ? '✓ Completed · undo' : watched || !lesson.video ? 'Mark lesson complete ✓' : 'Watch full video to complete'}</button>${currentLesson < c.lessons.length - 1 ? '<button class="button" id="next-lesson">Next lesson →</button>' : '<button class="button" id="go-quiz">Knowledge check ↓</button>'}</div>
-            ${lesson.video ? `<p class="video-watch-hint" id="video-watch-hint" ${isDone ? 'hidden' : ''}>${watched && !isDone ? 'Full video watched at normal speed. You can mark this lesson complete.' : 'Watch the full video at normal speed. Skipping ahead and speed changes are locked; rewinding is allowed.'}</p>` : ''}
+          ${item ? `<div class="lesson-actions"><button class="button primary" id="complete-lesson" ${!isDone && lesson.video && !watched ? 'hidden' : ''}>${isDone ? '✓ Completed · undo' : 'Mark lesson complete ✓'}</button>${currentLesson < c.lessons.length - 1 ? '<button class="button" id="next-lesson">Next lesson →</button>' : '<button class="button" id="go-quiz">Open knowledge check</button>'}</div>
+            ${lesson.video && !isDone && !watched ? '<p class="video-watch-hint" id="video-watch-hint">Finish watching the full video. Skipping ahead and speed changes are locked; rewinding is allowed.</p>' : '<p class="video-watch-hint" id="video-watch-hint" hidden></p>'}
             <div class="lesson-notes"><label class="notes-label" for="lesson-notes">Your lesson notes</label><textarea class="notes-input" id="lesson-notes" maxlength="10000" placeholder="Write an idea to remember or a question to revisit…">${escape(item.notes[lesson.id] || '')}</textarea><p class="notes-hint">Saved automatically. ${user && cloudReady ? 'Synced to your account.' : 'Stored in this browser.'}</p></div>` : '<p class="preview-hint">This is a preview. Start the course above when you’re ready to track your learning.</p>'}
         </section>
         <aside class="curriculum-panel" aria-label="Course curriculum">
@@ -329,8 +365,7 @@
           <div class="lesson-list">${c.lessons.map((l,i) => `<button class="lesson-row ${i === currentLesson ? 'selected' : ''} ${item?.completed.includes(l.id) ? 'done' : ''}" data-lesson="${i}" ${i === currentLesson ? 'aria-current="step"' : ''}><span>${item?.completed.includes(l.id) ? '✓' : i+1}</span><span>${escape(l.title)}</span>${i === currentLesson ? '<span class="lesson-current" aria-hidden="true">→</span>' : ''}</button>`).join('')}</div>
           <p class="notes-hint">${c.format ? 'Guided reading, practical exercises, and official documentation.' : 'Videos from external creators in the existing course curriculum.'}</p>
         </aside>
-      </div>
-      ${item ? `<details class="quiz-panel"><summary>Knowledge check <span>${item.quizPassed ? '✓ Passed' : escape(quizPassLabel(c.quiz))}</span></summary><section class="quiz" id="knowledge-check"><h3>Put your knowledge into practice.</h3><p>${item.quizPassed ? 'You passed this knowledge check. Revisit it anytime.' : `Answer all ${c.quiz.length} questions. You need at least ${QUIZ_PASS_SCORE} correct to pass. You can try again as often as you need.`}</p><form id="quiz-form">${c.quiz.map((q,i) => `<fieldset><legend>${i+1}. ${escape(q.question)}</legend>${q.options.map((o,j) => `<label><input type="radio" name="q${i}" value="${j}" required>${escape(o)}</label>`).join('')}</fieldset>`).join('')}<button class="button primary" type="submit">Check my answers →</button><div id="quiz-result" class="quiz-result" role="status" hidden></div></form></section></details>` : ''}`;
+      </div>`;
     if (item && lesson.video) mountStrictPlayer(lesson.video, c.id, lesson.id);
   }
   document.addEventListener('click', async event => {
@@ -347,7 +382,10 @@
     }
     if (target.dataset.course) openCourse(target.dataset.course);
     if (target.dataset.close) {
-      if (target.dataset.close === 'course-dialog') destroyStrictPlayer();
+      if (target.dataset.close === 'course-dialog') {
+        destroyStrictPlayer();
+        if ($('#quiz-dialog').open) $('#quiz-dialog').close();
+      }
       $(`#${target.dataset.close}`).close();
     }
     if (target.id === 'hero-action') setView(enrolled().length ? 'learning' : 'catalog');
@@ -373,10 +411,7 @@
       if (finished(currentCourse)) notify('Course completed. A milestone worth celebrating!');
     }
     if (target.id === 'next-lesson') { currentLesson++; renderCourse(); }
-    if (target.id === 'go-quiz') {
-      $('.quiz-panel').open = true;
-      $('#knowledge-check').scrollIntoView({behavior:'smooth'});
-    }
+    if (target.id === 'go-quiz') openQuizDialog();
     if (target.id === 'signin' || target.id === 'auth-retry') {
       if ($('#auth-dialog').open) $('#auth-dialog').close();
       await signIn();
@@ -401,9 +436,10 @@
     const data = new FormData(event.target), c = currentCourse;
     const score = c.quiz.reduce((n,q,i) => n + (Number(data.get(`q${i}`)) === q.answer ? 1 : 0), 0);
     const passed = score >= QUIZ_PASS_SCORE;
-    if (passed) { record(c).quizPassed = true; save(); render(); }
+    if (passed) { record(c).quizPassed = true; save(); render(); if ($('#course-dialog').open) renderCourse(); }
     $('#quiz-result').hidden = false;
     $('#quiz-result').innerHTML = `<strong>${score}/${c.quiz.length} correct. ${passed ? `Knowledge check passed (${QUIZ_PASS_SCORE}+ required)!` : `You need at least ${QUIZ_PASS_SCORE} correct to pass. Keep practicing, then try again.`}</strong><br>${c.quiz.map((q,i) => `${Number(data.get(`q${i}`)) === q.answer ? '✓' : '○'} ${escape(q.explanation)}`).join('<br>')}${passed && !finished(c) ? '<br>Complete all lessons to reach the course milestone.' : finished(c) ? '<br>✦ All lessons and the knowledge check completed. Well done!' : ''}`;
+    if (passed) notify('Knowledge check passed!');
   });
   const googleAuth = window.KKGoogleAuth.createClient({
     config: window.KK_FIREBASE_CONFIG,
@@ -506,7 +542,10 @@
         }
       }
   }
-  $('#course-dialog').addEventListener('close', destroyStrictPlayer);
+  $('#course-dialog').addEventListener('close', () => {
+    destroyStrictPlayer();
+    if ($('#quiz-dialog').open) $('#quiz-dialog').close();
+  });
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') sync(); });
   window.addEventListener('online', () => { if (cloudReady) sync(); });
   $('#today').textContent = new Intl.DateTimeFormat('en-IN',{weekday:'short',day:'numeric',month:'short',year:'numeric'}).format(new Date());
