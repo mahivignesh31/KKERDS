@@ -13,7 +13,7 @@
   <circle cx="620" cy="-30" r="220" fill="#ddeff8" fill-opacity=".10"/>
   <circle cx="-20" cy="460" r="180" fill="#ddeff8" fill-opacity=".08"/>
   <text x="48" y="58" fill="#ddeff8" font-family="Manrope,Arial,sans-serif" font-size="13" letter-spacing="3.2" font-weight="700">KK LEARNING</text>
-  <text x="48" y="92" fill="#ffffffcc" font-family="DM Sans,Arial,sans-serif" font-size="14" letter-spacing="2.4">DATA & BI</text>
+  <text x="48" y="92" fill="#ffffffcc" font-family="DM Sans,Arial,sans-serif" font-size="14" letter-spacing="2.4">DATA &amp; BI</text>
   <text x="48" y="148" fill="#f7fbf7" font-family="Manrope,Arial,sans-serif" font-size="40" font-weight="800">Analytics</text><text x="48" y="196" fill="#f7fbf7" font-family="Manrope,Arial,sans-serif" font-size="40" font-weight="800">Fundamentals</text>
   <rect x="48" y="252" width="64" height="5" rx="3" fill="#ddeff8"/>
   <g transform="translate(370 55)" filter="url(#soft-data-analytics-fundamentals)">

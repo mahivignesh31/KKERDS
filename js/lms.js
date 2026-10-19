@@ -389,7 +389,7 @@
         hasLessonQuiz || c.quiz?.length ? '<span class="feature-chip">Quizzes</span>' : '',
         '<span class="feature-chip">Ordered unlock</span>'
       ].filter(Boolean).join('');
-      return `<article class="course-card"><div class="course-image"><img src="${c.image}" alt="${escape(c.title)}" loading="lazy"><span class="course-tag">${escape(c.tag)}</span></div><div class="course-card-body"><span class="course-category">${escape(c.categoryLabel)}</span><h3>${escape(c.title)}</h3><p>${escape(c.description)}</p>${c.careers ? `<p class="course-careers"><strong>Roles:</strong> ${escape(c.careers)}</p>` : ''}<div class="feature-row">${chips}</div><div class="course-meta"><span>▤ ${c.lessons.length} lessons</span><span>◷ ${escape(c.duration || c.format || 'Self-paced')}</span></div>${record(c) ? progress(c) : ''}<button class="button wide" data-course="${c.id}">${finished(c) ? 'Review course' : record(c) ? `Continue · ${percent(c)}%` : 'Open course'}<span aria-hidden="true">↗</span></button></div></article>`;
+      return `<article class="course-card"><div class="course-image"><img src="${c.image}?v=20261019h" alt="${escape(c.title)}" loading="lazy"><span class="course-tag">${escape(c.tag)}</span></div><div class="course-card-body"><span class="course-category">${escape(c.categoryLabel)}</span><h3>${escape(c.title)}</h3><p>${escape(c.description)}</p>${c.careers ? `<p class="course-careers"><strong>Roles:</strong> ${escape(c.careers)}</p>` : ''}<div class="feature-row">${chips}</div><div class="course-meta"><span>▤ ${c.lessons.length} lessons</span><span>◷ ${escape(c.duration || c.format || 'Self-paced')}</span></div>${record(c) ? progress(c) : ''}<button class="button wide" data-course="${c.id}">${finished(c) ? 'Review course' : record(c) ? `Continue · ${percent(c)}%` : 'Open course'}<span aria-hidden="true">↗</span></button></div></article>`;
     }).join('');
     $('#no-results').hidden = visible.length !== 0;
     $('#no-results').textContent = view === 'learning' && !active.length ? 'You have not enrolled in a course yet. Open the catalog to begin.' : 'No courses matched your search. Try another keyword or category.';
@@ -421,6 +421,8 @@
     $('#catalog-section').hidden = !['overview','catalog','learning'].includes(next);
     $('#resources-section').hidden = next !== 'resources';
     $('#achievements-section').hidden = next !== 'achievements';
+    const catalogHeading = $('#catalog-section .section-heading');
+    if (catalogHeading) catalogHeading.hidden = next === 'catalog';
     $('#courses-heading').textContent = next === 'learning' ? 'Your enrolled courses' : 'Professional learning paths';
     document.querySelectorAll('[data-view]').forEach(b => { b.classList.toggle('active', b.dataset.view === next); if (b.dataset.view === next) b.setAttribute('aria-current','page'); else b.removeAttribute('aria-current'); });
     render();

@@ -13,7 +13,7 @@
   <circle cx="620" cy="-30" r="220" fill="#e7f5ea" fill-opacity=".10"/>
   <circle cx="-20" cy="460" r="180" fill="#e7f5ea" fill-opacity=".08"/>
   <text x="48" y="58" fill="#e7f5ea" font-family="Manrope,Arial,sans-serif" font-size="13" letter-spacing="3.2" font-weight="700">KK LEARNING</text>
-  <text x="48" y="92" fill="#ffffffcc" font-family="DM Sans,Arial,sans-serif" font-size="14" letter-spacing="2.4">DATA & BI</text>
+  <text x="48" y="92" fill="#ffffffcc" font-family="DM Sans,Arial,sans-serif" font-size="14" letter-spacing="2.4">DATA &amp; BI</text>
   <text x="48" y="148" fill="#f7fbf7" font-family="Manrope,Arial,sans-serif" font-size="40" font-weight="800">Power BI</text>
   <rect x="48" y="204" width="64" height="5" rx="3" fill="#e7f5ea"/>
   <g transform="translate(370 55)" filter="url(#soft-power-bi)">
