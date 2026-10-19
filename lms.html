@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="KK Learning — professional skill courses from KK Educational and Rural Development Society. Watch lessons, practise in labs, track progress, and pass knowledge checks.">
-  <meta name="theme-color" content="#0d3328">
+  <meta name="theme-color" content="#1f6b52">
   <title>KK Learning — Professional skill courses</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/lms.css?v=20261019j">
-  <script src="js/firebase-config.js?v=20261019j" defer></script>
-  <script src="js/lms-data.js?v=20261019j" defer></script>
-  <script src="js/lms-auth.js?v=20261019j" defer></script>
-  <script src="js/lms.js?v=20261019j" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/lms.css?v=20261019k">
+  <script src="js/firebase-config.js?v=20261019k" defer></script>
+  <script src="js/lms-data.js?v=20261019k" defer></script>
+  <script src="js/lms-auth.js?v=20261019k" defer></script>
+  <script src="js/lms.js?v=20261019k" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -53,7 +53,7 @@
       <span class="topbar-title">Learning Management System</span>
     </div>
     <div class="header-actions">
-      <span class="local-label" id="save-status">Saved on this device</span>
+      <span class="local-label" id="save-status" hidden>Saved on this device</span>
       <button class="button google-button" id="signin"><span class="google-g" aria-hidden="true">G</span> <span id="signin-label">Sign in with Google</span></button>
       <button class="button subtle" id="signout" hidden>Sign out</button>
     </div>
@@ -70,28 +70,23 @@
     </section>
 
     <div id="overview-content">
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="hero-brand">KK Learning</p>
-          <h2>Skills that advance<br>your career.</h2>
-          <p>Watch each lesson, practise in labs, and unlock the next module when you pass the knowledge check.</p>
-          <div class="hero-actions">
-            <button class="button cream" id="hero-action">Browse courses <span aria-hidden="true">↗</span></button>
-            <span class="hero-note">Video · Lab · Quiz · Ordered progress</span>
-          </div>
+      <section class="welcome-bar">
+        <div class="welcome-copy">
+          <p class="welcome-kicker">KK Learning</p>
+          <h2>Keep building skills that matter.</h2>
+          <p>Video lessons, practice labs, and knowledge checks — complete each module in order.</p>
         </div>
-        <div class="hero-panel" aria-hidden="true">
-          <div class="hero-metric"><strong>26</strong><span>Learning paths</span></div>
-          <div class="hero-metric"><strong>Pro</strong><span>Skill standard</span></div>
-          <div class="hero-metric"><strong>1×</strong><span>Lesson unlock flow</span></div>
+        <div class="welcome-actions">
+          <button class="button primary" id="hero-action">Continue learning <span aria-hidden="true">→</span></button>
+          <button class="button subtle" data-goto="catalog">View catalog</button>
         </div>
       </section>
 
       <section class="stats" aria-label="Your learning statistics">
-        <div class="stat"><span class="stat-icon mint" aria-hidden="true">▤</span><div><strong id="stat-enrolled">0</strong><span>Courses enrolled</span></div></div>
-        <div class="stat"><span class="stat-icon sand" aria-hidden="true">✓</span><div><strong id="stat-lessons">0</strong><span>Lessons completed</span></div></div>
-        <div class="stat"><span class="stat-icon slate" aria-hidden="true">◴</span><div><strong id="stat-progress">0%</strong><span>Overall progress</span></div></div>
-        <div class="stat"><span class="stat-icon brass" aria-hidden="true">♧</span><div><strong id="stat-achievements">0</strong><span>Courses completed</span></div></div>
+        <div class="stat"><span class="stat-icon mint" aria-hidden="true">1</span><div><strong id="stat-enrolled">0</strong><span>Enrolled</span></div></div>
+        <div class="stat"><span class="stat-icon sand" aria-hidden="true">2</span><div><strong id="stat-lessons">0</strong><span>Lessons done</span></div></div>
+        <div class="stat"><span class="stat-icon slate" aria-hidden="true">3</span><div><strong id="stat-progress">0%</strong><span>Progress</span></div></div>
+        <div class="stat"><span class="stat-icon brass" aria-hidden="true">4</span><div><strong id="stat-achievements">0</strong><span>Completed</span></div></div>
       </section>
 
       <div class="overview-grid">
@@ -101,15 +96,15 @@
               <p class="eyebrow">CONTINUE</p>
               <h2>Pick up where you left off</h2>
             </div>
-            <button class="text-button" data-goto="learning">My learning ↗</button>
+            <button class="text-button" data-goto="learning">My learning →</button>
           </div>
           <div id="continue-cards"></div>
         </section>
         <aside class="weekly-card">
-          <span class="eyebrow">FOCUS</span>
-          <h3>One lesson a day compounds.</h3>
+          <span class="eyebrow">TODAY</span>
+          <h3>One focused lesson.</h3>
           <p id="milestone-text">Complete your first lesson to begin a measurable learning streak.</p>
-          <div class="milestone-bottom"><span id="milestone-count">0 lessons completed</span><span aria-hidden="true">↗</span></div>
+          <div class="milestone-bottom"><span id="milestone-count">0 lessons completed</span><span aria-hidden="true">→</span></div>
         </aside>
       </div>
     </div>

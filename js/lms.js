@@ -313,7 +313,7 @@
       $('#save-status').textContent = 'Saving progress…';
       clearTimeout(saveTimer);
       saveTimer = setTimeout(sync, 650);
-    } else if (locallySaved) $('#save-status').textContent = user ? 'Saved locally · sync unavailable' : 'Saved on this device';
+    } else if (locallySaved) $('#save-status').textContent = user ? 'Saved on this device' : 'Saved on this device';
   }
   function sync() {
     clearTimeout(saveTimer);
@@ -389,7 +389,7 @@
         hasLessonQuiz || c.quiz?.length ? '<span class="feature-chip">Quizzes</span>' : '',
         '<span class="feature-chip">Ordered unlock</span>'
       ].filter(Boolean).join('');
-      return `<article class="course-card"><div class="course-image"><img src="${c.image}?v=20261019j" alt="${escape(c.title)}" loading="lazy"><span class="course-tag">${escape(c.tag)}</span></div><div class="course-card-body"><span class="course-category">${escape(c.categoryLabel)}</span><h3>${escape(c.title)}</h3><p>${escape(c.description)}</p>${c.careers ? `<p class="course-careers"><strong>Roles:</strong> ${escape(c.careers)}</p>` : ''}<div class="feature-row">${chips}</div><div class="course-meta"><span>▤ ${c.lessons.length} lessons</span><span>◷ ${escape(c.duration || c.format || 'Self-paced')}</span></div>${record(c) ? progress(c) : ''}<button class="button wide" data-course="${c.id}">${finished(c) ? 'Review course' : record(c) ? `Continue · ${percent(c)}%` : 'Open course'}<span aria-hidden="true">↗</span></button></div></article>`;
+      return `<article class="course-card"><div class="course-image"><img src="${c.image}?v=20261019k" alt="${escape(c.title)}" loading="lazy"><span class="course-tag">${escape(c.tag)}</span></div><div class="course-card-body"><span class="course-category">${escape(c.categoryLabel)}</span><h3>${escape(c.title)}</h3><p>${escape(c.description)}</p>${c.careers ? `<p class="course-careers"><strong>Roles:</strong> ${escape(c.careers)}</p>` : ''}<div class="feature-row">${chips}</div><div class="course-meta"><span>▤ ${c.lessons.length} lessons</span><span>◷ ${escape(c.duration || c.format || 'Self-paced')}</span></div>${record(c) ? progress(c) : ''}<button class="button wide" data-course="${c.id}">${finished(c) ? 'Review course' : record(c) ? `Continue · ${percent(c)}%` : 'Open course'}<span aria-hidden="true">↗</span></button></div></article>`;
     }).join('');
     $('#no-results').hidden = visible.length !== 0;
     $('#no-results').textContent = view === 'learning' && !active.length ? 'You have not enrolled in a course yet. Open the catalog to begin.' : 'No courses matched your search. Try another keyword or category.';
@@ -789,7 +789,7 @@
         else $('#save-status').textContent = 'Progress synced';
       } catch {
         if (generation === authGeneration) {
-          $('#save-status').textContent = 'Saved locally · sync unavailable';
+          $('#save-status').textContent = 'Saved on this device';
           notify('Signed in. Cloud progress is unavailable; changes will stay on this device.');
         }
       }
