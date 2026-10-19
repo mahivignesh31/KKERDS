@@ -347,33 +347,44 @@
   function render() {
     const active = enrolled(), completed = active.reduce((n,c) => n + count(c), 0), total = active.reduce((n,c) => n + c.lessons.length, 0);
     $('#nav-count').textContent = active.length;
-    $('#catalog-count').textContent = `${courses.length} practical learning paths`;
+    $('#catalog-count').textContent = `${courses.length} professional learning paths`;
     $('#stat-enrolled').textContent = active.length;
     $('#stat-lessons').textContent = completed;
     $('#stat-progress').textContent = `${total ? Math.round(completed / total * 100) : 0}%`;
     $('#stat-achievements').textContent = active.filter(finished).length;
     $('#milestone-count').textContent = `${completed} lesson${completed === 1 ? '' : 's'} completed`;
-    $('#milestone-text').textContent = completed ? 'Keep the momentum. Choose your next lesson and make a little time for your future.' : 'Complete your first lesson. Every journey begins with a little curiosity.';
-    $('#hero-action').innerHTML = active.length ? 'Continue learning <span>↗</span>' : 'Find your first course <span>↗</span>';
+    $('#milestone-text').textContent = completed ? 'Stay consistent. Open your next lesson and protect a short block of focused time today.' : 'Start with one lesson. Clear progress begins with a single completed module.';
+    $('#hero-action').innerHTML = active.length ? 'Continue learning <span aria-hidden="true">↗</span>' : 'Browse courses <span aria-hidden="true">↗</span>';
     const ongoing = active.filter(c => !finished(c));
-    $('#continue-cards').innerHTML = ongoing.length ? ongoing.slice(0,2).map(c => `<article class="continue-card"><img src="${c.image}" alt="${escape(c.title)}" loading="lazy"><div class="continue-info"><span class="eyebrow">${escape(c.categoryLabel)}</span><h3>${escape(c.title)}</h3><div class="progress-label"><span>${count(c)} of ${c.lessons.length} lessons</span><span>${percent(c)}%</span></div>${progress(c)}<button class="text-button" data-course="${c.id}">Resume learning →</button></div></article>`).join('') : `<div class="empty-learning"><span class="empty-icon" aria-hidden="true">${active.length ? '✦' : '▤'}</span><div><h3>${active.length ? 'Look how far you’ve come.' : 'A fresh start, full of possibilities.'}</h3><p>${active.length ? 'You’ve completed your enrolled courses. Find another skill to keep growing.' : 'Pick a course below to begin. Your progress and notes will be saved as you learn.'}</p><button class="text-button" data-goto="catalog">Explore your learning paths ↗</button></div></div>`;
+    $('#continue-cards').innerHTML = ongoing.length ? ongoing.slice(0,2).map(c => `<article class="continue-card"><img src="${c.image}" alt="${escape(c.title)}" loading="lazy"><div class="continue-info"><span class="eyebrow">${escape(c.categoryLabel)}</span><h3>${escape(c.title)}</h3><div class="progress-label"><span>${count(c)} of ${c.lessons.length} lessons</span><span>${percent(c)}%</span></div>${progress(c)}<button class="text-button" data-course="${c.id}">Resume course →</button></div></article>`).join('') : `<div class="empty-learning"><span class="empty-icon" aria-hidden="true">${active.length ? '✦' : '▤'}</span><div><h3>${active.length ? 'All enrolled courses completed.' : 'No active course yet.'}</h3><p>${active.length ? 'Choose another path from the catalog to keep building professional skills.' : 'Browse the catalog, enroll in a course, and your progress will appear here.'}</p><button class="text-button" data-goto="catalog">Open course catalog ↗</button></div></div>`;
     const visible = courses.filter(c => (view !== 'learning' || record(c)) && (category === 'all' || c.category === category) && `${c.title} ${c.description} ${c.categoryLabel}`.toLowerCase().includes(query));
-    $('#course-grid').innerHTML = visible.map(c => `<article class="course-card"><div class="course-image"><img src="${c.image}" alt="${escape(c.title)}" loading="lazy"><span class="course-tag">${escape(c.tag)}</span></div><div class="course-card-body"><span class="course-category">${escape(c.categoryLabel)}</span><h3>${escape(c.title)}</h3><p>${escape(c.description)}</p><div class="course-meta"><span>▤ ${c.lessons.length} lessons</span><span>◴ ${escape(c.format || 'Self-paced')}</span></div>${record(c) ? progress(c) : ''}<button class="button wide" data-course="${c.id}">${finished(c) ? 'Revisit course' : record(c) ? `Continue · ${percent(c)}%` : 'Explore course'}<span>↗</span></button></div></article>`).join('');
+    $('#course-grid').innerHTML = visible.map(c => {
+      const hasVideo = c.lessons.some(l => l.video);
+      const hasLab = c.lessons.some(l => l.lab);
+      const hasLessonQuiz = c.lessons.some(l => l.quiz?.length);
+      const chips = [
+        hasVideo ? '<span class="feature-chip">Video</span>' : '',
+        hasLab ? '<span class="feature-chip">Practice lab</span>' : '',
+        hasLessonQuiz || c.quiz?.length ? '<span class="feature-chip">Quizzes</span>' : '',
+        '<span class="feature-chip">Ordered unlock</span>'
+      ].filter(Boolean).join('');
+      return `<article class="course-card"><div class="course-image"><img src="${c.image}" alt="${escape(c.title)}" loading="lazy"><span class="course-tag">${escape(c.tag)}</span></div><div class="course-card-body"><span class="course-category">${escape(c.categoryLabel)}</span><h3>${escape(c.title)}</h3><p>${escape(c.description)}</p><div class="feature-row">${chips}</div><div class="course-meta"><span>▤ ${c.lessons.length} lessons</span><span>◴ ${escape(c.format || 'Self-paced')}</span></div>${record(c) ? progress(c) : ''}<button class="button wide" data-course="${c.id}">${finished(c) ? 'Review course' : record(c) ? `Continue · ${percent(c)}%` : 'Open course'}<span aria-hidden="true">↗</span></button></div></article>`;
+    }).join('');
     $('#no-results').hidden = visible.length !== 0;
-    $('#no-results').textContent = view === 'learning' && !active.length ? 'Your learning space is ready. Explore courses and enroll to begin.' : 'No courses found. Try another search or category.';
-    $('#resource-grid').innerHTML = courses.map(c => `<article class="resource-card"><span class="resource-icon" aria-hidden="true">${c.resource ? '▧' : '▤'}</span><h3>${escape(c.title)}</h3><p>${c.resource ? 'Revisit the training handbook alongside your lessons. PDF opens in a new tab; large files may take a moment to load.' : c.format ? 'Explore the curriculum, practical exercises, and official documentation links for this learning path.' : 'Explore the full course overview, prerequisites, and learning resources on the original course page.'}</p><a class="button" href="${encodeURI(c.resource || c.page)}" target="_blank" rel="noopener">${c.resource ? 'Open training handbook ↗' : 'Open course guide ↗'}</a></article>`).join('');
-    $('#achievement-grid').innerHTML = courses.map(c => `<article class="achievement-card ${finished(c) ? 'earned' : ''}"><span aria-hidden="true">${finished(c) ? '✦' : '♧'}</span><h3>${escape(c.title)}</h3><p>${finished(c) ? 'Course completed! You finished every lesson and passed the knowledge check.' : `${count(c)} / ${c.lessons.length} lessons completed. Finish the lessons and pass the knowledge check to reach this milestone.`}</p>${progress(c)}<button class="text-button" style="margin-top:15px" data-course="${c.id}">${finished(c) ? 'Review course ↗' : 'Keep growing ↗'}</button></article>`).join('');
+    $('#no-results').textContent = view === 'learning' && !active.length ? 'You have not enrolled in a course yet. Open the catalog to begin.' : 'No courses matched your search. Try another keyword or category.';
+    $('#resource-grid').innerHTML = courses.map(c => `<article class="resource-card"><span class="resource-icon" aria-hidden="true">${c.resource ? '▧' : '▤'}</span><h3>${escape(c.title)}</h3><p>${c.resource ? 'Training handbook for this path. Opens in a new tab.' : 'Course guide with curriculum overview and study links.'}</p><a class="button" href="${encodeURI(c.resource || c.page)}" target="_blank" rel="noopener">${c.resource ? 'Open handbook ↗' : 'Open course guide ↗'}</a></article>`).join('');
+    $('#achievement-grid').innerHTML = courses.map(c => `<article class="achievement-card ${finished(c) ? 'earned' : ''}"><span aria-hidden="true">${finished(c) ? '✦' : '♧'}</span><h3>${escape(c.title)}</h3><p>${finished(c) ? 'Completed: all lessons and the final knowledge check.' : `${count(c)} / ${c.lessons.length} lessons complete. Finish lessons and pass the final check to earn this milestone.`}</p>${progress(c)}<button class="text-button" style="margin-top:15px" data-course="${c.id}">${finished(c) ? 'Review course ↗' : 'Continue course ↗'}</button></article>`).join('');
   }
   function setView(next) {
     view = next; category = 'all'; query = '';
     $('#course-search').value = '';
     document.querySelectorAll('[data-category]').forEach(b => { b.classList.toggle('active', b.dataset.category === 'all'); b.setAttribute('aria-pressed', String(b.dataset.category === 'all')); });
     const headings = {
-      overview:['MAKE ROOM FOR YOUR POTENTIAL', user ? `Welcome back, ${user.displayName?.split(' ')[0] || 'learner'}` : 'Your next chapter starts here', 'Practical skills. Real possibilities. Take the next step, at your own pace.'],
-      learning:['KEEP YOUR MOMENTUM', 'A little progress, every day', 'Your courses, your pace. Pick up where you left off.'],
-      catalog:['INVEST IN YOURSELF', 'Find your next possibility', 'Explore practical learning paths built around skills you can use.'],
-      resources:['YOUR LEARNING TOOLKIT', 'Good learning goes beyond a lesson', 'Keep useful guides and training materials close at hand.'],
-      achievements:['CELEBRATE THE SMALL WINS', 'Look how far you can go', 'Every completed lesson is a step toward your next chapter.']
+      overview:['PROFESSIONAL SKILL DEVELOPMENT', user ? `Welcome back, ${user.displayName?.split(' ')[0] || 'learner'}` : 'Build skills that move you forward', 'Structured video lessons, practice labs, and knowledge checks — at your own pace.'],
+      learning:['MY LEARNING', 'Your enrolled courses', 'Resume any path and continue from your last completed lesson.'],
+      catalog:['COURSE CATALOG', 'Professional learning paths', 'Technology, data, trades, and creative skills with ordered progress.'],
+      resources:['LIBRARY', 'Learning resources', 'Course guides and training handbooks to support your study.'],
+      achievements:['MILESTONES', 'Your achievements', 'Track completed courses and celebrate steady professional progress.']
     };
     const heading = headings[next];
     $('#page-eyebrow').textContent = heading[0];
@@ -384,7 +395,7 @@
     $('#catalog-section').hidden = !['overview','catalog','learning'].includes(next);
     $('#resources-section').hidden = next !== 'resources';
     $('#achievements-section').hidden = next !== 'achievements';
-    $('#courses-heading').textContent = next === 'learning' ? 'Your courses, all in one place' : 'Skills that open doors';
+    $('#courses-heading').textContent = next === 'learning' ? 'Your enrolled courses' : 'Professional learning paths';
     document.querySelectorAll('[data-view]').forEach(b => { b.classList.toggle('active', b.dataset.view === next); if (b.dataset.view === next) b.setAttribute('aria-current','page'); else b.removeAttribute('aria-current'); });
     render();
   }
@@ -454,7 +465,7 @@
         <span class="course-category">${escape(c.categoryLabel)} · ${escape(c.format || 'Video lessons')}</span>
         <h2 id="dialog-title">${escape(c.title)}</h2>
         <p>${escape(c.description)} ${c.id === 'electrician' ? 'Practical electrical work requires qualified supervision and compliance with local requirements.' : ''}</p>
-        <div class="course-overview-meta"><span>▤ ${c.lessons.length} lessons</span><span>◴ Self-paced</span><span>✓ Knowledge check included</span></div>
+        <div class="course-overview-meta"><span>▤ ${c.lessons.length} lessons</span><span>◷ Self-paced</span><span>✓ Video on every lesson</span><span>○ Pass quizzes to unlock</span></div>
         <div class="course-start-bar">
           <div class="course-start-actions">
             ${!item ? '<button class="button primary" id="enroll">Start this course →</button>' : ''}

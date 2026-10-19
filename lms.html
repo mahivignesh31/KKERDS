@@ -3,55 +3,209 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Build practical skills with KK Educational and Rural Development Society. Learn at your pace, track lessons, and test your knowledge.">
+  <meta name="description" content="KK Learning — professional skill courses from KK Educational and Rural Development Society. Watch lessons, practise in labs, track progress, and pass knowledge checks.">
   <meta name="theme-color" content="#164c39">
-  <title>KK Learning — Your next chapter starts here</title>
+  <title>KK Learning — Professional skill courses</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/lms.css?v=20261019">
-  <script src="js/firebase-config.js?v=20261019" defer></script>
-  <script src="js/lms-data.js?v=20261019" defer></script>
-  <script src="js/lms-auth.js?v=20261019" defer></script>
-  <script src="js/lms.js?v=20261019" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/lms.css?v=20261019b">
+  <script src="js/firebase-config.js?v=20261019b" defer></script>
+  <script src="js/lms-data.js?v=20261019b" defer></script>
+  <script src="js/lms-auth.js?v=20261019b" defer></script>
+  <script src="js/lms.js?v=20261019b" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <aside class="sidebar" aria-label="Learning navigation">
-  <a class="brand" href="lms.html" aria-label="KK Computers — Learning home"><img class="brand-logo" src="img/kk.png" alt="KK Computers — The Career Solution" width="200" height="283"><span class="brand-caption"><strong>Learning portal</strong><small>Learn. Practice. Grow.</small></span></a>
-  <div class="workspace-label">YOUR WORKSPACE</div>
+  <a class="brand" href="lms.html" aria-label="KK Learning home">
+    <img class="brand-logo" src="img/kk.png" alt="KK Computers — The Career Solution" width="200" height="283">
+    <span class="brand-caption"><strong>KK Learning</strong><small>Professional skill portal</small></span>
+  </a>
+  <div class="workspace-label">WORKSPACE</div>
   <nav id="navigation" aria-label="Workspace">
     <button class="nav-item active" data-view="overview"><span aria-hidden="true">▦</span> Overview</button>
     <button class="nav-item" data-view="learning"><span aria-hidden="true">▤</span> My learning <span id="nav-count" class="count">0</span></button>
-    <button class="nav-item" data-view="catalog"><span aria-hidden="true">◈</span> Explore courses</button>
-    <button class="nav-item" data-view="resources"><span aria-hidden="true">▧</span> Resource library</button>
+    <button class="nav-item" data-view="catalog"><span aria-hidden="true">◈</span> Course catalog</button>
+    <button class="nav-item" data-view="resources"><span aria-hidden="true">▧</span> Resources</button>
     <button class="nav-item" data-view="achievements"><span aria-hidden="true">♧</span> Achievements</button>
   </nav>
-  <div class="sidebar-help"><span class="help-icon">✧</span><h3>A little help goes a long way.</h3><p>Have a question? Our team is here for your learning journey.</p><a href="contact.html">Let’s talk <span>↗</span></a></div>
-  <a class="back-site" href="index.html">↖ Back to KK Educational Society</a>
-  <div class="sidebar-bottom"><span class="avatar" id="side-avatar">L</span><div><strong id="side-name">Guest learner</strong><small id="side-status">Your journey starts here</small></div></div>
-</aside>
-<div class="app-shell">
-  <header class="topbar"><div><span class="eyebrow">LEARN. PRACTICE. GROW.</span><span class="topbar-title">Your learning space</span></div><div class="header-actions"><span class="local-label" id="save-status">Saved on this device</span><button class="button google-button" id="signin"><span class="google-g" aria-hidden="true">G</span> <span id="signin-label">Sign in with Google</span></button><button class="button subtle" id="signout" hidden>Sign out</button></div></header>
-  <main id="main" tabindex="-1">
-    <section class="page-heading"><div><p class="eyebrow" id="page-eyebrow">MAKE ROOM FOR YOUR POTENTIAL</p><h1 id="page-title">Your next chapter starts here<span>.</span></h1><p id="page-description">Practical skills. Real possibilities. Take the next step, at your own pace.</p></div><span class="date-chip" id="today"></span></section>
-    <div id="overview-content">
-      <section class="hero"><div class="hero-copy"><span class="hero-pill"><span></span> SMALL STEPS. BIG POSSIBILITIES.</span><h2>A new skill can<br>change your story.</h2><p>From your first click to your next career move.<br>Build confidence with learning that works for you.</p><button class="button cream" id="hero-action">Find your first course <span>↗</span></button><div class="hero-footnote"><span>✦</span> Made for curious minds. Built for your future.</div></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="art-spark">✦</span><div class="art-card"><span class="art-card-label">THE BEST INVESTMENT?</span><span class="art-word">You.</span><div class="art-line"></div><p>Keep growing.<br>Keep going.</p><span class="art-arrow">↗</span></div><div class="floating-tag">✧ &nbsp; A little better, every day</div></div></section>
-      <section class="stats" aria-label="Your learning statistics"><div class="stat"><span class="stat-icon mint">▤</span><div><strong id="stat-enrolled">0</strong><span>Courses enrolled</span></div></div><div class="stat"><span class="stat-icon sand">✓</span><div><strong id="stat-lessons">0</strong><span>Lessons completed</span></div></div><div class="stat"><span class="stat-icon lavender">◴</span><div><strong id="stat-progress">0%</strong><span>Overall progress</span></div></div><div class="stat"><span class="stat-icon peach">♧</span><div><strong id="stat-achievements">0</strong><span>Courses completed</span></div></div></section>
-      <div class="overview-grid"><section class="continue-section"><div class="section-heading"><div><p class="eyebrow">ONE STEP AT A TIME</p><h2>Continue your journey</h2></div><button class="text-button" data-goto="learning">My learning ↗</button></div><div id="continue-cards"></div></section><aside class="weekly-card"><span class="eyebrow">YOUR NEXT MILESTONE</span><h3>Make learning<br>a small daily habit.</h3><div class="milestone-graphic" aria-hidden="true">✦</div><p id="milestone-text">Complete your first lesson. Every journey begins with a little curiosity.</p><div class="milestone-bottom"><span id="milestone-count">0 lessons completed</span><span>↗</span></div></aside></div>
+  <div class="sidebar-help">
+    <span class="help-icon" aria-hidden="true">✧</span>
+    <h3>Need guidance?</h3>
+    <p>Our team can help you choose a course and plan your learning path.</p>
+    <a href="contact.html">Contact support <span aria-hidden="true">↗</span></a>
+  </div>
+  <a class="back-site" href="index.html">↖ KK Educational Society</a>
+  <div class="sidebar-bottom">
+    <span class="avatar" id="side-avatar">L</span>
+    <div>
+      <strong id="side-name">Guest learner</strong>
+      <small id="side-status">Progress saved on this device</small>
     </div>
-    <section id="catalog-section"><div class="section-heading"><div><p class="eyebrow">FIND YOUR NEXT POSSIBILITY</p><h2 id="courses-heading">Skills that open doors</h2></div><span class="course-total" id="catalog-count">7 practical learning paths</span></div><div class="catalog-toolbar"><div class="filters" role="group" aria-label="Course category"><button class="filter active" data-category="all" aria-pressed="true">All courses</button><button class="filter" data-category="technology" aria-pressed="false">Technology</button><button class="filter" data-category="analytics" aria-pressed="false">Data &amp; BI</button><button class="filter" data-category="trades" aria-pressed="false">Skilled trades</button><button class="filter" data-category="creative" aria-pressed="false">Creative skills</button></div><label class="search"><span aria-hidden="true">⌕</span><input id="course-search" type="search" placeholder="Find a course…" aria-label="Search courses"></label></div><div class="course-grid" id="course-grid"></div><p class="empty-state" id="no-results" hidden>No courses found. Try another search or category.</p></section>
-    <section id="resources-section" hidden><div class="section-heading"><h2>Your learning toolkit</h2><span class="course-total">Read. Revisit. Practice.</span></div><div class="resource-grid" id="resource-grid"></div></section>
-    <section id="achievements-section" hidden><div class="section-heading"><h2>Progress worth celebrating</h2></div><div id="achievement-grid" class="course-grid"></div><p class="achievement-note">These are personal learning milestones. Contact the society for information about official assessments and certification.</p></section>
-    <footer class="app-footer"><span>© <span id="year"></span> KK Educational & Rural Development Society</span><span><a href="privacy-policy.html">Privacy Policy</a> · A brighter future begins with a new skill. <span class="green">✦</span></span></footer>
+  </div>
+</aside>
+
+<div class="app-shell">
+  <header class="topbar">
+    <div>
+      <span class="eyebrow">KK EDUCATIONAL &amp; RURAL DEVELOPMENT SOCIETY</span>
+      <span class="topbar-title">Learning Management System</span>
+    </div>
+    <div class="header-actions">
+      <span class="local-label" id="save-status">Saved on this device</span>
+      <button class="button google-button" id="signin"><span class="google-g" aria-hidden="true">G</span> <span id="signin-label">Sign in with Google</span></button>
+      <button class="button subtle" id="signout" hidden>Sign out</button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="page-heading">
+      <div>
+        <p class="eyebrow" id="page-eyebrow">PROFESSIONAL SKILL DEVELOPMENT</p>
+        <h1 id="page-title">Build skills that move you forward<span>.</span></h1>
+        <p id="page-description">Structured video lessons, practice labs, and knowledge checks — at your own pace.</p>
+      </div>
+      <span class="date-chip" id="today"></span>
+    </section>
+
+    <div id="overview-content">
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="hero-pill"><span></span> STRUCTURED · PRACTICAL · SELF-PACED</span>
+          <h2>Learn with purpose.<br>Progress with clarity.</h2>
+          <p>Watch each lesson, practise what you learn, and unlock the next module when you pass the check.</p>
+          <button class="button cream" id="hero-action">Browse courses <span aria-hidden="true">↗</span></button>
+          <div class="hero-footnote"><span aria-hidden="true">✦</span> Trusted training from KK Educational Society</div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <span class="art-spark">✦</span>
+          <div class="art-card">
+            <span class="art-card-label">LEARNING STANDARD</span>
+            <span class="art-word">Pro.</span>
+            <div class="art-line"></div>
+            <p>Video · Lab · Quiz<br>Complete in order</p>
+            <span class="art-arrow">↗</span>
+          </div>
+          <div class="floating-tag">Video lessons on every course</div>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Learning features">
+        <div class="trust-item"><strong>Video lessons</strong><span>Every module includes guided video</span></div>
+        <div class="trust-item"><strong>Ordered progress</strong><span>Next lesson unlocks after you finish</span></div>
+        <div class="trust-item"><strong>Knowledge checks</strong><span>Pass with 3 of 5 answers correct</span></div>
+        <div class="trust-item"><strong>Saved progress</strong><span>Local save · Google sync optional</span></div>
+      </section>
+
+      <section class="stats" aria-label="Your learning statistics">
+        <div class="stat"><span class="stat-icon mint" aria-hidden="true">▤</span><div><strong id="stat-enrolled">0</strong><span>Courses enrolled</span></div></div>
+        <div class="stat"><span class="stat-icon sand" aria-hidden="true">✓</span><div><strong id="stat-lessons">0</strong><span>Lessons completed</span></div></div>
+        <div class="stat"><span class="stat-icon lavender" aria-hidden="true">◴</span><div><strong id="stat-progress">0%</strong><span>Overall progress</span></div></div>
+        <div class="stat"><span class="stat-icon peach" aria-hidden="true">♧</span><div><strong id="stat-achievements">0</strong><span>Courses completed</span></div></div>
+      </section>
+
+      <div class="overview-grid">
+        <section class="continue-section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">CONTINUE</p>
+              <h2>Pick up where you left off</h2>
+            </div>
+            <button class="text-button" data-goto="learning">My learning ↗</button>
+          </div>
+          <div id="continue-cards"></div>
+        </section>
+        <aside class="weekly-card">
+          <span class="eyebrow">FOCUS</span>
+          <h3>One lesson a day<br>compounds fast.</h3>
+          <div class="milestone-graphic" aria-hidden="true">✦</div>
+          <p id="milestone-text">Complete your first lesson to begin a measurable learning streak.</p>
+          <div class="milestone-bottom"><span id="milestone-count">0 lessons completed</span><span aria-hidden="true">↗</span></div>
+        </aside>
+      </div>
+    </div>
+
+    <section id="catalog-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">COURSE CATALOG</p>
+          <h2 id="courses-heading">Professional learning paths</h2>
+        </div>
+        <span class="course-total" id="catalog-count">7 learning paths</span>
+      </div>
+      <div class="catalog-toolbar">
+        <div class="filters" role="group" aria-label="Course category">
+          <button class="filter active" data-category="all" aria-pressed="true">All</button>
+          <button class="filter" data-category="technology" aria-pressed="false">Technology</button>
+          <button class="filter" data-category="analytics" aria-pressed="false">Data &amp; BI</button>
+          <button class="filter" data-category="trades" aria-pressed="false">Skilled trades</button>
+          <button class="filter" data-category="creative" aria-pressed="false">Creative</button>
+        </div>
+        <label class="search"><span aria-hidden="true">⌕</span><input id="course-search" type="search" placeholder="Search courses…" aria-label="Search courses"></label>
+      </div>
+      <div class="course-grid" id="course-grid"></div>
+      <p class="empty-state" id="no-results" hidden>No courses matched your search. Try another keyword or category.</p>
+    </section>
+
+    <section id="resources-section" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">LIBRARY</p>
+          <h2>Learning resources</h2>
+        </div>
+        <span class="course-total">Guides &amp; handbooks</span>
+      </div>
+      <div class="resource-grid" id="resource-grid"></div>
+    </section>
+
+    <section id="achievements-section" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">MILESTONES</p>
+          <h2>Your achievements</h2>
+        </div>
+      </div>
+      <div id="achievement-grid" class="course-grid"></div>
+      <p class="achievement-note">These milestones track personal learning progress. Contact the society for official assessment and certification information.</p>
+    </section>
+
+    <footer class="app-footer">
+      <span>© <span id="year"></span> KK Educational &amp; Rural Development Society</span>
+      <span><a href="privacy-policy.html">Privacy Policy</a> · Professional skills for a stronger future</span>
+    </footer>
   </main>
 </div>
 
-<dialog id="course-dialog" class="course-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span class="eyebrow">YOUR LEARNING JOURNEY</span><button class="icon-button" data-close="course-dialog" aria-label="Close course">✕</button></div><div id="course-dialog-content"></div></dialog>
-<dialog id="quiz-dialog" class="quiz-dialog" aria-labelledby="quiz-dialog-title"><div class="dialog-top"><span class="eyebrow">KNOWLEDGE CHECK</span><button class="icon-button" data-close="quiz-dialog" aria-label="Close knowledge check">✕</button></div><div id="quiz-dialog-content"></div></dialog>
-<dialog id="auth-dialog" class="auth-dialog" aria-labelledby="auth-title"><button class="icon-button close-auth" data-close="auth-dialog" aria-label="Close sign-in information">✕</button><span class="auth-symbol">✦</span><h2 id="auth-title">Take your learning with you.</h2><p id="auth-message">Sign in with Google to keep your learning progress across devices.</p><p class="auth-detail" id="auth-detail"></p><button class="button primary" id="auth-retry" hidden>Try Google sign-in again</button><button class="button" data-close="auth-dialog">Continue exploring</button></dialog>
-<div id="toast" class="toast" role="status" aria-live="polite"></div>
-<noscript><p class="noscript">Please enable JavaScript to use course search, progress tracking, and Google sign-in. You can still browse <a href="courses.html">our courses</a>.</p></noscript>
+<dialog id="course-dialog" class="course-dialog" aria-labelledby="dialog-title">
+  <div class="dialog-top">
+    <span class="eyebrow">COURSE WORKSPACE</span>
+    <button class="icon-button" data-close="course-dialog" aria-label="Close course">✕</button>
+  </div>
+  <div id="course-dialog-content"></div>
+</dialog>
 
+<dialog id="quiz-dialog" class="quiz-dialog" aria-labelledby="quiz-dialog-title">
+  <div class="dialog-top">
+    <span class="eyebrow">KNOWLEDGE CHECK</span>
+    <button class="icon-button" data-close="quiz-dialog" aria-label="Close knowledge check">✕</button>
+  </div>
+  <div id="quiz-dialog-content"></div>
+</dialog>
+
+<dialog id="auth-dialog" class="auth-dialog" aria-labelledby="auth-title">
+  <button class="icon-button close-auth" data-close="auth-dialog" aria-label="Close sign-in information">✕</button>
+  <span class="auth-symbol" aria-hidden="true">✦</span>
+  <h2 id="auth-title">Keep learning across devices</h2>
+  <p id="auth-message">Sign in with Google to sync your progress securely to your account.</p>
+  <p class="auth-detail" id="auth-detail"></p>
+  <button class="button primary" id="auth-retry" hidden>Try Google sign-in again</button>
+  <button class="button" data-close="auth-dialog">Continue as guest</button>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<noscript><p class="noscript">Enable JavaScript to use course search, progress tracking, and Google sign-in. You can still browse <a href="courses.html">our courses</a>.</p></noscript>
 </body>
 </html>
