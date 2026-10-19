@@ -84,7 +84,7 @@ window.KK_COURSES = [
       {
         "id": "2",
         "title": "Control Flow & Functions",
-        "video": "https://www.youtube.com/embed/PqFKWZp9yQ4",
+        "video": "https://www.youtube.com/embed/f4KOjWS_KZs",
         "lab": "python",
         "starterCode": "def grade_for(score):\n    if score < 0 or score > 100:\n        return \"Invalid\"\n    if score >= 90:\n        return \"A\"\n    if score >= 75:\n        return \"B\"\n    if score >= 50:\n        return \"C\"\n    return \"D\"\n\nfor value in [100, 75, 49, -1, 101]:\n    print(value, \"->\" , grade_for(value))\n",
         "body": "Break a program into decisions, loops, and reusable functions. Check boundary cases instead of testing only the happy path.",
@@ -147,7 +147,7 @@ window.KK_COURSES = [
       {
         "id": "3",
         "title": "Collections, Files & Exceptions",
-        "video": "https://www.youtube.com/embed/R-HLU9Fl5uM",
+        "video": "https://www.youtube.com/embed/W8KRzm-HUcc",
         "lab": "python",
         "starterCode": "contacts = {\"Ada\": \"111-222\", \"Grace\": \"333-444\"}\n\ndef show():\n    for name, phone in contacts.items():\n        print(name, phone)\n\nshow()\nname = input(\"Name to add: \")\nphone = input(\"Phone: \")\ncontacts[name] = phone\nprint(\"Updated list:\")\nshow()\n",
         "body": "Use lists and dictionaries to organize records. Handle expected file and input errors so a simple mistake does not end the workflow.",
@@ -462,7 +462,7 @@ window.KK_COURSES = [
       {
         "id": "8",
         "title": "Authentication & Authorization",
-        "video": "https://www.youtube.com/embed/o_HZ_pOuEF4",
+        "video": "https://www.youtube.com/embed/rHux0gMZ3Eg",
         "lab": "python",
         "starterCode": "users = {\"ada\": \"tasks-ada\", \"grace\": \"tasks-grace\"}\nownership = {\"1\": \"ada\", \"2\": \"grace\"}\n\ndef can_edit(user, task_id):\n    return ownership.get(task_id) == user\n\nuser = input(\"User (ada/grace): \").strip()\ntask_id = input(\"Task id (1/2): \").strip()\nprint(\"Allowed\" if can_edit(user, task_id) else \"Denied\")\n",
         "body": "Keep identity separate from permission. Use framework authentication and check ownership on the server for every protected action.",
@@ -525,7 +525,7 @@ window.KK_COURSES = [
       {
         "id": "9",
         "title": "JSON APIs & Frontend Integration",
-        "video": "https://www.youtube.com/embed/cuEtnHSinf4",
+        "video": "https://www.youtube.com/embed/PoRJizFvM7s",
         "lab": "python",
         "starterCode": "import json\n\ntasks = [\n    {\"id\": 1, \"title\": \"Learn fetch\", \"done\": False},\n    {\"id\": 2, \"title\": \"Handle errors\", \"done\": True},\n]\n\n# Pretend API response\npayload = json.dumps({\"tasks\": tasks})\nprint(\"API JSON:\")\nprint(payload)\n\ndata = json.loads(payload)\nfor task in data[\"tasks\"]:\n    print(\"-\", task[\"title\"], \"(done)\" if task[\"done\"] else \"(open)\")\n",
         "body": "Define the shape of a request and response before connecting the frontend. Handle loading states and errors as part of the interface.",
@@ -717,7 +717,7 @@ window.KK_COURSES = [
       {
         "id": "1",
         "title": "Ask a Better Business Question",
-        "video": "https://www.youtube.com/embed/ua-RbdYpfp4",
+        "video": "https://www.youtube.com/embed/PSNXoAs2FtQ",
         "body": "Start with a specific decision and a measurable question. Define the time period, population, and unit of analysis before collecting data.",
         "practice": "Write three questions for a small retail business. For each, name the metric and the data needed.",
         "readingUrl": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/",
@@ -726,7 +726,7 @@ window.KK_COURSES = [
       {
         "id": "2",
         "title": "Spreadsheets & Data Quality",
-        "video": "https://www.youtube.com/embed/NJyCR-Ygq_k",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
         "body": "Inspect column types, missing values, duplicates, and inconsistent labels. Keep a raw copy and record each cleaning decision.",
         "practice": "Create a small sales sheet with deliberate errors. Clean it and keep a log explaining which rows changed.",
         "readingUrl": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/",
@@ -744,7 +744,7 @@ window.KK_COURSES = [
       {
         "id": "4",
         "title": "SQL Joins & Relationships",
-        "video": "https://www.youtube.com/embed/bDhvCl-1sig",
+        "video": "https://www.youtube.com/embed/HXV3zeQKqGY",
         "body": "Identify the key and expected row count before joining tables. A repeated key can multiply rows and distort a total.",
         "practice": "Join customers to orders. Compare the row count and revenue before and after the join.",
         "readingUrl": "https://www.postgresql.org/docs/current/tutorial-sql.html",
@@ -762,7 +762,7 @@ window.KK_COURSES = [
       {
         "id": "6",
         "title": "Cleaning & Exploratory Analysis",
-        "video": "https://www.youtube.com/embed/3XiXlXjitfw",
+        "video": "https://www.youtube.com/embed/vmEHCJofslg",
         "body": "Compare distributions and groups, then investigate unusual values. Decide whether an outlier is an error or a real observation before changing it.",
         "practice": "Create a reproducible cleaning workflow and compare product sales across two months.",
         "readingUrl": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/",
@@ -771,7 +771,7 @@ window.KK_COURSES = [
       {
         "id": "7",
         "title": "Visualization & Insight Writing",
-        "video": "https://www.youtube.com/embed/8QMEngXxZsI",
+        "video": "https://www.youtube.com/embed/PSNXoAs2FtQ",
         "body": "Choose a chart based on the comparison you want to show. Add units, a clear title, and a brief interpretation without claiming causation from correlation.",
         "practice": "Create a trend chart and a category comparison. Write one finding and one limitation for each.",
         "readingUrl": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/",
@@ -780,7 +780,7 @@ window.KK_COURSES = [
       {
         "id": "8",
         "title": "Capstone: Sales Insights Report",
-        "video": "https://www.youtube.com/embed/r-uOjjnqN0Y",
+        "video": "https://www.youtube.com/embed/rfscVS0vtbw",
         "body": "Combine a business question, a documented dataset, reproducible analysis, and a recommendation. Explain assumptions and limitations alongside your findings.",
         "practice": "Deliver a notebook or spreadsheet, three charts, and a one-page sales summary with recommendations and caveats.",
         "readingUrl": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/",
@@ -855,7 +855,7 @@ window.KK_COURSES = [
       {
         "id": "1",
         "title": "Power BI Workflow & Setup",
-        "video": "https://www.youtube.com/embed/1LKbP5lHhpU",
+        "video": "https://www.youtube.com/embed/NNSHu0rkew8",
         "body": "Plan a report from source data to a useful decision. This path uses Power BI Desktop on Windows; use a Windows machine or environment for the hands-on exercises.",
         "practice": "Open Power BI Desktop and sketch a report that answers three questions about monthly sales.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
@@ -864,7 +864,7 @@ window.KK_COURSES = [
       {
         "id": "2",
         "title": "Connect & Inspect Your Data",
-        "video": "https://www.youtube.com/embed/gg2uXWRs7nE",
+        "video": "https://www.youtube.com/embed/AGrl-H87pRU",
         "body": "Choose a source and inspect column names, types, and missing values before building visuals. Keep track of where the data came from.",
         "practice": "Import a small sales CSV and record the number of rows and the purpose of each column.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
@@ -873,7 +873,7 @@ window.KK_COURSES = [
       {
         "id": "3",
         "title": "Clean & Transform with Power Query",
-        "video": "https://www.youtube.com/embed/4P95oG7-e08",
+        "video": "https://www.youtube.com/embed/6cV3OwFrOkk",
         "body": "Treat cleaning as a repeatable sequence of transformations. Check the result after changing types, removing duplicates, or splitting columns.",
         "practice": "Standardize product names, set date and numeric types, and inspect errors in the transformed sales table.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
@@ -882,7 +882,7 @@ window.KK_COURSES = [
       {
         "id": "4",
         "title": "Model Tables & Relationships",
-        "video": "https://www.youtube.com/embed/2Vrpk-8fRlc",
+        "video": "https://www.youtube.com/embed/NNSHu0rkew8",
         "body": "Choose the grain of each table and identify unique keys. Keep descriptive dimensions separate from repeated sales transactions.",
         "practice": "Sketch a sales fact table and product and date dimensions. Check keys before defining relationships.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema",
@@ -891,7 +891,7 @@ window.KK_COURSES = [
       {
         "id": "5",
         "title": "DAX Measures & Filter Context",
-        "video": "https://www.youtube.com/embed/NnsPD3qQ9GE",
+        "video": "https://www.youtube.com/embed/AGrl-H87pRU",
         "body": "Write measures for reusable calculations. Check how results change with filters rather than assuming every visual uses the same context.",
         "practice": "Create a Total Sales measure with SUM, then compare its result with and without a product filter.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-quickstart-learn-dax-basics",
@@ -900,7 +900,7 @@ window.KK_COURSES = [
       {
         "id": "6",
         "title": "Reports, Slicers & Visual Design",
-        "video": "https://www.youtube.com/embed/1VB8A5hVrXE",
+        "video": "https://www.youtube.com/embed/6cV3OwFrOkk",
         "body": "Organize a report around the most useful questions. Use consistent formatting and test whether slicers change the intended visuals.",
         "practice": "Build a sales summary with a total, monthly trend, product comparison, and date slicer.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
@@ -909,7 +909,7 @@ window.KK_COURSES = [
       {
         "id": "7",
         "title": "Validate & Plan Sharing",
-        "video": "https://www.youtube.com/embed/yIyJ6tVbx-E",
+        "video": "https://www.youtube.com/embed/NNSHu0rkew8",
         "body": "Reconcile your totals with the source and test filters. Review access requirements before sharing business data or publishing a report.",
         "practice": "Compare your report totals against the source and write a checklist for the intended audience and refresh process.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
@@ -918,7 +918,7 @@ window.KK_COURSES = [
       {
         "id": "8",
         "title": "Capstone: Interactive Sales Report",
-        "video": "https://www.youtube.com/embed/1LKbP5lHhpU",
+        "video": "https://www.youtube.com/embed/AGrl-H87pRU",
         "body": "Build a report that explains what changed, where it changed, and what to investigate next. Include source notes and refresh assumptions.",
         "practice": "Deliver a report with a summary page and a detail page. Document three findings and demonstrate the slicers to a reviewer.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
@@ -1252,7 +1252,7 @@ window.KK_COURSES = [
       {
         "id": "7",
         "title": "Advanced Electrical Installations",
-        "video": "https://www.youtube.com/embed/qM6VjTPTzVU"
+        "video": "https://www.youtube.com/embed/nYuVSG89vg0"
       },
       {
         "id": "8",
@@ -1347,7 +1347,7 @@ window.KK_COURSES = [
       {
         "id": "4",
         "title": "Industrial Sewing Machine Operation",
-        "video": "https://www.youtube.com/embed/4r4p61Mk84w"
+        "video": "https://www.youtube.com/embed/lmnDPB4rXN8"
       },
       {
         "id": "5",
@@ -1372,7 +1372,7 @@ window.KK_COURSES = [
       {
         "id": "9",
         "title": "Production Efficiency & Workstation Setup",
-        "video": "https://www.youtube.com/embed/eCrPW3sORQI"
+        "video": "https://www.youtube.com/embed/OpQs91Wg_rs"
       },
       {
         "id": "10",

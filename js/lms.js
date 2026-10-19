@@ -245,6 +245,18 @@
             if (mountId !== watchMountId) return;
             if (event.data === YT.PlayerState.ENDED) onVideoFinished(courseId, lessonId);
           },
+          onError() {
+            if (mountId !== watchMountId) return;
+            // Do not block progress if YouTube blocks or removes the video.
+            markLessonWatched(courseId, lessonId);
+            updateCompleteButton();
+            const hint = $('#video-watch-hint');
+            if (hint) {
+              hint.hidden = false;
+              hint.textContent = 'This video could not load. Study the lesson notes below, then mark the lesson complete.';
+            }
+            notify('Video unavailable. You can still complete this lesson using the reading and practice below.');
+          },
           onPlaybackRateChange() {
             if (mountId !== watchMountId) return;
             try {
@@ -258,7 +270,9 @@
       });
     } catch {
       if (mountId === watchMountId) {
-        notify('Could not load the locked video player. Check your connection and try again.');
+        markLessonWatched(courseId, lessonId);
+        updateCompleteButton();
+        notify('Could not load the video player. You can still complete this lesson from the reading below.');
       }
     }
   }
