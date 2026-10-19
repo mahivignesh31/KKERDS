@@ -1027,3 +1027,19 @@ h1 > span { color: var(--brass); }
 @media (prefers-reduced-motion: reduce) {
   .course-card, .button { transition: none !important; }
 }
+
+/* Nav + heading polish */
+.sidebar .nav-item.active {
+  background: rgba(232, 223, 196, .16) !important;
+  color: #f6edd6 !important;
+  box-shadow: inset 3px 0 0 #e8dfc4;
+}
+.page-heading > div { min-width: 0; flex: 1; }
+.page-heading h1 {
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+.hero h2 { overflow-wrap: anywhere; }
+@media (max-width: 1100px) {
+  .page-heading .date-chip { display: none; }
+}
