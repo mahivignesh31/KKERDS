@@ -7,7 +7,162 @@
   let user = null, db = null, firebase = null, cloudReady = false;
   let view = 'overview', category = 'all', query = '', currentCourse = null, currentLesson = 0;
   let toastTimer, saveTimer, syncQueue = Promise.resolve(), authGeneration = 0;
+  let ytPlayer = null, watchTimer = null, watchCursor = 0, watchReady = false, watchMountId = 0;
+  const watchedLessons = new Set();
   let state = readLocal();
+  function watchKey(courseId, lessonId) { return `${courseId}:${lessonId}`; }
+  function isLessonWatched(courseId, lessonId) { return watchedLessons.has(watchKey(courseId, lessonId)); }
+  function markLessonWatched(courseId, lessonId) { watchedLessons.add(watchKey(courseId, lessonId)); }
+  function parseYouTube(url) {
+    try {
+      const parsed = new URL(url);
+      const list = parsed.searchParams.get('list');
+      const parts = parsed.pathname.split('/').filter(Boolean);
+      const videoId = parts[0] === 'embed' && parts[1] && parts[1] !== 'videoseries' ? parts[1] : null;
+      return videoId || list ? {videoId, list} : null;
+    } catch { return null; }
+  }
+  function loadYouTubeAPI() {
+    if (window.YT?.Player) return Promise.resolve(window.YT);
+    return new Promise((resolve, reject) => {
+      const previous = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = () => {
+        try { previous?.(); } catch {}
+        resolve(window.YT);
+      };
+      if (!document.querySelector('script[data-kk-youtube-api]')) {
+        const script = document.createElement('script');
+        script.src = 'https://www.youtube.com/iframe_api';
+        script.async = true;
+        script.dataset.kkYoutubeApi = '1';
+        script.onerror = () => reject(new Error('youtube-api-failed'));
+        document.head.appendChild(script);
+      }
+    });
+  }
+  function destroyStrictPlayer() {
+    clearInterval(watchTimer);
+    watchTimer = null;
+    watchReady = false;
+    watchCursor = 0;
+    if (ytPlayer) {
+      try { ytPlayer.destroy(); } catch {}
+      ytPlayer = null;
+    }
+  }
+  function updateCompleteButton() {
+    const button = $('#complete-lesson');
+    const hint = $('#video-watch-hint');
+    if (!button || !currentCourse) return;
+    const lesson = currentCourse.lessons[currentLesson];
+    const done = record(currentCourse)?.completed.includes(lesson.id);
+    if (!lesson.video || done) {
+      button.disabled = false;
+      if (hint) hint.hidden = true;
+      return;
+    }
+    const watched = isLessonWatched(currentCourse.id, lesson.id);
+    button.disabled = !watched;
+    button.classList.toggle('primary', watched);
+    button.classList.toggle('subtle', !watched);
+    if (hint) {
+      hint.hidden = false;
+      hint.textContent = watched
+        ? 'Full video watched at normal speed. You can mark this lesson complete.'
+        : 'Watch the full video at normal speed. Skipping ahead and speed changes are locked; rewinding is allowed.';
+    }
+  }
+  function enforceStrictPlayback() {
+    if (!ytPlayer || typeof ytPlayer.getCurrentTime !== 'function') return;
+    try {
+      if (typeof ytPlayer.getPlaybackRate === 'function' && ytPlayer.getPlaybackRate() !== 1) {
+        ytPlayer.setPlaybackRate(1);
+        notify('Playback speed is locked at normal (1×).');
+      }
+      const time = ytPlayer.getCurrentTime() || 0;
+      const jump = 1.2;
+      // Rewind is allowed; only block skipping ahead of the furthest watched point.
+      if (time > watchCursor + jump) {
+        ytPlayer.seekTo(watchCursor, true);
+        notify('Skipping ahead is disabled. You can move back, but finish the video in order.');
+        return;
+      }
+      if (ytPlayer.getPlayerState?.() === window.YT?.PlayerState?.PLAYING) {
+        watchCursor = Math.max(watchCursor, time);
+      }
+      const duration = ytPlayer.getDuration?.() || 0;
+      if (duration > 0 && watchCursor >= duration - 1.5) {
+        markLessonWatched(currentCourse.id, currentCourse.lessons[currentLesson].id);
+        updateCompleteButton();
+      }
+    } catch {}
+  }
+  async function mountStrictPlayer(url, courseId, lessonId) {
+    destroyStrictPlayer();
+    const host = $('#kk-strict-player');
+    if (!host) return;
+    const media = parseYouTube(url);
+    if (!media) {
+      host.outerHTML = `<div class="video-frame"><iframe src="${escape(url)}" title="Lesson video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`;
+      return;
+    }
+    const mountId = ++watchMountId;
+    watchCursor = 0;
+    try {
+      const YT = await loadYouTubeAPI();
+      if (mountId !== watchMountId || !$('#kk-strict-player')) return;
+      const playerVars = {
+        controls: 1,
+        disablekb: 1,
+        modestbranding: 1,
+        rel: 0,
+        fs: 0,
+        playsinline: 1,
+        iv_load_policy: 3,
+        origin: location.origin
+      };
+      if (media.list) {
+        playerVars.listType = 'playlist';
+        playerVars.list = media.list;
+      }
+      ytPlayer = new YT.Player(host, {
+        width: '100%',
+        height: '100%',
+        videoId: media.videoId || undefined,
+        playerVars,
+        events: {
+          onReady() {
+            if (mountId !== watchMountId) return;
+            watchReady = true;
+            try { ytPlayer.setPlaybackRate(1); } catch {}
+            watchTimer = setInterval(enforceStrictPlayback, 250);
+            updateCompleteButton();
+          },
+          onStateChange(event) {
+            if (mountId !== watchMountId) return;
+            if (event.data === YT.PlayerState.ENDED) {
+              markLessonWatched(courseId, lessonId);
+              updateCompleteButton();
+              notify('Video finished. You can mark this lesson complete.');
+            }
+          },
+          onPlaybackRateChange() {
+            if (mountId !== watchMountId) return;
+            try {
+              if (ytPlayer.getPlaybackRate() !== 1) {
+                ytPlayer.setPlaybackRate(1);
+                notify('Playback speed is locked at normal (1×).');
+              }
+            } catch {}
+          }
+        }
+      });
+    } catch {
+      if (mountId === watchMountId) {
+        notify('Could not load the locked video player. Check your connection and try again.');
+      }
+    }
+  }
   function key() { return `kk-learning-v1:${user ? user.uid : 'guest'}`; }
   function normalize(raw) {
     const clean = { courses: {} };
@@ -60,11 +215,13 @@
     });
     return syncQueue;
   }
+  const QUIZ_PASS_SCORE = 3;
   const enrolled = () => courses.filter(c => state.courses[c.id]);
   const record = c => state.courses[c.id];
   const count = c => record(c)?.completed.length || 0;
   const percent = c => Math.round(count(c) / c.lessons.length * 100);
   const finished = c => count(c) === c.lessons.length && record(c)?.quizPassed;
+  const quizPassLabel = (quiz) => `${quiz.length} questions · Pass with ${QUIZ_PASS_SCORE}+ correct`;
   function progress(c) { return `<div class="progress-track" role="progressbar" aria-label="${escape(c.title)} lesson progress" aria-valuenow="${percent(c)}" aria-valuemin="0" aria-valuemax="100"><span style="width:${percent(c)}%"></span></div>`; }
   function render() {
     const active = enrolled(), completed = active.reduce((n,c) => n + count(c), 0), total = active.reduce((n,c) => n + c.lessons.length, 0);
@@ -120,10 +277,12 @@
     $('#course-dialog').scrollTop = 0;
   }
   function renderCourse() {
+    destroyStrictPlayer();
     const c = currentCourse;
     const lesson = c.lessons[currentLesson];
     const item = record(c);
     const isDone = item?.completed.includes(lesson.id);
+    const watched = !lesson.video || isDone || isLessonWatched(c.id, lesson.id);
     let content;
     if (lesson.body) {
       content = `<article class="lesson-reading">
@@ -132,7 +291,7 @@
         <a class="button" href="${escape(lesson.readingUrl)}" target="_blank" rel="noopener">${escape(lesson.readingLabel)} ↗</a>
       </article>`;
     } else if (item && lesson.video) {
-      content = `<div class="video-frame"><iframe src="${escape(lesson.video)}" title="${escape(lesson.title)} video lesson" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`;
+      content = `<div class="video-frame strict-video"><div id="kk-strict-player"></div><p class="video-lock-badge" aria-live="polite">Strict watch · no skip ahead · 1× speed only</p></div>`;
     } else {
       content = `<article class="course-preview">
         <img src="${escape(c.image)}" alt="${escape(c.title)}" width="720" height="405">
@@ -159,7 +318,8 @@
           <div class="lesson-heading"><span class="eyebrow">${!item ? 'LESSON PREVIEW' : c.format ? 'READ · PRACTICE · BUILD' : 'WATCH · LEARN · PRACTICE'}</span><span>Lesson ${currentLesson + 1} of ${c.lessons.length}</span></div>
           <h3 class="lesson-title" id="active-lesson-title">${escape(lesson.title)}</h3>
           ${content}
-          ${item ? `<div class="lesson-actions"><button class="button ${isDone ? 'subtle' : 'primary'}" id="complete-lesson">${isDone ? '✓ Completed · undo' : 'Mark lesson complete ✓'}</button>${currentLesson < c.lessons.length - 1 ? '<button class="button" id="next-lesson">Next lesson →</button>' : '<button class="button" id="go-quiz">Knowledge check ↓</button>'}</div>
+          ${item ? `<div class="lesson-actions"><button class="button ${isDone || watched ? 'primary' : 'subtle'}" id="complete-lesson" ${!isDone && lesson.video && !watched ? 'disabled' : ''}>${isDone ? '✓ Completed · undo' : watched || !lesson.video ? 'Mark lesson complete ✓' : 'Watch full video to complete'}</button>${currentLesson < c.lessons.length - 1 ? '<button class="button" id="next-lesson">Next lesson →</button>' : '<button class="button" id="go-quiz">Knowledge check ↓</button>'}</div>
+            ${lesson.video ? `<p class="video-watch-hint" id="video-watch-hint" ${isDone ? 'hidden' : ''}>${watched && !isDone ? 'Full video watched at normal speed. You can mark this lesson complete.' : 'Watch the full video at normal speed. Skipping ahead and speed changes are locked; rewinding is allowed.'}</p>` : ''}
             <div class="lesson-notes"><label class="notes-label" for="lesson-notes">Your lesson notes</label><textarea class="notes-input" id="lesson-notes" maxlength="10000" placeholder="Write an idea to remember or a question to revisit…">${escape(item.notes[lesson.id] || '')}</textarea><p class="notes-hint">Saved automatically. ${user && cloudReady ? 'Synced to your account.' : 'Stored in this browser.'}</p></div>` : '<p class="preview-hint">This is a preview. Start the course above when you’re ready to track your learning.</p>'}
         </section>
         <aside class="curriculum-panel" aria-label="Course curriculum">
@@ -170,7 +330,8 @@
           <p class="notes-hint">${c.format ? 'Guided reading, practical exercises, and official documentation.' : 'Videos from external creators in the existing course curriculum.'}</p>
         </aside>
       </div>
-      ${item ? `<details class="quiz-panel"><summary>Knowledge check <span>${item.quizPassed ? '✓ Passed' : '3 questions · Try when you’re ready'}</span></summary><section class="quiz" id="knowledge-check"><h3>Put your knowledge into practice.</h3><p>${item.quizPassed ? 'You passed this knowledge check. Revisit it anytime.' : 'Answer all three questions correctly to pass. You can try again as often as you need.'}</p><form id="quiz-form">${c.quiz.map((q,i) => `<fieldset><legend>${i+1}. ${escape(q.question)}</legend>${q.options.map((o,j) => `<label><input type="radio" name="q${i}" value="${j}" required>${escape(o)}</label>`).join('')}</fieldset>`).join('')}<button class="button primary" type="submit">Check my answers →</button><div id="quiz-result" class="quiz-result" role="status" hidden></div></form></section></details>` : ''}`;
+      ${item ? `<details class="quiz-panel"><summary>Knowledge check <span>${item.quizPassed ? '✓ Passed' : escape(quizPassLabel(c.quiz))}</span></summary><section class="quiz" id="knowledge-check"><h3>Put your knowledge into practice.</h3><p>${item.quizPassed ? 'You passed this knowledge check. Revisit it anytime.' : `Answer all ${c.quiz.length} questions. You need at least ${QUIZ_PASS_SCORE} correct to pass. You can try again as often as you need.`}</p><form id="quiz-form">${c.quiz.map((q,i) => `<fieldset><legend>${i+1}. ${escape(q.question)}</legend>${q.options.map((o,j) => `<label><input type="radio" name="q${i}" value="${j}" required>${escape(o)}</label>`).join('')}</fieldset>`).join('')}<button class="button primary" type="submit">Check my answers →</button><div id="quiz-result" class="quiz-result" role="status" hidden></div></form></section></details>` : ''}`;
+    if (item && lesson.video) mountStrictPlayer(lesson.video, c.id, lesson.id);
   }
   document.addEventListener('click', async event => {
     const target = event.target.closest('button');
@@ -185,7 +346,10 @@
       render();
     }
     if (target.dataset.course) openCourse(target.dataset.course);
-    if (target.dataset.close) $(`#${target.dataset.close}`).close();
+    if (target.dataset.close) {
+      if (target.dataset.close === 'course-dialog') destroyStrictPlayer();
+      $(`#${target.dataset.close}`).close();
+    }
     if (target.id === 'hero-action') setView(enrolled().length ? 'learning' : 'catalog');
     if (target.dataset.lesson !== undefined) { currentLesson = Number(target.dataset.lesson); renderCourse(); }
     if (target.id === 'enroll') {
@@ -193,8 +357,18 @@
       save(); render(); renderCourse(); notify('You’re enrolled. Your next chapter starts now.');
     }
     if (target.id === 'complete-lesson') {
-      const item = record(currentCourse), id = currentCourse.lessons[currentLesson].id;
-      if (item.completed.includes(id)) item.completed = item.completed.filter(x => x !== id); else item.completed.push(id);
+      const item = record(currentCourse);
+      const lesson = currentCourse.lessons[currentLesson];
+      const id = lesson.id;
+      if (item.completed.includes(id)) {
+        item.completed = item.completed.filter(x => x !== id);
+      } else {
+        if (lesson.video && !isLessonWatched(currentCourse.id, id)) {
+          notify('Finish watching the full video at normal speed before marking this lesson complete.');
+          return;
+        }
+        item.completed.push(id);
+      }
       save(); render(); renderCourse();
       if (finished(currentCourse)) notify('Course completed. A milestone worth celebrating!');
     }
@@ -226,9 +400,10 @@
     event.preventDefault();
     const data = new FormData(event.target), c = currentCourse;
     const score = c.quiz.reduce((n,q,i) => n + (Number(data.get(`q${i}`)) === q.answer ? 1 : 0), 0);
-    if (score === c.quiz.length) { record(c).quizPassed = true; save(); render(); }
+    const passed = score >= QUIZ_PASS_SCORE;
+    if (passed) { record(c).quizPassed = true; save(); render(); }
     $('#quiz-result').hidden = false;
-    $('#quiz-result').innerHTML = `<strong>${score}/${c.quiz.length} correct. ${score === c.quiz.length ? 'Knowledge check passed!' : 'Keep practicing, then try again.'}</strong><br>${c.quiz.map((q,i) => `${Number(data.get(`q${i}`)) === q.answer ? '✓' : '○'} ${escape(q.explanation)}`).join('<br>')}${score === c.quiz.length && !finished(c) ? '<br>Complete all lessons to reach the course milestone.' : finished(c) ? '<br>✦ All lessons and the knowledge check completed. Well done!' : ''}`;
+    $('#quiz-result').innerHTML = `<strong>${score}/${c.quiz.length} correct. ${passed ? `Knowledge check passed (${QUIZ_PASS_SCORE}+ required)!` : `You need at least ${QUIZ_PASS_SCORE} correct to pass. Keep practicing, then try again.`}</strong><br>${c.quiz.map((q,i) => `${Number(data.get(`q${i}`)) === q.answer ? '✓' : '○'} ${escape(q.explanation)}`).join('<br>')}${passed && !finished(c) ? '<br>Complete all lessons to reach the course milestone.' : finished(c) ? '<br>✦ All lessons and the knowledge check completed. Well done!' : ''}`;
   });
   const googleAuth = window.KKGoogleAuth.createClient({
     config: window.KK_FIREBASE_CONFIG,
@@ -331,6 +506,7 @@
         }
       }
   }
+  $('#course-dialog').addEventListener('close', destroyStrictPlayer);
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') sync(); });
   window.addEventListener('online', () => { if (cloudReady) sync(); });
   $('#today').textContent = new Intl.DateTimeFormat('en-IN',{weekday:'short',day:'numeric',month:'short',year:'numeric'}).format(new Date());

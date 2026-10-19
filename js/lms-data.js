@@ -133,6 +133,26 @@ window.KK_COURSES = [
         ],
         "answer": 1,
         "explanation": "CRUD describes the four common operations on stored records."
+      },
+      {
+        "question": "Where should user passwords be stored in a web application?",
+        "options": [
+          "As plain text in the database",
+          "Hashed with a secure password hashing method",
+          "Inside the page CSS file"
+        ],
+        "answer": 1,
+        "explanation": "Store only secure password hashes, never plain-text passwords."
+      },
+      {
+        "question": "What does a URL route typically map to in Django?",
+        "options": [
+          "A view that returns a response",
+          "A spreadsheet chart title",
+          "A sewing machine setting"
+        ],
+        "answer": 0,
+        "explanation": "Routes connect URLs to views that build and return the response."
       }
     ]
   },
@@ -251,6 +271,26 @@ window.KK_COURSES = [
         ],
         "answer": 1,
         "explanation": "Correlation alone does not establish causation."
+      },
+      {
+        "question": "What is a good first step when exploring a new dataset?",
+        "options": [
+          "Delete half of the rows at random",
+          "Inspect columns, types, and a sample of values",
+          "Publish a final dashboard immediately"
+        ],
+        "answer": 1,
+        "explanation": "Understanding structure and sample values prevents mistakes later."
+      },
+      {
+        "question": "Why should charts include clear labels and units?",
+        "options": [
+          "So readers can interpret the numbers correctly",
+          "Only to make the file larger",
+          "Because labels replace the need for accurate data"
+        ],
+        "answer": 0,
+        "explanation": "Clear labels and units help people understand what the visual shows."
       }
     ]
   },
@@ -369,6 +409,26 @@ window.KK_COURSES = [
         ],
         "answer": 0,
         "explanation": "Measures are evaluated in the filter context supplied by visuals, slicers, and other filters."
+      },
+      {
+        "question": "What is a good use of a slicer in a Power BI report?",
+        "options": [
+          "Let readers filter the report interactively",
+          "Hide all measures permanently",
+          "Replace the need for a data model"
+        ],
+        "answer": 0,
+        "explanation": "Slicers let users filter visuals without changing the underlying dataset design."
+      },
+      {
+        "question": "Where should relationship keys typically live in a star schema?",
+        "options": [
+          "Between fact and dimension tables",
+          "Only inside page titles",
+          "Only in chart colors"
+        ],
+        "answer": 0,
+        "explanation": "Fact and dimension tables connect through keys so filters can flow correctly."
       }
     ]
   },
@@ -464,6 +524,26 @@ window.KK_COURSES = [
         ],
         "answer": 2,
         "explanation": "An SSD retains stored data when the power is off."
+      },
+      {
+        "question": "What does an operating system primarily do?",
+        "options": [
+          "Manage hardware and run applications",
+          "Replace the need for any storage",
+          "Print documents without software"
+        ],
+        "answer": 0,
+        "explanation": "The OS manages hardware resources and provides a platform for applications."
+      },
+      {
+        "question": "Which practice improves file organization?",
+        "options": [
+          "Using clear folder names and consistent file names",
+          "Saving everything to the desktop randomly",
+          "Deleting documents without checking"
+        ],
+        "answer": 0,
+        "explanation": "Clear naming and folders make files easier to find and share."
       }
     ]
   },
@@ -559,6 +639,26 @@ window.KK_COURSES = [
         ],
         "answer": 0,
         "explanation": "Record settings and follow an approved change process so you can recover if needed."
+      },
+      {
+        "question": "What does IP addressing help a network do?",
+        "options": [
+          "Identify and deliver data to devices",
+          "Increase sewing machine speed",
+          "Replace electrical earthing"
+        ],
+        "answer": 0,
+        "explanation": "IP addresses identify devices so packets can be routed correctly."
+      },
+      {
+        "question": "What is a common first step when a customer has no internet?",
+        "options": [
+          "Check power, cables, and basic link lights",
+          "Delete the customer account immediately",
+          "Ignore the modem status lights"
+        ],
+        "answer": 0,
+        "explanation": "Basic power and cabling checks often reveal simple connectivity problems."
       }
     ]
   },
@@ -649,6 +749,26 @@ window.KK_COURSES = [
         ],
         "answer": 0,
         "explanation": "Protective earthing provides a path for fault current; it does not replace other protection."
+      },
+      {
+        "question": "Why are PPE and safe work practices important?",
+        "options": [
+          "They reduce injury risk during electrical work",
+          "They replace the need for training",
+          "They increase circuit voltage"
+        ],
+        "answer": 0,
+        "explanation": "Personal protective equipment and safe practices help prevent electrical injuries."
+      },
+      {
+        "question": "What should you do if you are unsure about an electrical procedure?",
+        "options": [
+          "Stop and seek guidance from a qualified person",
+          "Guess and continue working live",
+          "Remove all protective devices"
+        ],
+        "answer": 0,
+        "explanation": "Uncertainty is a stop signal—get qualified guidance before continuing."
       }
     ]
   },
@@ -744,6 +864,26 @@ window.KK_COURSES = [
         ],
         "answer": 1,
         "explanation": "A test on a scrap helps you adjust settings before sewing the garment."
+      },
+      {
+        "question": "Why should fabric be pressed at key stages?",
+        "options": [
+          "To set seams and improve finished shape",
+          "To remove the need for stitching",
+          "To increase machine motor speed"
+        ],
+        "answer": 0,
+        "explanation": "Pressing helps seams lie flat and improves the garment’s final appearance."
+      },
+      {
+        "question": "What should you check before cutting fabric from a pattern?",
+        "options": [
+          "Grainline, size markings, and fabric layout",
+          "Only the thread color",
+          "Only the machine brand"
+        ],
+        "answer": 0,
+        "explanation": "Correct layout and markings prevent cutting mistakes that waste fabric."
       }
     ]
   }
