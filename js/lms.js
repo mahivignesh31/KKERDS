@@ -258,6 +258,20 @@
   const percent = c => Math.round(count(c) / c.lessons.length * 100);
   const finished = c => count(c) === c.lessons.length && record(c)?.quizPassed;
   const quizPassLabel = (quiz) => `${quiz.length} questions · Pass with ${QUIZ_PASS_SCORE}+ correct`;
+  function isLessonUnlocked(c, index) {
+    if (index <= 0) return true;
+    const item = record(c);
+    if (!item) return false;
+    return c.lessons.slice(0, index).every(lesson => item.completed.includes(lesson.id));
+  }
+  function clampToUnlockedLesson() {
+    if (!currentCourse || isLessonUnlocked(currentCourse, currentLesson)) return;
+    const firstOpen = currentCourse.lessons.findIndex((_, i) => isLessonUnlocked(currentCourse, i) && !record(currentCourse)?.completed.includes(currentCourse.lessons[i].id));
+    if (firstOpen >= 0) { currentLesson = firstOpen; return; }
+    let lastUnlocked = 0;
+    currentCourse.lessons.forEach((_, i) => { if (isLessonUnlocked(currentCourse, i)) lastUnlocked = i; });
+    currentLesson = lastUnlocked;
+  }
   function progress(c) { return `<div class="progress-track" role="progressbar" aria-label="${escape(c.title)} lesson progress" aria-valuenow="${percent(c)}" aria-valuemin="0" aria-valuemax="100"><span style="width:${percent(c)}%"></span></div>`; }
   function render() {
     const active = enrolled(), completed = active.reduce((n,c) => n + count(c), 0), total = active.reduce((n,c) => n + c.lessons.length, 0);
@@ -314,11 +328,13 @@
   }
   function renderCourse() {
     destroyStrictPlayer();
+    clampToUnlockedLesson();
     const c = currentCourse;
     const lesson = c.lessons[currentLesson];
     const item = record(c);
     const isDone = item?.completed.includes(lesson.id);
     const watched = !lesson.video || isDone || isLessonWatched(c.id, lesson.id);
+    const canGoNext = isDone && currentLesson < c.lessons.length - 1 && isLessonUnlocked(c, currentLesson + 1);
     let content;
     if (lesson.body) {
       content = `<article class="lesson-reading">
@@ -354,15 +370,20 @@
           <div class="lesson-heading"><span class="eyebrow">${!item ? 'LESSON PREVIEW' : c.format ? 'READ · PRACTICE · BUILD' : 'WATCH · LEARN · PRACTICE'}</span><span>Lesson ${currentLesson + 1} of ${c.lessons.length}</span></div>
           <h3 class="lesson-title" id="active-lesson-title">${escape(lesson.title)}</h3>
           ${content}
-          ${item ? `<div class="lesson-actions"><button class="button primary" id="complete-lesson" ${!isDone && lesson.video && !watched ? 'hidden' : ''}>${isDone ? '✓ Completed · undo' : 'Mark lesson complete ✓'}</button>${currentLesson < c.lessons.length - 1 ? '<button class="button" id="next-lesson">Next lesson →</button>' : '<button class="button" id="go-quiz">Open knowledge check</button>'}</div>
-            ${lesson.video && !isDone && !watched ? '<p class="video-watch-hint" id="video-watch-hint">Finish watching the full video. Skipping ahead and speed changes are locked; rewinding is allowed.</p>' : '<p class="video-watch-hint" id="video-watch-hint" hidden></p>'}
+          ${item ? `<div class="lesson-actions"><button class="button primary" id="complete-lesson" ${!isDone && lesson.video && !watched ? 'hidden' : ''}>${isDone ? '✓ Completed · undo' : 'Mark lesson complete ✓'}</button>${currentLesson < c.lessons.length - 1 ? `<button class="button" id="next-lesson" ${canGoNext ? '' : 'disabled'}>Next lesson →</button>` : `<button class="button" id="go-quiz" ${count(c) === c.lessons.length ? '' : 'disabled'}>Open knowledge check</button>`}</div>
+            ${lesson.video && !isDone && !watched ? '<p class="video-watch-hint" id="video-watch-hint">Finish watching the full video. Skipping ahead and speed changes are locked; rewinding is allowed.</p>' : !isDone ? '<p class="video-watch-hint" id="video-watch-hint">Complete this lesson before the next one unlocks.</p>' : '<p class="video-watch-hint" id="video-watch-hint" hidden></p>'}
             <div class="lesson-notes"><label class="notes-label" for="lesson-notes">Your lesson notes</label><textarea class="notes-input" id="lesson-notes" maxlength="10000" placeholder="Write an idea to remember or a question to revisit…">${escape(item.notes[lesson.id] || '')}</textarea><p class="notes-hint">Saved automatically. ${user && cloudReady ? 'Synced to your account.' : 'Stored in this browser.'}</p></div>` : '<p class="preview-hint">This is a preview. Start the course above when you’re ready to track your learning.</p>'}
         </section>
         <aside class="curriculum-panel" aria-label="Course curriculum">
           <div class="curriculum-header"><h3>Course curriculum</h3><span>${count(c)}/${c.lessons.length}</span></div>
           ${progress(c)}
-          <p class="curriculum-hint">Choose a lesson to ${item ? 'continue learning' : 'preview its content'}.</p>
-          <div class="lesson-list">${c.lessons.map((l,i) => `<button class="lesson-row ${i === currentLesson ? 'selected' : ''} ${item?.completed.includes(l.id) ? 'done' : ''}" data-lesson="${i}" ${i === currentLesson ? 'aria-current="step"' : ''}><span>${item?.completed.includes(l.id) ? '✓' : i+1}</span><span>${escape(l.title)}</span>${i === currentLesson ? '<span class="lesson-current" aria-hidden="true">→</span>' : ''}</button>`).join('')}</div>
+          <p class="curriculum-hint">${item ? 'Finish each lesson in order. Later lessons stay locked until the previous one is complete.' : 'Preview a lesson, then enroll to start in order.'}</p>
+          <div class="lesson-list">${c.lessons.map((l,i) => {
+            const done = item?.completed.includes(l.id);
+            const unlocked = !item || isLessonUnlocked(c, i);
+            const selected = i === currentLesson;
+            return `<button class="lesson-row ${selected ? 'selected' : ''} ${done ? 'done' : ''} ${unlocked ? '' : 'locked'}" data-lesson="${i}" ${selected ? 'aria-current="step"' : ''} ${unlocked ? '' : 'aria-disabled="true"'}><span>${done ? '✓' : unlocked ? i+1 : '◌'}</span><span>${escape(l.title)}</span>${selected ? '<span class="lesson-current" aria-hidden="true">→</span>' : unlocked ? '' : '<span class="lesson-lock-label">Locked</span>'}</button>`;
+          }).join('')}</div>
           <p class="notes-hint">${c.format ? 'Guided reading, practical exercises, and official documentation.' : 'Videos from external creators in the existing course curriculum.'}</p>
         </aside>
       </div>`;
@@ -389,10 +410,20 @@
       $(`#${target.dataset.close}`).close();
     }
     if (target.id === 'hero-action') setView(enrolled().length ? 'learning' : 'catalog');
-    if (target.dataset.lesson !== undefined) { currentLesson = Number(target.dataset.lesson); renderCourse(); }
+    if (target.dataset.lesson !== undefined) {
+      const index = Number(target.dataset.lesson);
+      if (!currentCourse) return;
+      if (record(currentCourse) && !isLessonUnlocked(currentCourse, index)) {
+        notify('Complete the previous lesson first. Lessons unlock one by one.');
+        return;
+      }
+      currentLesson = index;
+      renderCourse();
+    }
     if (target.id === 'enroll') {
       state.courses[currentCourse.id] = {enrolled:true, completed:[], notes:{}, quizPassed:false};
-      save(); render(); renderCourse(); notify('You’re enrolled. Your next chapter starts now.');
+      currentLesson = 0;
+      save(); render(); renderCourse(); notify('You’re enrolled. Start with lesson 1 — later lessons unlock after you complete each one.');
     }
     if (target.id === 'complete-lesson') {
       const item = record(currentCourse);
@@ -400,6 +431,12 @@
       const id = lesson.id;
       if (item.completed.includes(id)) {
         item.completed = item.completed.filter(x => x !== id);
+        // Drop progress after this lesson so order stays enforced.
+        const cut = currentLesson;
+        item.completed = item.completed.filter(doneId => {
+          const idx = currentCourse.lessons.findIndex(l => l.id === doneId);
+          return idx >= 0 && idx < cut;
+        });
       } else {
         if (lesson.video && !isLessonWatched(currentCourse.id, id)) {
           notify('Finish watching the full video at normal speed before marking this lesson complete.');
@@ -410,8 +447,25 @@
       save(); render(); renderCourse();
       if (finished(currentCourse)) notify('Course completed. A milestone worth celebrating!');
     }
-    if (target.id === 'next-lesson') { currentLesson++; renderCourse(); }
-    if (target.id === 'go-quiz') openQuizDialog();
+    if (target.id === 'next-lesson') {
+      if (!record(currentCourse)?.completed.includes(currentCourse.lessons[currentLesson].id)) {
+        notify('Mark this lesson complete before moving to the next one.');
+        return;
+      }
+      if (!isLessonUnlocked(currentCourse, currentLesson + 1)) {
+        notify('Complete the previous lesson first. Lessons unlock one by one.');
+        return;
+      }
+      currentLesson++;
+      renderCourse();
+    }
+    if (target.id === 'go-quiz') {
+      if (count(currentCourse) !== currentCourse.lessons.length) {
+        notify('Complete every lesson in order before the knowledge check.');
+        return;
+      }
+      openQuizDialog();
+    }
     if (target.id === 'signin' || target.id === 'auth-retry') {
       if ($('#auth-dialog').open) $('#auth-dialog').close();
       await signIn();
