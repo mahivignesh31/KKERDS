@@ -1442,3 +1442,19 @@ h1 > span { color: var(--green); }
   .welcome-actions { width: 100%; }
   .welcome-actions .button { flex: 1; }
 }
+
+/* Heading safety — never clip titles */
+.page-heading, .welcome-bar, .welcome-copy, .welcome-copy h2, .page-heading h1 {
+  overflow: visible;
+  text-overflow: unset;
+  white-space: normal;
+}
+.page-heading {
+  align-items: flex-start;
+  gap: 16px;
+}
+.date-chip { flex-shrink: 0; }
+.welcome-bar {
+  align-items: flex-start;
+}
+.welcome-actions { margin-top: 4px; }

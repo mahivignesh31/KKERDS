@@ -389,7 +389,7 @@
         hasLessonQuiz || c.quiz?.length ? '<span class="feature-chip">Quizzes</span>' : '',
         '<span class="feature-chip">Ordered unlock</span>'
       ].filter(Boolean).join('');
-      return `<article class="course-card"><div class="course-image"><img src="${c.image}?v=20261019l" alt="${escape(c.title)}" loading="lazy"><span class="course-tag">${escape(c.tag)}</span></div><div class="course-card-body"><span class="course-category">${escape(c.categoryLabel)}</span><h3>${escape(c.title)}</h3><p>${escape(c.description)}</p>${c.careers ? `<p class="course-careers"><strong>Roles:</strong> ${escape(c.careers)}</p>` : ''}<div class="feature-row">${chips}</div><div class="course-meta"><span>▤ ${c.lessons.length} lessons</span><span>◷ ${escape(c.duration || c.format || 'Self-paced')}</span></div>${record(c) ? progress(c) : ''}<button class="button wide" data-course="${c.id}">${finished(c) ? 'Review course' : record(c) ? `Continue · ${percent(c)}%` : 'Open course'}<span aria-hidden="true">↗</span></button></div></article>`;
+      return `<article class="course-card"><div class="course-image"><img src="${c.image}?v=20261019m" alt="${escape(c.title)}" loading="lazy"><span class="course-tag">${escape(c.tag)}</span></div><div class="course-card-body"><span class="course-category">${escape(c.categoryLabel)}</span><h3>${escape(c.title)}</h3><p>${escape(c.description)}</p>${c.careers ? `<p class="course-careers"><strong>Roles:</strong> ${escape(c.careers)}</p>` : ''}<div class="feature-row">${chips}</div><div class="course-meta"><span>▤ ${c.lessons.length} lessons</span><span>◷ ${escape(c.duration || c.format || 'Self-paced')}</span></div>${record(c) ? progress(c) : ''}<button class="button wide" data-course="${c.id}">${finished(c) ? 'Review course' : record(c) ? `Continue · ${percent(c)}%` : 'Open course'}<span aria-hidden="true">↗</span></button></div></article>`;
     }).join('');
     $('#no-results').hidden = visible.length !== 0;
     $('#no-results').textContent = view === 'learning' && !active.length ? 'You have not enrolled in a course yet. Open the catalog to begin.' : 'No courses matched your search. Try another keyword or category.';
@@ -406,7 +406,7 @@
       b.setAttribute('aria-pressed', String(on));
     });
     const headings = {
-      overview:['KK LEARNING', user ? `Welcome back, ${user.displayName?.split(' ')[0] || 'learner'}` : 'Professional skill development', 'Structured video lessons, practice labs, and knowledge checks — at your own pace.'],
+      overview:['KK LEARNING', user ? `Welcome back, ${user.displayName?.split(' ')[0] || 'learner'}` : 'Your learning workspace', 'Video lessons, practice labs, and knowledge checks — at your own pace.'],
       learning:['MY LEARNING', 'Your enrolled courses', 'Resume any path and continue from your last completed lesson.'],
       catalog:['COURSE CATALOG', 'Professional learning paths', 'Technology, data, business, and internship tracks with ordered progress.'],
       resources:['LIBRARY', 'Learning resources', 'Course guides and training handbooks to support your study.'],
