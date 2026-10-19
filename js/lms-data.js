@@ -1432,5 +1432,2361 @@ window.KK_COURSES = [
         "explanation": "Correct layout and markings prevent cutting mistakes that waste fabric."
       }
     ]
+  },
+  {
+    "id": "advanced-excel-power-bi",
+    "title": "Advanced Excel & Power BI",
+    "page": "course-guide.html?course=advanced-excel-power-bi",
+    "category": "analytics",
+    "categoryLabel": "Data & BI",
+    "image": "img/lms-power-bi.svg",
+    "description": "Build advanced spreadsheets, dashboards, and Power BI reports used in high-demand analyst roles.",
+    "tag": "High demand",
+    "track": "professional",
+    "demand": "High",
+    "duration": "60–90 hours",
+    "careers": "MIS Executive, Reporting Analyst, Junior Business Analyst",
+    "format": "Industry course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "Excel foundations for analysts",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Refresh formulas, tables, and clean data habits used in daily MIS work.",
+        "practice": "Build a sales table with totals, averages, and percentage growth.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "2",
+        "title": "Lookups, pivots & dashboards",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Use lookup functions and PivotTables to summarise business questions quickly.",
+        "practice": "Create a PivotTable dashboard for monthly revenue by product.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "3",
+        "title": "Power BI Desktop setup",
+        "video": "https://www.youtube.com/embed/NNSHu0rkew8",
+        "body": "Install and navigate Power BI Desktop. Plan a report from source to insight.",
+        "practice": "Sketch three questions your first sales report should answer.",
+        "readingUrl": "https://learn.microsoft.com/en-us/power-bi/",
+        "readingLabel": "Power BI Learn"
+      },
+      {
+        "id": "4",
+        "title": "Power Query cleaning",
+        "video": "https://www.youtube.com/embed/AGrl-H87pRU",
+        "body": "Transform messy files into trusted tables with repeatable Power Query steps.",
+        "practice": "Clean a sample CSV: fix types, remove blanks, standardise names.",
+        "readingUrl": "https://learn.microsoft.com/en-us/power-bi/",
+        "readingLabel": "Power BI Learn"
+      },
+      {
+        "id": "5",
+        "title": "Model & DAX measures",
+        "video": "https://www.youtube.com/embed/6cV3OwFrOkk",
+        "body": "Relate tables and write measures that respond correctly to filters.",
+        "practice": "Create a Total Sales measure and test it with a slicer.",
+        "readingUrl": "https://learn.microsoft.com/en-us/power-bi/",
+        "readingLabel": "Power BI Learn"
+      },
+      {
+        "id": "6",
+        "title": "Executive reporting project",
+        "video": "https://www.youtube.com/embed/NNSHu0rkew8",
+        "body": "Design a clear report page for managers with trend, comparison, and filter controls.",
+        "practice": "Deliver a one-page executive view and list three insights.",
+        "readingUrl": "https://learn.microsoft.com/en-us/power-bi/",
+        "readingLabel": "Power BI Learn"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting Advanced Excel & Power BI?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "ai-tools-automation",
+    "title": "AI Tools & Workplace Automation",
+    "page": "course-guide.html?course=ai-tools-automation",
+    "category": "technology",
+    "categoryLabel": "Technology",
+    "image": "img/lms-python-fullstack.svg",
+    "description": "Use AI assistants and automation habits to speed up office work while staying accurate and secure.",
+    "tag": "High demand",
+    "track": "professional",
+    "demand": "High",
+    "duration": "45–60 hours",
+    "careers": "Operations Executive, Admin Associate, Productivity Specialist",
+    "format": "Industry course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "AI at work: safe & useful",
+        "video": "https://www.youtube.com/embed/fZmQ_aPXJAM",
+        "body": "Understand where AI helps knowledge work and where human review is required.",
+        "practice": "List five tasks in your target role that AI can draft vs must verify.",
+        "readingUrl": "https://www.microsoft.com/en-us/microsoft-365/copilot",
+        "readingLabel": "Microsoft Copilot overview"
+      },
+      {
+        "id": "2",
+        "title": "Prompting for office outputs",
+        "video": "https://www.youtube.com/embed/1XctnF7C74s",
+        "body": "Write clear prompts for emails, summaries, and checklists with tone and constraints.",
+        "practice": "Draft a customer reply prompt and refine it twice for clarity.",
+        "readingUrl": "https://support.microsoft.com/",
+        "readingLabel": "Microsoft support"
+      },
+      {
+        "id": "3",
+        "title": "Document & spreadsheet acceleration",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Combine AI drafts with Excel and Word workflows for faster first versions.",
+        "practice": "Generate a meeting summary template and convert action items into a tracker table.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "4",
+        "title": "Automation thinking",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Map repetitive processes and decide what to automate vs keep manual.",
+        "practice": "Draw a simple flowchart for an invoice or leave-request process.",
+        "readingUrl": "https://learn.microsoft.com/en-us/power-automate/",
+        "readingLabel": "Power Automate Learn"
+      },
+      {
+        "id": "5",
+        "title": "Quality, privacy & review",
+        "video": "https://www.youtube.com/embed/z5nc9MDbvkw",
+        "body": "Protect confidential data and validate AI outputs before sending externally.",
+        "practice": "Create a 6-point review checklist for AI-assisted workplace documents.",
+        "readingUrl": "https://www.microsoft.com/en-us/trust-center",
+        "readingLabel": "Trust Center"
+      },
+      {
+        "id": "6",
+        "title": "Capstone: productive week plan",
+        "video": "https://www.youtube.com/embed/fZmQ_aPXJAM",
+        "body": "Design a personal AI-assisted weekly workflow for an office role.",
+        "practice": "Submit a one-page plan covering tools, prompts, and review steps.",
+        "readingUrl": "https://www.microsoft.com/en-us/microsoft-365",
+        "readingLabel": "Microsoft 365"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting AI Tools & Workplace Automation?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "digital-marketing-seo",
+    "title": "Digital Marketing & SEO",
+    "page": "course-guide.html?course=digital-marketing-seo",
+    "category": "marketing",
+    "categoryLabel": "Marketing",
+    "image": "img/lms-data-analytics.svg",
+    "description": "Learn search, content, and campaign fundamentals used in high-demand digital marketing roles.",
+    "tag": "High demand",
+    "track": "professional",
+    "demand": "High",
+    "duration": "60–90 hours",
+    "careers": "Marketing Executive, SEO Executive, Content Marketer",
+    "format": "Industry course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "Digital marketing landscape",
+        "video": "https://www.youtube.com/embed/xsVTqzratPs",
+        "body": "Map channels: search, social, email, and paid — and how they support business goals.",
+        "practice": "Pick a local business and write goals for awareness, leads, and sales.",
+        "readingUrl": "https://developers.google.com/search/docs",
+        "readingLabel": "Google Search docs"
+      },
+      {
+        "id": "2",
+        "title": "SEO fundamentals",
+        "video": "https://www.youtube.com/embed/xsVTqzratPs",
+        "body": "Learn how search engines crawl, index, and rank pages.",
+        "practice": "List on-page SEO checks for a service page title, headings, and meta description.",
+        "readingUrl": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+        "readingLabel": "SEO starter guide"
+      },
+      {
+        "id": "3",
+        "title": "Keyword research basics",
+        "video": "https://www.youtube.com/embed/qX6Q8DQGyRU",
+        "body": "Find searchable phrases with intent and realistic competition.",
+        "practice": "Build a 15-keyword list grouped by informational vs commercial intent.",
+        "readingUrl": "https://developers.google.com/search/docs",
+        "readingLabel": "Google Search docs"
+      },
+      {
+        "id": "4",
+        "title": "Content that ranks & converts",
+        "video": "https://www.youtube.com/embed/xsVTqzratPs",
+        "body": "Structure pages for clarity, trust, and conversion.",
+        "practice": "Outline a landing page with H1–H3, CTA, and FAQ.",
+        "readingUrl": "https://developers.google.com/search/docs",
+        "readingLabel": "Google Search docs"
+      },
+      {
+        "id": "5",
+        "title": "Analytics & iteration",
+        "video": "https://www.youtube.com/embed/PSNXoAs2FtQ",
+        "body": "Read basic traffic and conversion signals to improve campaigns.",
+        "practice": "Define 5 KPIs for a monthly SEO report.",
+        "readingUrl": "https://support.google.com/analytics",
+        "readingLabel": "Google Analytics help"
+      },
+      {
+        "id": "6",
+        "title": "Campaign capstone",
+        "video": "https://www.youtube.com/embed/qX6Q8DQGyRU",
+        "body": "Plan a 30-day organic growth sprint for a sample brand.",
+        "practice": "Deliver keyword map, content calendar, and success metrics.",
+        "readingUrl": "https://developers.google.com/search/docs",
+        "readingLabel": "Google Search docs"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting Digital Marketing & SEO?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "python-beginners",
+    "title": "Python for Beginners",
+    "page": "course-guide.html?course=python-beginners",
+    "category": "technology",
+    "categoryLabel": "Technology",
+    "image": "img/lms-python-fullstack.svg",
+    "description": "Start programming with Python for technical and automation-oriented career paths.",
+    "tag": "High in technical roles",
+    "track": "professional",
+    "demand": "High",
+    "duration": "90–120 hours",
+    "careers": "Junior Developer Trainee, Automation Assistant, Data Associate",
+    "format": "Industry course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "Python setup & first programs",
+        "video": "https://www.youtube.com/embed/kqtD5dpn9C8",
+        "body": "Install Python mindset: variables, input/output, and clear naming.",
+        "practice": "Write a program that calculates simple interest.",
+        "readingUrl": "https://docs.python.org/3/tutorial/",
+        "readingLabel": "Python tutorial"
+      },
+      {
+        "id": "2",
+        "title": "Decisions & loops",
+        "video": "https://www.youtube.com/embed/f4KOjWS_KZs",
+        "body": "Use if/else and loops to handle repeated workplace logic.",
+        "practice": "Grade scores and print pass/fail with validation.",
+        "readingUrl": "https://docs.python.org/3/tutorial/controlflow.html",
+        "readingLabel": "Control flow"
+      },
+      {
+        "id": "3",
+        "title": "Functions & reuse",
+        "video": "https://www.youtube.com/embed/rfscVS0vtbw",
+        "body": "Package logic into functions you can test and reuse.",
+        "practice": "Create functions for discount price and invoice total.",
+        "readingUrl": "https://docs.python.org/3/tutorial/",
+        "readingLabel": "Python tutorial"
+      },
+      {
+        "id": "4",
+        "title": "Lists & dictionaries",
+        "video": "https://www.youtube.com/embed/W8KRzm-HUcc",
+        "body": "Store collections of records for mini business tools.",
+        "practice": "Build an in-memory product price catalogue.",
+        "readingUrl": "https://docs.python.org/3/tutorial/datastructures.html",
+        "readingLabel": "Data structures"
+      },
+      {
+        "id": "5",
+        "title": "Files & errors",
+        "video": "https://www.youtube.com/embed/rfscVS0vtbw",
+        "body": "Read/write simple files and handle expected errors safely.",
+        "practice": "Save contacts to a text/JSON-like structure and reload them.",
+        "readingUrl": "https://docs.python.org/3/tutorial/",
+        "readingLabel": "Python tutorial"
+      },
+      {
+        "id": "6",
+        "title": "Beginner project",
+        "video": "https://www.youtube.com/embed/kqtD5dpn9C8",
+        "body": "Combine skills into a small utility script.",
+        "practice": "Deliver an expense tracker CLI with add/list/total commands.",
+        "readingUrl": "https://docs.python.org/3/tutorial/",
+        "readingLabel": "Python tutorial"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting Python for Beginners?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "hr-recruitment-payroll",
+    "title": "HR Recruitment & Payroll",
+    "page": "course-guide.html?course=hr-recruitment-payroll",
+    "category": "business",
+    "categoryLabel": "Business & HR",
+    "image": "img/board.jpeg",
+    "description": "Learn hiring workflows and payroll fundamentals with broad office-sector applicability.",
+    "tag": "Office-sector ready",
+    "track": "professional",
+    "demand": "Broad applicability",
+    "duration": "60 hours",
+    "careers": "HR Assistant, Payroll Executive, Recruitment Coordinator",
+    "format": "Industry course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "HR function overview",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Understand recruitment, onboarding, attendance, and payroll touchpoints.",
+        "practice": "Map an employee lifecycle from offer to first salary.",
+        "readingUrl": "https://www.ilo.org/",
+        "readingLabel": "Workplace standards reference"
+      },
+      {
+        "id": "2",
+        "title": "Job descriptions & sourcing",
+        "video": "https://www.youtube.com/embed/1XctnF7C74s",
+        "body": "Write clear JD criteria and source candidates ethically.",
+        "practice": "Draft a JD for an Accounts Executive role.",
+        "readingUrl": "https://www.ilo.org/",
+        "readingLabel": "Workplace standards reference"
+      },
+      {
+        "id": "3",
+        "title": "Screening & interviews",
+        "video": "https://www.youtube.com/embed/fZmQ_aPXJAM",
+        "body": "Plan structured interviews and fair evaluation scorecards.",
+        "practice": "Create a 8-question interview scorecard.",
+        "readingUrl": "https://www.ilo.org/",
+        "readingLabel": "Workplace standards reference"
+      },
+      {
+        "id": "4",
+        "title": "Offer & onboarding docs",
+        "video": "https://www.youtube.com/embed/2MCmnr2L50o",
+        "body": "Organise joining checklists, document collection, and induction basics.",
+        "practice": "Build an onboarding checklist for week one.",
+        "readingUrl": "https://support.microsoft.com/word",
+        "readingLabel": "Word help"
+      },
+      {
+        "id": "5",
+        "title": "Payroll components",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Learn earnings, deductions, and payslip structure at a conceptual level.",
+        "practice": "Prepare a sample payslip sheet with basic earnings and deductions.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "6",
+        "title": "HR operations capstone",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Connect recruitment and payroll into one monthly operations calendar.",
+        "practice": "Submit a monthly HR ops calendar with owners and due dates.",
+        "readingUrl": "https://www.ilo.org/",
+        "readingLabel": "Workplace standards reference"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting HR Recruitment & Payroll?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "data-analytics-fundamentals",
+    "title": "Data Analytics Fundamentals",
+    "page": "course-guide.html?course=data-analytics-fundamentals",
+    "category": "analytics",
+    "categoryLabel": "Data & BI",
+    "image": "img/lms-data-analytics.svg",
+    "description": "Build analytical thinking with spreadsheets, SQL, and Python for high-demand analyst roles.",
+    "tag": "High in analytical roles",
+    "track": "professional",
+    "demand": "High",
+    "duration": "90–120 hours",
+    "careers": "Data Analyst Trainee, Business Analyst Associate, Reporting Analyst",
+    "format": "Industry course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "Ask better business questions",
+        "video": "https://www.youtube.com/embed/PSNXoAs2FtQ",
+        "body": "Define metrics, time windows, and decision outcomes before analysis.",
+        "practice": "Write three measurable questions for a retail business.",
+        "readingUrl": "https://pandas.pydata.org/docs/",
+        "readingLabel": "pandas docs"
+      },
+      {
+        "id": "2",
+        "title": "Spreadsheet analysis",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Clean columns, create summaries, and validate totals.",
+        "practice": "Build a monthly KPI sheet with trend formulas.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "3",
+        "title": "SQL foundations",
+        "video": "https://www.youtube.com/embed/HXV3zeQKqGY",
+        "body": "Query tables with SELECT, WHERE, GROUP BY, and JOIN patterns.",
+        "practice": "Write queries for top products and monthly revenue.",
+        "readingUrl": "https://www.w3schools.com/sql/",
+        "readingLabel": "SQL tutorial"
+      },
+      {
+        "id": "4",
+        "title": "Python & pandas intro",
+        "video": "https://www.youtube.com/embed/vmEHCJofslg",
+        "body": "Load tabular data and compute basic aggregates in Python.",
+        "practice": "Load a CSV and print shape, null counts, and group totals.",
+        "readingUrl": "https://pandas.pydata.org/docs/getting_started/",
+        "readingLabel": "pandas getting started"
+      },
+      {
+        "id": "5",
+        "title": "Visual storytelling",
+        "video": "https://www.youtube.com/embed/PSNXoAs2FtQ",
+        "body": "Choose charts that answer the question without misleading scales.",
+        "practice": "Create three charts and a five-line insight summary.",
+        "readingUrl": "https://pandas.pydata.org/docs/",
+        "readingLabel": "pandas docs"
+      },
+      {
+        "id": "6",
+        "title": "Analytics capstone",
+        "video": "https://www.youtube.com/embed/PSNXoAs2FtQ",
+        "body": "Deliver an end-to-end mini analysis with caveats and recommendations.",
+        "practice": "Submit notebook/sheet, charts, and a one-page brief.",
+        "readingUrl": "https://pandas.pydata.org/docs/",
+        "readingLabel": "pandas docs"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting Data Analytics Fundamentals?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "banking-finance-operations",
+    "title": "Banking & Finance Operations",
+    "page": "course-guide.html?course=banking-finance-operations",
+    "category": "finance",
+    "categoryLabel": "Finance",
+    "image": "img/board.jpeg",
+    "description": "Understand banking operations, compliance basics, and finance-sector workplace processes.",
+    "tag": "Finance-sector",
+    "track": "professional",
+    "demand": "Finance-sector specific",
+    "duration": "60–90 hours",
+    "careers": "Banking Operations Associate, Finance Operations Executive",
+    "format": "Industry course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "Banking ecosystem overview",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Learn deposits, lending, payments, and customer lifecycle basics.",
+        "practice": "Diagram how a customer account request moves through a branch.",
+        "readingUrl": "https://www.rbi.org.in/",
+        "readingLabel": "RBI resources"
+      },
+      {
+        "id": "2",
+        "title": "KYC & documentation",
+        "video": "https://www.youtube.com/embed/2MCmnr2L50o",
+        "body": "Follow document accuracy and verification habits for onboarding.",
+        "practice": "Create a KYC checklist for individual vs business accounts.",
+        "readingUrl": "https://www.rbi.org.in/",
+        "readingLabel": "RBI resources"
+      },
+      {
+        "id": "3",
+        "title": "Payments & reconciliation",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Track entries, mismatches, and daily reconciliation discipline.",
+        "practice": "Build a sample reconciliation sheet with matched/unmatched rows.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "4",
+        "title": "Risk, fraud & controls",
+        "video": "https://www.youtube.com/embed/z5nc9MDbvkw",
+        "body": "Recognise common control points and escalation paths.",
+        "practice": "Write a red-flag list for suspicious transaction patterns.",
+        "readingUrl": "https://www.rbi.org.in/",
+        "readingLabel": "RBI resources"
+      },
+      {
+        "id": "5",
+        "title": "Customer service in finance",
+        "video": "https://www.youtube.com/embed/1XctnF7C74s",
+        "body": "Communicate clearly under policy constraints.",
+        "practice": "Draft a polite email explaining a failed transaction next step.",
+        "readingUrl": "https://support.microsoft.com/",
+        "readingLabel": "Microsoft support"
+      },
+      {
+        "id": "6",
+        "title": "Operations capstone",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Design a daily ops checklist for a junior banking associate.",
+        "practice": "Submit opening, mid-day, and closing task lists.",
+        "readingUrl": "https://www.rbi.org.in/",
+        "readingLabel": "RBI resources"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting Banking & Finance Operations?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "office-admin-mis",
+    "title": "Office Administration & MIS",
+    "page": "course-guide.html?course=office-admin-mis",
+    "category": "business",
+    "categoryLabel": "Business & HR",
+    "image": "img/board.jpeg",
+    "description": "Master office coordination, documentation, and MIS reporting for entry-level professional roles.",
+    "tag": "Entry-level ready",
+    "track": "professional",
+    "demand": "Broad entry-level applicability",
+    "duration": "60 hours",
+    "careers": "Office Administrator, MIS Executive, Admin Coordinator",
+    "format": "Industry course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "Office administration essentials",
+        "video": "https://www.youtube.com/embed/2MCmnr2L50o",
+        "body": "Organise files, calendars, and professional communication standards.",
+        "practice": "Create a shared folder naming convention and weekly calendar template.",
+        "readingUrl": "https://support.microsoft.com/word",
+        "readingLabel": "Word help"
+      },
+      {
+        "id": "2",
+        "title": "Business communication",
+        "video": "https://www.youtube.com/embed/1XctnF7C74s",
+        "body": "Write clear emails, minutes, and follow-ups.",
+        "practice": "Draft minutes for a 30-minute status meeting.",
+        "readingUrl": "https://support.microsoft.com/",
+        "readingLabel": "Microsoft support"
+      },
+      {
+        "id": "3",
+        "title": "Spreadsheets for MIS",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Track KPIs and maintain clean MIS trackers.",
+        "practice": "Build an attendance/task tracker with summary counts.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "4",
+        "title": "Presenting MIS updates",
+        "video": "https://www.youtube.com/embed/Fl2lYiRPsVc",
+        "body": "Turn tables into concise management slides.",
+        "practice": "Create a 5-slide weekly MIS pack.",
+        "readingUrl": "https://support.microsoft.com/powerpoint",
+        "readingLabel": "PowerPoint help"
+      },
+      {
+        "id": "5",
+        "title": "Process & escalation",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Document SOPs and escalation paths for common admin issues.",
+        "practice": "Write an SOP for vendor invoice submission.",
+        "readingUrl": "https://support.microsoft.com/",
+        "readingLabel": "Microsoft support"
+      },
+      {
+        "id": "6",
+        "title": "Admin capstone",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Run a mock week of admin + MIS reporting.",
+        "practice": "Submit tracker, minutes, and MIS slides as one pack.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting Office Administration & MIS?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "graphic-design-content",
+    "title": "Graphic Design & Content Creation",
+    "page": "course-guide.html?course=graphic-design-content",
+    "category": "creative",
+    "categoryLabel": "Creative skills",
+    "image": "img/lms-data-analytics.svg",
+    "description": "Create marketing visuals and content assets for marketing and creative career paths.",
+    "tag": "Marketing & creative",
+    "track": "professional",
+    "demand": "Marketing and creative roles",
+    "duration": "60–90 hours",
+    "careers": "Content Creator, Design Executive, Social Media Designer",
+    "format": "Industry course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "Design basics for marketers",
+        "video": "https://www.youtube.com/embed/Fl2lYiRPsVc",
+        "body": "Learn layout, contrast, hierarchy, and brand consistency.",
+        "practice": "Redesign a messy flyer layout on paper/slide with clear hierarchy.",
+        "readingUrl": "https://www.canva.com/learn/design/",
+        "readingLabel": "Canva design school"
+      },
+      {
+        "id": "2",
+        "title": "Brand kits & templates",
+        "video": "https://www.youtube.com/embed/Fl2lYiRPsVc",
+        "body": "Build reusable templates for posts, stories, and posters.",
+        "practice": "Create 3 on-brand social post templates.",
+        "readingUrl": "https://www.canva.com/learn/design/",
+        "readingLabel": "Canva design school"
+      },
+      {
+        "id": "3",
+        "title": "Content writing for visuals",
+        "video": "https://www.youtube.com/embed/xsVTqzratPs",
+        "body": "Write short copy that fits visual formats and CTAs.",
+        "practice": "Write captions for 5 product posts with CTA variants.",
+        "readingUrl": "https://developers.google.com/search/docs",
+        "readingLabel": "Search/content guidance"
+      },
+      {
+        "id": "4",
+        "title": "Web & creative production flow",
+        "video": "https://www.youtube.com/embed/UB1O30fR-EE",
+        "body": "Understand asset sizes, export formats, and handoff to web/social tools.",
+        "practice": "Export a checklist of sizes for Instagram, LinkedIn, and website banner.",
+        "readingUrl": "https://developer.mozilla.org/",
+        "readingLabel": "MDN"
+      },
+      {
+        "id": "5",
+        "title": "Campaign content pack",
+        "video": "https://www.youtube.com/embed/qX6Q8DQGyRU",
+        "body": "Plan a mini campaign with matching visuals and copy.",
+        "practice": "Deliver 6 creatives + caption sheet for a launch week.",
+        "readingUrl": "https://www.canva.com/learn/design/",
+        "readingLabel": "Canva design school"
+      },
+      {
+        "id": "6",
+        "title": "Portfolio capstone",
+        "video": "https://www.youtube.com/embed/fZmQ_aPXJAM",
+        "body": "Present your best work with process notes.",
+        "practice": "Publish a one-page portfolio PDF with 6 pieces and outcomes.",
+        "readingUrl": "https://www.canva.com/learn/design/",
+        "readingLabel": "Canva design school"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting Graphic Design & Content Creation?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "communication-interview-skills",
+    "title": "Communication & Interview Skills",
+    "page": "course-guide.html?course=communication-interview-skills",
+    "category": "career",
+    "categoryLabel": "Career skills",
+    "image": "img/board.jpeg",
+    "description": "Build workplace communication and interview readiness essential across industries.",
+    "tag": "Essential across industries",
+    "track": "professional",
+    "demand": "Essential",
+    "duration": "30–45 hours",
+    "careers": "All entry-level professional roles",
+    "format": "Industry course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "Professional communication basics",
+        "video": "https://www.youtube.com/embed/1XctnF7C74s",
+        "body": "Write clear, respectful workplace messages.",
+        "practice": "Rewrite a vague email into a clear request with deadline.",
+        "readingUrl": "https://support.microsoft.com/",
+        "readingLabel": "Microsoft support"
+      },
+      {
+        "id": "2",
+        "title": "Meetings & spoken clarity",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Prepare agendas, speak concisely, and capture actions.",
+        "practice": "Record a 60-second self-introduction for your target role.",
+        "readingUrl": "https://support.microsoft.com/",
+        "readingLabel": "Microsoft support"
+      },
+      {
+        "id": "3",
+        "title": "Resume & LinkedIn story",
+        "video": "https://www.youtube.com/embed/fZmQ_aPXJAM",
+        "body": "Translate projects into quantified achievements.",
+        "practice": "Write 5 bullet achievements using action + result format.",
+        "readingUrl": "https://www.linkedin.com/help/",
+        "readingLabel": "LinkedIn help"
+      },
+      {
+        "id": "4",
+        "title": "Interview frameworks",
+        "video": "https://www.youtube.com/embed/fZmQ_aPXJAM",
+        "body": "Use STAR stories for behavioural questions.",
+        "practice": "Prepare 4 STAR stories covering teamwork, conflict, deadline, and learning.",
+        "readingUrl": "https://www.linkedin.com/help/",
+        "readingLabel": "LinkedIn help"
+      },
+      {
+        "id": "5",
+        "title": "Mock interview lab",
+        "video": "https://www.youtube.com/embed/1XctnF7C74s",
+        "body": "Practise common HR and role questions with feedback notes.",
+        "practice": "Complete a timed mock interview script and self-score.",
+        "readingUrl": "https://support.microsoft.com/",
+        "readingLabel": "Microsoft support"
+      },
+      {
+        "id": "6",
+        "title": "Offer & workplace etiquette",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Handle follow-ups, offer communication, and first-week professionalism.",
+        "practice": "Draft a thank-you email and a first-week learning plan.",
+        "readingUrl": "https://support.microsoft.com/",
+        "readingLabel": "Microsoft support"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting Communication & Interview Skills?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "tally-prime-gst",
+    "title": "Tally Prime with GST",
+    "page": "course-guide.html?course=tally-prime-gst",
+    "category": "finance",
+    "categoryLabel": "Finance",
+    "image": "img/board.jpeg",
+    "description": "Internship-oriented accounting practice with Tally Prime and GST workflow fundamentals.",
+    "tag": "Internship track",
+    "track": "internship",
+    "demand": "Accounts & billing",
+    "duration": "60 hours",
+    "careers": "Accounts Executive, Billing Executive",
+    "format": "Internship course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "Accounting basics for Tally",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Understand ledgers, vouchers, and debit/credit in practice terms.",
+        "practice": "Classify 10 sample transactions into ledger types.",
+        "readingUrl": "https://tallysolutions.com/tally/tallyprime/",
+        "readingLabel": "TallyPrime overview"
+      },
+      {
+        "id": "2",
+        "title": "Company setup concepts",
+        "video": "https://www.youtube.com/embed/2MCmnr2L50o",
+        "body": "Learn company creation fields and master data discipline.",
+        "practice": "Draft a company master checklist for a trading firm.",
+        "readingUrl": "https://tallysolutions.com/tally/tallyprime/",
+        "readingLabel": "TallyPrime overview"
+      },
+      {
+        "id": "3",
+        "title": "GST fundamentals",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Map CGST/SGST/IGST concepts to invoice scenarios.",
+        "practice": "Prepare 5 sample invoices with correct GST type notes.",
+        "readingUrl": "https://www.gst.gov.in/",
+        "readingLabel": "GST portal"
+      },
+      {
+        "id": "4",
+        "title": "Billing & receivables",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Track invoices, receipts, and outstanding balances.",
+        "practice": "Build an outstanding receivables aging sheet.",
+        "readingUrl": "https://tallysolutions.com/tally/tallyprime/",
+        "readingLabel": "TallyPrime overview"
+      },
+      {
+        "id": "5",
+        "title": "Reports for accounts teams",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Read trial-related summaries and day books conceptually.",
+        "practice": "Create a daily billing MIS for a fictional shop.",
+        "readingUrl": "https://tallysolutions.com/tally/tallyprime/",
+        "readingLabel": "TallyPrime overview"
+      },
+      {
+        "id": "6",
+        "title": "Internship simulation",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Run a week of billing + GST documentation tasks.",
+        "practice": "Submit voucher log, GST invoice set, and outstanding report.",
+        "readingUrl": "https://www.gst.gov.in/",
+        "readingLabel": "GST portal"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting Tally Prime with GST?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "accounting-taxation",
+    "title": "Accounting & Taxation",
+    "page": "course-guide.html?course=accounting-taxation",
+    "category": "finance",
+    "categoryLabel": "Finance",
+    "image": "img/board.jpeg",
+    "description": "Internship pathway into junior accounting and tax support roles.",
+    "tag": "Internship track",
+    "track": "internship",
+    "demand": "Accounting & tax",
+    "duration": "60–90 hours",
+    "careers": "Junior Accountant, Tax Assistant",
+    "format": "Internship course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "Bookkeeping foundations",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Record transactions accurately and maintain audit-friendly notes.",
+        "practice": "Post 12 transactions into a simple journal sheet.",
+        "readingUrl": "https://www.icai.org/",
+        "readingLabel": "ICAI resources"
+      },
+      {
+        "id": "2",
+        "title": "Ledgers & trial concepts",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Link journal entries to ledger views and balancing checks.",
+        "practice": "Prepare ledger extracts and a mini trial balance.",
+        "readingUrl": "https://www.icai.org/",
+        "readingLabel": "ICAI resources"
+      },
+      {
+        "id": "3",
+        "title": "Taxation orientation",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Understand direct/indirect tax touchpoints for junior roles.",
+        "practice": "Create a glossary of 15 tax terms used in offices.",
+        "readingUrl": "https://www.incometax.gov.in/",
+        "readingLabel": "Income Tax portal"
+      },
+      {
+        "id": "4",
+        "title": "GST documentation support",
+        "video": "https://www.youtube.com/embed/2MCmnr2L50o",
+        "body": "Support invoice and return documentation workflows.",
+        "practice": "Build a GST document checklist for monthly filing support.",
+        "readingUrl": "https://www.gst.gov.in/",
+        "readingLabel": "GST portal"
+      },
+      {
+        "id": "5",
+        "title": "Excel for accountants",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Use spreadsheets for reconciliations and schedules.",
+        "practice": "Reconcile bank-like sample data and list mismatches.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "6",
+        "title": "Junior accountant simulation",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Complete a month-end support pack.",
+        "practice": "Submit journal, trial, GST checklist, and reconciliation notes.",
+        "readingUrl": "https://www.icai.org/",
+        "readingLabel": "ICAI resources"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting Accounting & Taxation?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "advanced-excel-mis",
+    "title": "Advanced Excel & MIS Reporting",
+    "page": "course-guide.html?course=advanced-excel-mis",
+    "category": "analytics",
+    "categoryLabel": "Data & BI",
+    "image": "img/lms-power-bi.svg",
+    "description": "Internship track for MIS and reporting analyst roles using advanced Excel.",
+    "tag": "Internship track",
+    "track": "internship",
+    "demand": "MIS & reporting",
+    "duration": "60 hours",
+    "careers": "MIS Executive, Reporting Analyst",
+    "format": "Internship course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "MIS data standards",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Define clean columns, owners, and refresh cadence.",
+        "practice": "Design a data dictionary for a sales MIS.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "2",
+        "title": "Advanced formulas",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Use lookup and logical formulas for automated reports.",
+        "practice": "Build a commission calculator with tier logic.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "3",
+        "title": "Pivot reporting",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Create management pivots with slicers and layouts.",
+        "practice": "Produce region × product monthly pivots.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "4",
+        "title": "Dashboard packaging",
+        "video": "https://www.youtube.com/embed/Fl2lYiRPsVc",
+        "body": "Present MIS insights for weekly reviews.",
+        "practice": "Create a one-page MIS dashboard slide.",
+        "readingUrl": "https://support.microsoft.com/powerpoint",
+        "readingLabel": "PowerPoint help"
+      },
+      {
+        "id": "5",
+        "title": "Automation habits",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Reduce manual refresh errors with checklists.",
+        "practice": "Write a daily MIS refresh SOP.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "6",
+        "title": "MIS internship simulation",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Deliver a full weekly MIS pack.",
+        "practice": "Submit raw sheet, pivot, dashboard, and insight notes.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting Advanced Excel & MIS Reporting?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "banking-financial-services",
+    "title": "Banking & Financial Services",
+    "page": "course-guide.html?course=banking-financial-services",
+    "category": "finance",
+    "categoryLabel": "Finance",
+    "image": "img/board.jpeg",
+    "description": "Internship preparation for banking operations and finance associate roles.",
+    "tag": "Internship track",
+    "track": "internship",
+    "demand": "Banking & finance",
+    "duration": "60–90 hours",
+    "careers": "Banking Operations, Finance Associate",
+    "format": "Internship course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "BFS industry map",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Explore retail banking, payments, and support functions.",
+        "practice": "Compare three entry roles and required skills.",
+        "readingUrl": "https://www.rbi.org.in/",
+        "readingLabel": "RBI resources"
+      },
+      {
+        "id": "2",
+        "title": "Customer onboarding ops",
+        "video": "https://www.youtube.com/embed/2MCmnr2L50o",
+        "body": "Practise form accuracy and checklist culture.",
+        "practice": "Create an account opening document pack list.",
+        "readingUrl": "https://www.rbi.org.in/",
+        "readingLabel": "RBI resources"
+      },
+      {
+        "id": "3",
+        "title": "Transaction support",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Track entries and exception queues.",
+        "practice": "Build an exception register with aging.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "4",
+        "title": "Compliance awareness",
+        "video": "https://www.youtube.com/embed/z5nc9MDbvkw",
+        "body": "Understand confidentiality and escalation basics.",
+        "practice": "Write do/don’t guidelines for customer data handling.",
+        "readingUrl": "https://www.rbi.org.in/",
+        "readingLabel": "RBI resources"
+      },
+      {
+        "id": "5",
+        "title": "Stakeholder communication",
+        "video": "https://www.youtube.com/embed/1XctnF7C74s",
+        "body": "Communicate status to supervisors and customers clearly.",
+        "practice": "Draft two status emails: delay notice and resolution notice.",
+        "readingUrl": "https://support.microsoft.com/",
+        "readingLabel": "Microsoft support"
+      },
+      {
+        "id": "6",
+        "title": "BFS internship simulation",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Complete a day-in-the-life operations pack.",
+        "practice": "Submit checklist, exception log, and communication samples.",
+        "readingUrl": "https://www.rbi.org.in/",
+        "readingLabel": "RBI resources"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting Banking & Financial Services?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "business-analytics-power-bi",
+    "title": "Business Analytics with Power BI",
+    "page": "course-guide.html?course=business-analytics-power-bi",
+    "category": "analytics",
+    "categoryLabel": "Data & BI",
+    "image": "img/lms-power-bi.svg",
+    "description": "Internship track to junior business analyst skills with Power BI storytelling.",
+    "tag": "Internship track",
+    "track": "internship",
+    "demand": "Business analytics",
+    "duration": "60–90 hours",
+    "careers": "Junior Business Analyst",
+    "format": "Internship course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "BA mindset",
+        "video": "https://www.youtube.com/embed/PSNXoAs2FtQ",
+        "body": "Translate business problems into measurable analytics questions.",
+        "practice": "Write problem → metric → decision for two scenarios.",
+        "readingUrl": "https://learn.microsoft.com/en-us/power-bi/",
+        "readingLabel": "Power BI Learn"
+      },
+      {
+        "id": "2",
+        "title": "Power BI for analysts",
+        "video": "https://www.youtube.com/embed/NNSHu0rkew8",
+        "body": "Build analyst-ready reports from cleaned tables.",
+        "practice": "Import sample data and create a draft report page.",
+        "readingUrl": "https://learn.microsoft.com/en-us/power-bi/",
+        "readingLabel": "Power BI Learn"
+      },
+      {
+        "id": "3",
+        "title": "Metrics & DAX lite",
+        "video": "https://www.youtube.com/embed/AGrl-H87pRU",
+        "body": "Define KPIs and simple measures.",
+        "practice": "Create conversion rate and growth measures.",
+        "readingUrl": "https://learn.microsoft.com/en-us/power-bi/",
+        "readingLabel": "Power BI Learn"
+      },
+      {
+        "id": "4",
+        "title": "Insight writing",
+        "video": "https://www.youtube.com/embed/6cV3OwFrOkk",
+        "body": "Turn visuals into recommendations leaders can act on.",
+        "practice": "Write five insight bullets tied to visuals.",
+        "readingUrl": "https://learn.microsoft.com/en-us/power-bi/",
+        "readingLabel": "Power BI Learn"
+      },
+      {
+        "id": "5",
+        "title": "Stakeholder demo",
+        "video": "https://www.youtube.com/embed/Fl2lYiRPsVc",
+        "body": "Present findings with assumptions and next questions.",
+        "practice": "Prepare a 6-minute demo script.",
+        "readingUrl": "https://support.microsoft.com/powerpoint",
+        "readingLabel": "PowerPoint help"
+      },
+      {
+        "id": "6",
+        "title": "BA internship simulation",
+        "video": "https://www.youtube.com/embed/NNSHu0rkew8",
+        "body": "Deliver an analyst starter pack.",
+        "practice": "Submit PBIX-style screenshots/notes, insights, and demo script.",
+        "readingUrl": "https://learn.microsoft.com/en-us/power-bi/",
+        "readingLabel": "Power BI Learn"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting Business Analytics with Power BI?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "digital-marketing-ecommerce",
+    "title": "Digital Marketing & E-Commerce",
+    "page": "course-guide.html?course=digital-marketing-ecommerce",
+    "category": "marketing",
+    "categoryLabel": "Marketing",
+    "image": "img/lms-data-analytics.svg",
+    "description": "Internship preparation for marketing executive roles across digital and e-commerce channels.",
+    "tag": "Internship track",
+    "track": "internship",
+    "demand": "Digital marketing",
+    "duration": "60–90 hours",
+    "careers": "Marketing Executive",
+    "format": "Internship course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "E-commerce funnel basics",
+        "video": "https://www.youtube.com/embed/xsVTqzratPs",
+        "body": "Map awareness → consideration → purchase → retention.",
+        "practice": "Diagram a funnel for an online store niche.",
+        "readingUrl": "https://developers.google.com/search/docs",
+        "readingLabel": "Google Search docs"
+      },
+      {
+        "id": "2",
+        "title": "SEO for product pages",
+        "video": "https://www.youtube.com/embed/xsVTqzratPs",
+        "body": "Optimise titles, descriptions, and category structure.",
+        "practice": "Rewrite 5 product titles/meta descriptions.",
+        "readingUrl": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+        "readingLabel": "SEO starter guide"
+      },
+      {
+        "id": "3",
+        "title": "Campaign content ops",
+        "video": "https://www.youtube.com/embed/qX6Q8DQGyRU",
+        "body": "Plan calendars for social and email support assets.",
+        "practice": "Build a 2-week content calendar.",
+        "readingUrl": "https://developers.google.com/search/docs",
+        "readingLabel": "Google Search docs"
+      },
+      {
+        "id": "4",
+        "title": "Offers & landing pages",
+        "video": "https://www.youtube.com/embed/UB1O30fR-EE",
+        "body": "Structure landing pages that convert.",
+        "practice": "Wireframe a festival sale landing page.",
+        "readingUrl": "https://developer.mozilla.org/",
+        "readingLabel": "MDN"
+      },
+      {
+        "id": "5",
+        "title": "Performance reading",
+        "video": "https://www.youtube.com/embed/PSNXoAs2FtQ",
+        "body": "Interpret basic campaign and store KPIs.",
+        "practice": "Define KPI dashboard fields for weekly review.",
+        "readingUrl": "https://support.google.com/analytics",
+        "readingLabel": "Google Analytics help"
+      },
+      {
+        "id": "6",
+        "title": "Marketing internship simulation",
+        "video": "https://www.youtube.com/embed/qX6Q8DQGyRU",
+        "body": "Deliver a launch campaign pack.",
+        "practice": "Submit funnel map, SEO copy, calendar, and KPI sheet.",
+        "readingUrl": "https://developers.google.com/search/docs",
+        "readingLabel": "Google Search docs"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting Digital Marketing & E-Commerce?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "hr-payroll-management",
+    "title": "HR & Payroll Management",
+    "page": "course-guide.html?course=hr-payroll-management",
+    "category": "business",
+    "categoryLabel": "Business & HR",
+    "image": "img/board.jpeg",
+    "description": "Internship track for HR assistant and payroll executive responsibilities.",
+    "tag": "Internship track",
+    "track": "internship",
+    "demand": "HR & payroll",
+    "duration": "60 hours",
+    "careers": "HR Assistant, Payroll Executive",
+    "format": "Internship course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "HR operations calendar",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Plan monthly HR cycles: attendance, payroll inputs, compliance reminders.",
+        "practice": "Build a monthly HR calendar with owners.",
+        "readingUrl": "https://www.ilo.org/",
+        "readingLabel": "Workplace standards reference"
+      },
+      {
+        "id": "2",
+        "title": "Employee master data",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Maintain accurate employee records and change logs.",
+        "practice": "Design an employee master sheet with validation fields.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "3",
+        "title": "Attendance to payroll inputs",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Convert attendance into payroll-ready summaries.",
+        "practice": "Create attendance-to-payable days logic in Excel.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "4",
+        "title": "Payslip communication",
+        "video": "https://www.youtube.com/embed/1XctnF7C74s",
+        "body": "Handle payroll queries professionally and confidentially.",
+        "practice": "Draft responses for late salary and deduction questions.",
+        "readingUrl": "https://support.microsoft.com/",
+        "readingLabel": "Microsoft support"
+      },
+      {
+        "id": "5",
+        "title": "Statutory awareness",
+        "video": "https://www.youtube.com/embed/2MCmnr2L50o",
+        "body": "Learn documentation habits around common statutory deductions at a conceptual level.",
+        "practice": "Prepare a statutory document checklist for new joiners.",
+        "readingUrl": "https://www.epfindia.gov.in/",
+        "readingLabel": "EPFO"
+      },
+      {
+        "id": "6",
+        "title": "HR/payroll internship simulation",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Run a mock payroll week.",
+        "practice": "Submit master data, attendance summary, payslip notes, and query emails.",
+        "readingUrl": "https://www.ilo.org/",
+        "readingLabel": "Workplace standards reference"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting HR & Payroll Management?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "financial-modelling",
+    "title": "Financial Modelling",
+    "page": "course-guide.html?course=financial-modelling",
+    "category": "finance",
+    "categoryLabel": "Finance",
+    "image": "img/lms-power-bi.svg",
+    "description": "Internship track into finance analyst trainee work using Excel models.",
+    "tag": "Internship track",
+    "track": "internship",
+    "demand": "Finance analysis",
+    "duration": "60–90 hours",
+    "careers": "Finance Analyst Trainee",
+    "format": "Internship course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "Model design principles",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Separate inputs, calculations, and outputs for auditable models.",
+        "practice": "Build a 3-section workbook skeleton with colour conventions.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "2",
+        "title": "Revenue & cost drivers",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Link drivers to statements with transparent assumptions.",
+        "practice": "Create a driver table for price, volume, and cost inflation.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "3",
+        "title": "Three-statement thinking",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Connect P&L, balance sheet, and cash flow conceptually.",
+        "practice": "Map how profit flows into cash in a simple example.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "4",
+        "title": "Scenarios & sensitivity",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Test best/base/worst cases for decisions.",
+        "practice": "Add scenario toggles and a sensitivity table.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "5",
+        "title": "Model checks",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Balance checks, error flags, and documentation.",
+        "practice": "Add a checks dashboard with pass/fail indicators.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      },
+      {
+        "id": "6",
+        "title": "Modelling internship simulation",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Deliver a starter financial model pack.",
+        "practice": "Submit model, assumption log, and scenario summary.",
+        "readingUrl": "https://support.microsoft.com/excel",
+        "readingLabel": "Excel help"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting Financial Modelling?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
+  },
+  {
+    "id": "sap-fico-fundamentals",
+    "title": "SAP FICO Fundamentals",
+    "page": "course-guide.html?course=sap-fico-fundamentals",
+    "category": "finance",
+    "categoryLabel": "Finance",
+    "image": "img/board.jpeg",
+    "description": "Internship orientation to SAP FICO concepts for ERP finance support trainees.",
+    "tag": "Internship track",
+    "track": "internship",
+    "demand": "ERP finance",
+    "duration": "60 hours",
+    "careers": "ERP Finance Support Trainee",
+    "format": "Internship course",
+    "resource": null,
+    "lessons": [
+      {
+        "id": "1",
+        "title": "ERP & FICO overview",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Understand how FI/CO supports enterprise finance processes.",
+        "practice": "Draw FI vs CO responsibilities in a one-page map.",
+        "readingUrl": "https://www.sap.com/products/financial-management.html",
+        "readingLabel": "SAP finance overview"
+      },
+      {
+        "id": "2",
+        "title": "Org structure concepts",
+        "video": "https://www.youtube.com/embed/2MCmnr2L50o",
+        "body": "Learn company code, chart of accounts, and controlling area ideas.",
+        "practice": "Create a glossary of 12 SAP FICO org terms.",
+        "readingUrl": "https://help.sap.com/",
+        "readingLabel": "SAP Help"
+      },
+      {
+        "id": "3",
+        "title": "Document posting mindset",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Connect business events to financial documents and periods.",
+        "practice": "Classify 10 events into FI document types conceptually.",
+        "readingUrl": "https://help.sap.com/",
+        "readingLabel": "SAP Help"
+      },
+      {
+        "id": "4",
+        "title": "Master data discipline",
+        "video": "https://www.youtube.com/embed/wbJcJCkBcMg",
+        "body": "Appreciate vendor/customer/GL master accuracy.",
+        "practice": "Design a master-data change request form.",
+        "readingUrl": "https://help.sap.com/",
+        "readingLabel": "SAP Help"
+      },
+      {
+        "id": "5",
+        "title": "Reporting & support tickets",
+        "video": "https://www.youtube.com/embed/1XctnF7C74s",
+        "body": "Handle end-user issues with clear reproduction steps.",
+        "practice": "Write 3 sample support tickets with steps and impact.",
+        "readingUrl": "https://help.sap.com/",
+        "readingLabel": "SAP Help"
+      },
+      {
+        "id": "6",
+        "title": "FICO internship simulation",
+        "video": "https://www.youtube.com/embed/ZKOL-rZ79gs",
+        "body": "Prepare an ERP finance support starter kit.",
+        "practice": "Submit term glossary, process map, and ticket pack.",
+        "readingUrl": "https://www.sap.com/products/financial-management.html",
+        "readingLabel": "SAP finance overview"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "What is the best first step when starting SAP FICO Fundamentals?",
+        "options": [
+          "Skip all practice",
+          "Learn core concepts then practise with real examples",
+          "Only watch the final lesson"
+        ],
+        "answer": 1,
+        "explanation": "Build foundations first, then apply them."
+      },
+      {
+        "question": "Why should you practise with real workplace examples?",
+        "options": [
+          "To build job-ready confidence",
+          "To avoid learning",
+          "To skip assessments"
+        ],
+        "answer": 0,
+        "explanation": "Practical examples connect training to job tasks."
+      },
+      {
+        "question": "How should you treat confidential workplace data?",
+        "options": [
+          "Share it publicly",
+          "Follow company policy and keep it secure",
+          "Post it on social media"
+        ],
+        "answer": 1,
+        "explanation": "Data protection is a core workplace responsibility."
+      },
+      {
+        "question": "What helps you improve after a mistake?",
+        "options": [
+          "Ignore feedback",
+          "Review the process and correct the error",
+          "Delete all files"
+        ],
+        "answer": 1,
+        "explanation": "Reflection and correction build professional skill."
+      },
+      {
+        "question": "When is a knowledge check considered passed here?",
+        "options": [
+          "Any one answer correct",
+          "At least 3 of 5 answers correct",
+          "Only perfect scores forever"
+        ],
+        "answer": 1,
+        "explanation": "Pass mark is 3 or more correct out of 5."
+      }
+    ]
   }
 ];

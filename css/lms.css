@@ -477,6 +477,13 @@ body {
   border-radius: 999px;
   padding: 5px 9px;
 }
+.course-careers, .course-careers-line {
+  font-size: 12px;
+  line-height: 1.65;
+  color: #4f5d52;
+  margin: 0 0 12px;
+}
+.course-careers strong, .course-careers-line strong { color: var(--green-dark); }
 .course-dialog {
   width: min(1120px, calc(100% - 28px));
   border: 0;

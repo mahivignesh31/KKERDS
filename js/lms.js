@@ -361,7 +361,7 @@
   function render() {
     const active = enrolled(), completed = active.reduce((n,c) => n + count(c), 0), total = active.reduce((n,c) => n + c.lessons.length, 0);
     $('#nav-count').textContent = active.length;
-    $('#catalog-count').textContent = `${courses.length} professional learning paths`;
+    $('#catalog-count').textContent = `${courses.length} professional & internship paths`;
     $('#stat-enrolled').textContent = active.length;
     $('#stat-lessons').textContent = completed;
     $('#stat-progress').textContent = `${total ? Math.round(completed / total * 100) : 0}%`;
@@ -371,18 +371,25 @@
     $('#hero-action').innerHTML = active.length ? 'Continue learning <span aria-hidden="true">↗</span>' : 'Browse courses <span aria-hidden="true">↗</span>';
     const ongoing = active.filter(c => !finished(c));
     $('#continue-cards').innerHTML = ongoing.length ? ongoing.slice(0,2).map(c => `<article class="continue-card"><img src="${c.image}" alt="${escape(c.title)}" loading="lazy"><div class="continue-info"><span class="eyebrow">${escape(c.categoryLabel)}</span><h3>${escape(c.title)}</h3><div class="progress-label"><span>${count(c)} of ${c.lessons.length} lessons</span><span>${percent(c)}%</span></div>${progress(c)}<button class="text-button" data-course="${c.id}">Resume course →</button></div></article>`).join('') : `<div class="empty-learning"><span class="empty-icon" aria-hidden="true">${active.length ? '✦' : '▤'}</span><div><h3>${active.length ? 'All enrolled courses completed.' : 'No active course yet.'}</h3><p>${active.length ? 'Choose another path from the catalog to keep building professional skills.' : 'Browse the catalog, enroll in a course, and your progress will appear here.'}</p><button class="text-button" data-goto="catalog">Open course catalog ↗</button></div></div>`;
-    const visible = courses.filter(c => (view !== 'learning' || record(c)) && (category === 'all' || c.category === category) && `${c.title} ${c.description} ${c.categoryLabel}`.toLowerCase().includes(query));
+    const visible = courses.filter(c => {
+      if (view === 'learning' && !record(c)) return false;
+      if (category === 'internship') return c.track === 'internship';
+      if (category !== 'all' && c.category !== category) return false;
+      return `${c.title} ${c.description} ${c.categoryLabel} ${c.careers || ''} ${c.duration || ''}`.toLowerCase().includes(query);
+    });
     $('#course-grid').innerHTML = visible.map(c => {
       const hasVideo = c.lessons.some(l => l.video);
       const hasLab = c.lessons.some(l => l.lab);
       const hasLessonQuiz = c.lessons.some(l => l.quiz?.length);
       const chips = [
+        c.track === 'internship' ? '<span class="feature-chip">Internship</span>' : '',
+        c.demand ? `<span class="feature-chip">${escape(c.demand)}</span>` : '',
         hasVideo ? '<span class="feature-chip">Video</span>' : '',
         hasLab ? '<span class="feature-chip">Practice lab</span>' : '',
         hasLessonQuiz || c.quiz?.length ? '<span class="feature-chip">Quizzes</span>' : '',
         '<span class="feature-chip">Ordered unlock</span>'
       ].filter(Boolean).join('');
-      return `<article class="course-card"><div class="course-image"><img src="${c.image}" alt="${escape(c.title)}" loading="lazy"><span class="course-tag">${escape(c.tag)}</span></div><div class="course-card-body"><span class="course-category">${escape(c.categoryLabel)}</span><h3>${escape(c.title)}</h3><p>${escape(c.description)}</p><div class="feature-row">${chips}</div><div class="course-meta"><span>▤ ${c.lessons.length} lessons</span><span>◴ ${escape(c.format || 'Self-paced')}</span></div>${record(c) ? progress(c) : ''}<button class="button wide" data-course="${c.id}">${finished(c) ? 'Review course' : record(c) ? `Continue · ${percent(c)}%` : 'Open course'}<span aria-hidden="true">↗</span></button></div></article>`;
+      return `<article class="course-card"><div class="course-image"><img src="${c.image}" alt="${escape(c.title)}" loading="lazy"><span class="course-tag">${escape(c.tag)}</span></div><div class="course-card-body"><span class="course-category">${escape(c.categoryLabel)}</span><h3>${escape(c.title)}</h3><p>${escape(c.description)}</p>${c.careers ? `<p class="course-careers"><strong>Roles:</strong> ${escape(c.careers)}</p>` : ''}<div class="feature-row">${chips}</div><div class="course-meta"><span>▤ ${c.lessons.length} lessons</span><span>◷ ${escape(c.duration || c.format || 'Self-paced')}</span></div>${record(c) ? progress(c) : ''}<button class="button wide" data-course="${c.id}">${finished(c) ? 'Review course' : record(c) ? `Continue · ${percent(c)}%` : 'Open course'}<span aria-hidden="true">↗</span></button></div></article>`;
     }).join('');
     $('#no-results').hidden = visible.length !== 0;
     $('#no-results').textContent = view === 'learning' && !active.length ? 'You have not enrolled in a course yet. Open the catalog to begin.' : 'No courses matched your search. Try another keyword or category.';
@@ -392,7 +399,12 @@
   function setView(next) {
     view = next; category = 'all'; query = '';
     $('#course-search').value = '';
-    document.querySelectorAll('[data-category]').forEach(b => { b.classList.toggle('active', b.dataset.category === 'all'); b.setAttribute('aria-pressed', String(b.dataset.category === 'all')); });
+    document.querySelectorAll('[data-category], [data-track]').forEach(b => {
+      const key = b.dataset.category || b.dataset.track;
+      const on = key === 'all';
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
     const headings = {
       overview:['PROFESSIONAL SKILL DEVELOPMENT', user ? `Welcome back, ${user.displayName?.split(' ')[0] || 'learner'}` : 'Build skills that move you forward', 'Structured video lessons, practice labs, and knowledge checks — at your own pace.'],
       learning:['MY LEARNING', 'Your enrolled courses', 'Resume any path and continue from your last completed lesson.'],
@@ -493,7 +505,8 @@
           <span class="course-enrollment-status">${item ? `${count(c)} of ${c.lessons.length} lessons completed` : 'Enroll to save progress'}</span>
         </div>
         <p>${escape(c.description)} ${c.id === 'electrician' ? 'Practical electrical work requires qualified supervision and compliance with local requirements.' : ''}</p>
-        <div class="course-overview-meta"><span>▤ ${c.lessons.length} lessons</span><span>◷ Self-paced</span><span>✓ Video lessons</span><span>○ Quiz unlocks</span></div>
+        <div class="course-overview-meta"><span>▤ ${c.lessons.length} lessons</span><span>◷ ${escape(c.duration || 'Self-paced')}</span><span>✓ Video lessons</span><span>○ Quiz unlocks</span>${c.track === 'internship' ? '<span>✦ Internship track</span>' : ''}</div>
+        ${c.careers ? `<p class="course-careers-line"><strong>Career opportunities:</strong> ${escape(c.careers)}</p>` : ''}
         <div class="course-start-bar">
           <div class="course-start-actions">
             ${!item ? '<button class="button primary" id="enroll">Start this course →</button>' : ''}
@@ -535,9 +548,14 @@
       setView(target.dataset.view || target.dataset.goto);
       if (target.dataset.goto) { $('#main').scrollIntoView({behavior:'smooth'}); $('#main').focus({preventScroll:true}); }
     }
-    if (target.dataset.category) {
-      category = target.dataset.category;
-      document.querySelectorAll('[data-category]').forEach(b => { b.classList.toggle('active', b === target); b.setAttribute('aria-pressed',String(b === target)); });
+    if (target.dataset.category || target.dataset.track) {
+      category = target.dataset.category || target.dataset.track;
+      document.querySelectorAll('[data-category], [data-track]').forEach(b => {
+        const key = b.dataset.category || b.dataset.track;
+        const on = key === category;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
       render();
     }
     if (target.dataset.course) openCourse(target.dataset.course);
