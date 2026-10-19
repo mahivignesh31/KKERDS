@@ -9,11 +9,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/lms.css?v=20261019b">
-  <script src="js/firebase-config.js?v=20261019b" defer></script>
-  <script src="js/lms-data.js?v=20261019b" defer></script>
-  <script src="js/lms-auth.js?v=20261019b" defer></script>
-  <script src="js/lms.js?v=20261019b" defer></script>
+  <link rel="stylesheet" href="css/lms.css?v=20261019c">
+  <script src="js/firebase-config.js?v=20261019c" defer></script>
+  <script src="js/lms-data.js?v=20261019c" defer></script>
+  <script src="js/lms-auth.js?v=20261019c" defer></script>
+  <script src="js/lms.js?v=20261019c" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -181,7 +181,10 @@
 
 <dialog id="course-dialog" class="course-dialog" aria-labelledby="dialog-title">
   <div class="dialog-top">
-    <span class="eyebrow">COURSE WORKSPACE</span>
+    <div class="dialog-top-copy">
+      <span class="eyebrow">COURSE WORKSPACE</span>
+      <strong id="dialog-course-title">Course</strong>
+    </div>
     <button class="icon-button" data-close="course-dialog" aria-label="Close course">✕</button>
   </div>
   <div id="course-dialog-content"></div>

@@ -405,8 +405,15 @@
     const first = currentCourse.lessons.findIndex(l => !record(currentCourse)?.completed.includes(l.id));
     currentLesson = first < 0 ? 0 : first;
     renderCourse();
-    $('#course-dialog').showModal();
-    $('#course-dialog').scrollTop = 0;
+    const dialog = $('#course-dialog');
+    if (!dialog.open) dialog.showModal();
+    dialog.scrollTop = 0;
+    requestAnimationFrame(() => {
+      dialog.scrollTop = 0;
+      const list = $('.lesson-list');
+      if (list) list.scrollTop = 0;
+      $('.lesson-row.selected')?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    });
   }
   function renderCourse() {
     destroyStrictPlayer();
@@ -460,33 +467,39 @@
         <div><h4>Study this lesson</h4><p>Open the full course guide to study this topic and its learning resources.</p></div>
       </article>`;
     }
+    const stickyTitle = $('#dialog-course-title');
+    if (stickyTitle) stickyTitle.textContent = c.title;
     $('#course-dialog-content').innerHTML = `
       <header class="dialog-heading">
-        <span class="course-category">${escape(c.categoryLabel)} · ${escape(c.format || 'Video lessons')}</span>
-        <h2 id="dialog-title">${escape(c.title)}</h2>
+        <div class="dialog-heading-top">
+          <div>
+            <span class="course-category">${escape(c.categoryLabel)} · ${escape(c.format || 'Video lessons')}</span>
+            <h2 id="dialog-title">${escape(c.title)}</h2>
+          </div>
+          <span class="course-enrollment-status">${item ? `${count(c)} of ${c.lessons.length} lessons completed` : 'Enroll to save progress'}</span>
+        </div>
         <p>${escape(c.description)} ${c.id === 'electrician' ? 'Practical electrical work requires qualified supervision and compliance with local requirements.' : ''}</p>
-        <div class="course-overview-meta"><span>▤ ${c.lessons.length} lessons</span><span>◷ Self-paced</span><span>✓ Video on every lesson</span><span>○ Pass quizzes to unlock</span></div>
+        <div class="course-overview-meta"><span>▤ ${c.lessons.length} lessons</span><span>◷ Self-paced</span><span>✓ Video lessons</span><span>○ Quiz unlocks</span></div>
         <div class="course-start-bar">
           <div class="course-start-actions">
             ${!item ? '<button class="button primary" id="enroll">Start this course →</button>' : ''}
             <a class="button" href="${escape(c.page)}" target="_blank" rel="noopener">Full course guide ↗</a>
           </div>
-          <span class="course-enrollment-status">${item ? `${count(c)} of ${c.lessons.length} lessons completed` : 'Start to save your progress and lesson notes'}</span>
         </div>
       </header>
       <div class="player-layout">
         <section class="lesson-panel" aria-labelledby="active-lesson-title">
-          <div class="lesson-heading"><span class="eyebrow">${!item ? 'LESSON PREVIEW' : lesson.video && lesson.lab ? 'WATCH · LAB · QUIZ' : lesson.video ? 'WATCH · LEARN · PRACTICE' : c.format ? 'READ · PRACTICE · BUILD' : 'WATCH · LEARN · PRACTICE'}</span><span>Lesson ${currentLesson + 1} of ${c.lessons.length}</span></div>
+          <div class="lesson-heading"><span class="eyebrow">${!item ? 'LESSON PREVIEW' : lesson.video && lesson.lab ? 'WATCH · LAB · QUIZ' : 'WATCH · LEARN · PRACTICE'}</span><span>Lesson ${currentLesson + 1} of ${c.lessons.length}</span></div>
           <h3 class="lesson-title" id="active-lesson-title">${escape(lesson.title)}</h3>
           ${content}
           ${item ? `<div class="lesson-actions"><button class="button primary" id="complete-lesson" ${!isDone && lesson.video && !watched ? 'hidden' : ''}>${isDone ? '✓ Completed · undo' : 'Mark lesson complete ✓'}</button>${lesson.quiz?.length ? `<button class="button" id="lesson-quiz" ${isDone ? '' : 'disabled'}>${lessonQuizDone ? '✓ Lesson quiz passed' : 'Take lesson quiz'}</button>` : ''}${currentLesson < c.lessons.length - 1 ? `<button class="button" id="next-lesson" ${canGoNext ? '' : 'disabled'}>Next lesson →</button>` : `<button class="button" id="go-quiz" ${count(c) === c.lessons.length && [...c.lessons].every(l => !l.quiz?.length || lessonQuizPassed(c, l.id)) ? '' : 'disabled'}>Final knowledge check</button>`}</div>
             ${lesson.video && !isDone && !watched ? '<p class="video-watch-hint" id="video-watch-hint">Finish watching the full video. Skipping ahead and speed changes are locked; rewinding is allowed.</p>' : isDone && lesson.quiz?.length && !lessonQuizDone ? '<p class="video-watch-hint" id="video-watch-hint">Pass this lesson quiz (3 of 5 correct) to unlock the next lesson.</p>' : !isDone ? '<p class="video-watch-hint" id="video-watch-hint">Complete this lesson before the next one unlocks.</p>' : '<p class="video-watch-hint" id="video-watch-hint" hidden></p>'}
-            <div class="lesson-notes"><label class="notes-label" for="lesson-notes">Your lesson notes</label><textarea class="notes-input" id="lesson-notes" maxlength="10000" placeholder="Write an idea to remember or a question to revisit…">${escape(item.notes[lesson.id] || '')}</textarea><p class="notes-hint">Saved automatically. ${user && cloudReady ? 'Synced to your account.' : 'Stored in this browser.'}</p></div>` : '<p class="preview-hint">This is a preview. Start the course above when you’re ready to track your learning.</p>'}
+            <div class="lesson-notes"><label class="notes-label" for="lesson-notes">Your lesson notes</label><textarea class="notes-input" id="lesson-notes" maxlength="10000" placeholder="Write an idea to remember or a question to revisit…">${escape(item.notes[lesson.id] || '')}</textarea><p class="notes-hint">Saved automatically. ${user && cloudReady ? 'Synced to your account.' : 'Stored in this browser.'}</p></div>` : '<p class="preview-hint">Preview mode. Start the course above to unlock progress tracking, labs, and quizzes.</p>'}
         </section>
         <aside class="curriculum-panel" aria-label="Course curriculum">
           <div class="curriculum-header"><h3>Course curriculum</h3><span>${count(c)}/${c.lessons.length}</span></div>
           ${progress(c)}
-          <p class="curriculum-hint">${item ? 'Finish video, practice, and the lesson quiz in order. The next lesson stays locked until you pass.' : 'Preview a lesson, then enroll to start in order.'}</p>
+          <p class="curriculum-hint">${item ? 'Complete each lesson in order. Later lessons stay locked until you finish the previous one.' : 'Preview any lesson. After you enroll, lessons unlock in order.'}</p>
           <div class="lesson-list">${c.lessons.map((l,i) => {
             const done = item?.completed.includes(l.id);
             const quizDone = !l.quiz?.length || lessonQuizPassed(c, l.id);
@@ -494,7 +507,7 @@
             const selected = i === currentLesson;
             return `<button class="lesson-row ${selected ? 'selected' : ''} ${done && quizDone ? 'done' : ''} ${unlocked ? '' : 'locked'}" data-lesson="${i}" ${selected ? 'aria-current="step"' : ''} ${unlocked ? '' : 'aria-disabled="true"'}><span>${done && quizDone ? '✓' : unlocked ? i+1 : '◌'}</span><span>${escape(l.title)}</span>${selected ? '<span class="lesson-current" aria-hidden="true">→</span>' : unlocked ? '' : '<span class="lesson-lock-label">Locked</span>'}</button>`;
           }).join('')}</div>
-          <p class="notes-hint">${c.tools?.includes('python-lab') ? 'Includes videos, in-browser labs, and a quiz after each lesson.' : c.format ? 'Guided reading, practical exercises, and official documentation.' : 'Videos from external creators in the existing course curriculum.'}</p>
+          <p class="notes-hint">${c.tools?.includes('python-lab') ? 'Videos, labs, and a quiz after each lesson.' : 'Video lessons with ordered unlock and knowledge checks.'}</p>
         </aside>
       </div>`;
     if (item && lesson.video) mountStrictPlayer(lesson.video, c.id, lesson.id);

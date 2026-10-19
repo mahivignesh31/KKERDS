@@ -717,7 +717,7 @@ window.KK_COURSES = [
       {
         "id": "1",
         "title": "Ask a Better Business Question",
-        "video": "https://www.youtube.com/embed/yZvFH7B6gIg",
+        "video": "https://www.youtube.com/embed/ua-RbdYpfp4",
         "body": "Start with a specific decision and a measurable question. Define the time period, population, and unit of analysis before collecting data.",
         "practice": "Write three questions for a small retail business. For each, name the metric and the data needed.",
         "readingUrl": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/",
@@ -780,7 +780,7 @@ window.KK_COURSES = [
       {
         "id": "8",
         "title": "Capstone: Sales Insights Report",
-        "video": "https://www.youtube.com/embed/r-uBZW2f_p4",
+        "video": "https://www.youtube.com/embed/r-uOjjnqN0Y",
         "body": "Combine a business question, a documented dataset, reproducible analysis, and a recommendation. Explain assumptions and limitations alongside your findings.",
         "practice": "Deliver a notebook or spreadsheet, three charts, and a one-page sales summary with recommendations and caveats.",
         "readingUrl": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/",
@@ -855,7 +855,7 @@ window.KK_COURSES = [
       {
         "id": "1",
         "title": "Power BI Workflow & Setup",
-        "video": "https://www.youtube.com/embed/3u7EsV2x-us",
+        "video": "https://www.youtube.com/embed/1LKbP5lHhpU",
         "body": "Plan a report from source data to a useful decision. This path uses Power BI Desktop on Windows; use a Windows machine or environment for the hands-on exercises.",
         "practice": "Open Power BI Desktop and sketch a report that answers three questions about monthly sales.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
@@ -864,7 +864,7 @@ window.KK_COURSES = [
       {
         "id": "2",
         "title": "Connect & Inspect Your Data",
-        "video": "https://www.youtube.com/embed/AEfLSgL-G3g",
+        "video": "https://www.youtube.com/embed/gg2uXWRs7nE",
         "body": "Choose a source and inspect column names, types, and missing values before building visuals. Keep track of where the data came from.",
         "practice": "Import a small sales CSV and record the number of rows and the purpose of each column.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
@@ -873,7 +873,7 @@ window.KK_COURSES = [
       {
         "id": "3",
         "title": "Clean & Transform with Power Query",
-        "video": "https://www.youtube.com/embed/jLRd5sOMf7A",
+        "video": "https://www.youtube.com/embed/4P95oG7-e08",
         "body": "Treat cleaning as a repeatable sequence of transformations. Check the result after changing types, removing duplicates, or splitting columns.",
         "practice": "Standardize product names, set date and numeric types, and inspect errors in the transformed sales table.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
@@ -882,7 +882,7 @@ window.KK_COURSES = [
       {
         "id": "4",
         "title": "Model Tables & Relationships",
-        "video": "https://www.youtube.com/embed/gTZ_58xFp00",
+        "video": "https://www.youtube.com/embed/2Vrpk-8fRlc",
         "body": "Choose the grain of each table and identify unique keys. Keep descriptive dimensions separate from repeated sales transactions.",
         "practice": "Sketch a sales fact table and product and date dimensions. Check keys before defining relationships.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema",
@@ -891,7 +891,7 @@ window.KK_COURSES = [
       {
         "id": "5",
         "title": "DAX Measures & Filter Context",
-        "video": "https://www.youtube.com/embed/1VB8A5hVrXE",
+        "video": "https://www.youtube.com/embed/NnsPD3qQ9GE",
         "body": "Write measures for reusable calculations. Check how results change with filters rather than assuming every visual uses the same context.",
         "practice": "Create a Total Sales measure with SUM, then compare its result with and without a product filter.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-quickstart-learn-dax-basics",
@@ -900,7 +900,7 @@ window.KK_COURSES = [
       {
         "id": "6",
         "title": "Reports, Slicers & Visual Design",
-        "video": "https://www.youtube.com/embed/VgP4Qo-XyXg",
+        "video": "https://www.youtube.com/embed/1VB8A5hVrXE",
         "body": "Organize a report around the most useful questions. Use consistent formatting and test whether slicers change the intended visuals.",
         "practice": "Build a sales summary with a total, monthly trend, product comparison, and date slicer.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
@@ -909,7 +909,7 @@ window.KK_COURSES = [
       {
         "id": "7",
         "title": "Validate & Plan Sharing",
-        "video": "https://www.youtube.com/embed/xq7gPzUQ0xQ",
+        "video": "https://www.youtube.com/embed/yIyJ6tVbx-E",
         "body": "Reconcile your totals with the source and test filters. Review access requirements before sharing business data or publishing a report.",
         "practice": "Compare your report totals against the source and write a checklist for the intended audience and refresh process.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
@@ -918,7 +918,7 @@ window.KK_COURSES = [
       {
         "id": "8",
         "title": "Capstone: Interactive Sales Report",
-        "video": "https://www.youtube.com/embed/3u7EsV2x-us",
+        "video": "https://www.youtube.com/embed/1LKbP5lHhpU",
         "body": "Build a report that explains what changed, where it changed, and what to investigate next. Include source notes and refresh assumptions.",
         "practice": "Deliver a report with a summary page and a detail page. Document three findings and demonstrate the slicers to a reviewer.",
         "readingUrl": "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
